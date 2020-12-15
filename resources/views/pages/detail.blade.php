@@ -27,6 +27,7 @@
                                                     <li><img src="image/{{$post->image}}"></li>
                                                 </ul>
                                             </div>
+                                            <div class="line"></div>
                                             <div class="info-wrapper">
                                                 <dl><dt>Địa chỉ:</dt><dd> {{$post->address}}</dd></dl>
                                                 <dl><dt>Giá:</dt><dd>Khoảng {{$post->price}} đồng/tháng</dd></dl>
@@ -35,6 +36,7 @@
                                                         <dl><dt>Hình thức:</dt><dd>{{$post->category->name}}</dd></dl>
                                                         <dl><dt>Diện tích:</dt><dd>Khoảng {{$post->area}} m2</dd></dl>
                                                         <dl><dt>Số phòng:</dt><dd>{{$post->bedRoom}}</dd></dl>
+                                                        <dl><dt>Ở tối đa:</dt><dd></dd></dl>
                                                         
                                                     </div>
                                                     <div class="i-right">
@@ -101,22 +103,26 @@
                             <section class="comment-wrapper clearfix kcblist-inited">
                                 @if(isset($user))
                                 <form action = "comment/{{$post->id}}" role = "form">
-                                <div class = "form-group">
-                                    <textarea class = "" rows = "3" name = "content" method = "post"></textarea>
-                                    <input type="hidden" name = "_token" value = "{{csrf_token()}}"/>
+                                <div class = "formcomment"> 
+                                    <div class = "form-group">
+                                        <textarea class = "textarea" rows = "3" name = "content" method = "post"></textarea>
+                                        <input type="hidden" name = "_token" value = "{{csrf_token()}}"/>
+                                    </div>
+                                    <button type = "submit" class = "btn btn-primary">Bình luận</button>
+                                    @endif
                                 </div>
-                                <button type = "submit" class = "btn btn-primary">Gửi</button>
-                                @endif
                                 <div class="comment_list">
                                     <span class="box-head">Bình luận ({{$count}})</span>
-                                    <div class="lst-comment" id="listComment">
-                                        <ul data-view="listcm"></ul>
+                                    <div class = "commentlist">
+                                        <div class="list-comment" id="listComment">
+                                            <ul data-view="listcm"></ul>
+                                        </div>
+                                        <ul>
+                                        @foreach($post->comment as $row)
+                                        <l1>{{$row->user->name}}({{$row->updated_at}}) : {{$row->content}}</li></br>
+                                        @endforeach
+                                        </ul>
                                     </div>
-                                    <ul>
-                                    @foreach($post->comment as $row)
-                                    <l1>{{$row->user->name}}({{$row->updated_at}}) : {{$row->content}}</li></br>
-                                    @endforeach
-                                    </ul>
                                 </div>
                             </section>
                         </div>  
