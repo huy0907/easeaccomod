@@ -292,6 +292,7 @@ header .block-search .block-inner .box-search #top-search .search-form-label .ic
     overflow: hidden;
 }
 
+
 @media only screen and (max-width: 1100px) {
     .box-contact.right, .sidebar .py-10 {
         display: none;
@@ -301,6 +302,9 @@ header .block-search .block-inner .box-search #top-search .search-form-label .ic
     }
 }
 
+.sidebar .box-contact {
+    padding-top: 0px;
+}
 
 .box-contact .contacts {
     padding: 15px;
@@ -448,7 +452,7 @@ ul, ol {
 }
 
 i.ico.icon {
-    background-image: url(../images/icon/icon.jpg);
+    background-image: url(../images/icon.jpg);
 }
 i.ico {
     display: inline-block;
