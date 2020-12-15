@@ -23,8 +23,6 @@
                                 <th>Address</th>
                                 <th>Description</th>
                                 <th>Price</th>
-                                <th>Bedroom</th>
-                                <th>Air condition</th>
                                 <th>Delete</th>
                                 <th>Edit</th>
                             </tr>
@@ -40,8 +38,6 @@
                                 <td>{{$row->address}}</td>
                                 <td>{{$row->description}}</td>
                                 <td>{{$row->price}}</td>
-                                <td>{{$row->bedRoom}}</td>
-                                <td>{{$row->airConditioning}}</td>
                                 <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="admin/post/delete/{{$row->id}}"> Delete</a></td>
                                 <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="admin/post/edit/{{$row->id}}">Edit</a></td>
                             </tr>

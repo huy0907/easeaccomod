@@ -33,14 +33,12 @@ class PostController extends Controller
         ['category' => 'required',
         'name' => 'required|min:3|unique:post,name',
         'price' => 'required',
-        'bedroom' => 'required',
         'description' => 'required',
         'address' => 'required'
         ],
         [
         'category.required' => "Your category cannot empty",
         'name.required' => "Your name cannot empty",
-        'bedroom.required' => "Your bedroom cannot empty",
         'description.required' => "Your description cannot empty",
         'price.required' => "Your price cannot empty",
         'address.required' => "Your address cannot empty"
@@ -49,11 +47,9 @@ class PostController extends Controller
         $post->category_id = $req->category;
         $post->name = $req->name;
         $post->price = $req->price;
-        $post->bedRoom = $req->bedroom;
         $post->description = $req->description;
         $post->address = $req->address;
         $post->isConfirm = 1;
-        $post->airConditioning = $req->air;
         if($req->hasFile('image'))
         {
             $file = $req->file('image');
@@ -97,14 +93,12 @@ class PostController extends Controller
         ['category' => 'required',
         'name' => 'required|min:3',
         'price' => 'required',
-        'bedroom' => 'required',
         'description' => 'required',
         'address' => 'required'
         ],
         [
         'category.required' => "Your category cannot empty",
         'name.required' => "Your name cannot empty",
-        'bedroom.required' => "Your bedroom cannot empty",
         'description.required' => "Your description cannot empty",
         'price.required' => "Your price cannot empty",
         'address.required' => "Your address cannot empty"
@@ -112,10 +106,8 @@ class PostController extends Controller
         $post->category_id = $req->category;
         $post->name = $req->name;
         $post->price = $req->price;
-        $post->bedRoom = $req->bedroom;
         $post->description = $req->description;
         $post->address = $req->address;
-        $post->airConditioning = $req->air;
         if($req->hasFile('image'))
         {
             $file = $req->file('image');

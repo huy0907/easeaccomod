@@ -10,6 +10,7 @@ use App\category;
 use App\post;
 use App\comment;
 use DB;
+use App\User;
 use Illuminate\Support\Facades\Auth;
 class PageController extends Controller
 {
@@ -39,7 +40,37 @@ class PageController extends Controller
         $count_cmt = comment::where('post_id', '=', $post->id)->count();
         return view('pages.detail', ['post' => $post, 'post_relate' => $post_relate, 'count' => $count_cmt]);
     }
-    
+    public function getregister()
+    {
+        return view('pages/register');
+    }
+    public function postregister(Request $req)
+    {
+        $this->validate($req,
+        ['role' => 'required',
+        'password' => 'required|min:6',
+        'email' => 'required|unique:users,email',
+        ],
+        [
+        'role.required' => "Bạn hãy chọn loại người dùng",
+        'email.required' => "Your email cannot empty",
+        'password.required' => "Your password cannot empty",
+        'password.min' => "Your password length must be at least 6 characters",
+        'email.unique' => "Your email must be unique",
+        
+        ]);
+        $user = new User;
+        $user->idRole= $req->role;
+        $user->email = $req->email;
+        $user->password = bcrypt($req->password);
+        if($user->idRole == 1)
+        {
+            $user->isConfirm = 0;
+        }
+        else  $user->isConfirm = 1;
+        $user->save();
+        return redirect('register')->with('notify', 'Register succesfully!');
+    }
     public function getlogin()
     {
         return view('pages/login');

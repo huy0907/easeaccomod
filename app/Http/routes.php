@@ -65,6 +65,8 @@ Route::get('detail/{id}', 'PageController@detail');
 Route::get('login','PageController@getlogin');
 Route::post('login','PageController@postlogin');
 Route::get('logout', 'PageController@getlogout');
+Route::get('register', 'PageController@getregister');
+Route::post('register', 'PageController@postregister');
 Route::get('profile/{id}', 'PageController@getprofile');
 Route::get('post', 'PageController@getpost');
 Route::get('comment/{id}', 'CommentController@postComment');

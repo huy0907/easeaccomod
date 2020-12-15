@@ -57,27 +57,6 @@
                                 <label>Price</label>
                                 <input class="form-control" name="price" placeholder="Please Enter price"  value = "{{$post->price}}"/>
                             </div>
-                            <div class="form-group">
-                                <label>Bedroom</label>
-                                <input class="form-control" name="bedroom"  value = "{{$post->bedRoom}}" placeholder="Please Enter bedroom"  />
-                            </div>
-                            <div class="form-group">
-                                <label>Air conditioning</label>
-                                <label class="radio-inline">
-                                    <input name="air" value="Có" type="radio"
-                                    @if($post->airConditioning == "Có")
-                                        {{"checked=''"}}
-                                    @endif
-                                      >Yes
-                                </label>
-                                <label class="radio-inline">
-                                    <input name="air" value="Không" type="radio"
-                                    @if($post->airConditioning == "Không")
-                                        {{"checked=''"}}
-                                    @endif
-                                    >No
-                                </label>
-                            </div>
                             <button type="submit" class="btn btn-default">Post Edit</button>
                             <button type="reset" class="btn btn-default">Reset</button>
                         <form>

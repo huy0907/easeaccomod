@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Đăng nhập</title>
+        <title>Đăng ký</title>
         <link rel="stylesheet" type="text/css" href="css/style-login.css">
     </head>
     <body>
         <div class="loginbox">
         <img src="images/avatar-login.png" class="avatar">
-            <h1>Đăng nhập</h1>
+            <h1>Đăng Ký</h1>
             @if(count($errors) > 0)
                 <div class = "alert alert-danger">
                     @foreach($errors->all() as $err)
@@ -21,15 +21,20 @@
                     {{session('notify')}}
                 </div>
             @endif
-            <form action = "login" method = "post">
+            <form action = "register" method = "POST">
             <input type="hidden" name = "_token" value = "{{csrf_token()}}"/>
-                <p>Tài khoản</p>
-                <input type="email" name="email" placeholder="">
+                <p>Email</p>
+                <input type="email" name="email" placeholder="Nhập email của bạn">
                 <p>Mật khẩu</p>
-                <input type="password" name="password" placeholder="">
-                <input type="submit" name="" value="Đăng nhập">
-                <a href="#">Quên mật khẩu?</a><br>
-                <a href="register">Chưa có tài khoản? Đăng ký?</a>
+                <input type="password" name="password" placeholder="abcdefg">
+                <p>Nhập lại mật khẩu</p>
+                <input type="password" name="password_again" placeholder="******">
+                <label class="">
+                    <input name="role" value="2" type="radio">Người tìm nhà
+                    <input name="role" value="1" type="radio">Người đăng bài
+                </label>
+                <input type="submit" name="" value="Đăng ký">
+                <a href="login">Đã có tài khoản? Đăng nhập?</a>
             </form>
         </div>
     </body>
