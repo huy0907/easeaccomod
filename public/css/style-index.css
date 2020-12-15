@@ -202,6 +202,30 @@ header .block-search .block-inner .box-search #top-search .search-form-label .ic
     height: 100%;
     border-radius: 10px;
 }
+.drop_menu{
+    display: none;
+    width: 300px;
+    position: absolute;
+    z-index: 1;
+
+
+}
+.drop_menu_child{
+    text-align: left;
+    width: 300px;
+    border-right: 0px;
+    border-bottom: 1px solid #fff;
+    color: white;
+}
+.li_admin:hover > ul{
+    display: block;
+    color: red;
+    background-color: white;
+    border: 1px solid black;
+}
+.drop_menu_child:hover{
+    background-color: grey;
+    display:block;
 
 #main-body {
     min-height: 400px;
