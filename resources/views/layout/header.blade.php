@@ -13,7 +13,7 @@
                             <li class=""><a href="#">Nhà, căn hộ cho thuê</a></li>
                             <li class=""><a href="#">Tìm ở ghép</a></li>
                             <li class="li_news"><a href="#">Blog</a></li>
-                            <li class="li_guide"><a href="#">Hướng dẫn</a></li>
+                            <li class="li_guide"><a href="#">Help</a></li>
                             </ul>
                         </div>
                         <div class="box-user">

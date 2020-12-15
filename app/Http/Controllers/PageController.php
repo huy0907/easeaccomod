@@ -42,10 +42,17 @@ class PageController extends Controller
     {
         return view('pages/login');
     }
+    public function getpost()
+    {
+        return view('pages/postnews');
+    }
     public function getlogout()
     {
         Auth::logout();
         return redirect('index');
+    }
+    public function getprofile($id){
+        return view('pages/profile');
     }
     public function postlogin(Request $req)
     {
