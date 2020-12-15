@@ -108,14 +108,15 @@
                                     <a href="" title="Gửi bình luận" class="send-comment" data-act="send"><b>Gửi bình luận</b></a>
                                 </div>
                                 <div class="comment_list">
-                                    <span class="box-head">Bình luận (0)</span>
+                                    <span class="box-head">Bình luận ({{$count}})</span>
                                     <div class="lst-comment" id="listComment">
                                         <ul data-view="listcm"></ul>
                                     </div>
-                                    <p class="text-no-comment" data-view="nocomment" style="">
-                                        Hiện chưa có bình luận nào, hãy là người đầu tiên bình luận
-                                    </p>
-                                    <a class="viewmore-comment" href="" id="viewmorecm" data-act="viewmore" title="Xem thêm bình luận" style="display: none;">Xem thêm bình luận</a>
+                                    <ul>
+                                    @foreach($post->comment as $row)
+                                    <l1>{{$row->user->name}}({{$row->updated_at}}) : {{$row->content}}</li></br>
+                                    @endforeach
+                                    </ul>
                                 </div>
                             </section>
                         </div>  
