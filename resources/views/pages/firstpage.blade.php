@@ -1,5 +1,6 @@
 @extends('layout.index')
 @section('content')
+<!--MAIN-->
 <div id="main-body">
                 <div class="block block-vip">
                     
@@ -7,35 +8,187 @@
                         <div class="container main">
                             <div class="header vip">Trọ mới</div>
                                 <div class="modulecontent">						
-                                    @foreach ($top_post as $row)
-                                    <div class="item vip" title="{{$row->name}}&nbsp;">
+                                    <div class="item vip" title="Phòng chung cư mini 1007/77/8 Lạc Long Quân, P.11, Q.Tân Bình&nbsp;">
                                         <div class="border">
                                             <div class="image">
-                                                <a href="detail/{{$row->id}}" style="background-image:url('image/{{$row->image}}')"></a>
+                                                <a href="#" style="background-image:url('https://tromoi.com/uploads/static/ho_chi_minh/f3(4).jpg')"></a>
                                             </div>
                                             <div class="info col">
                                                 <span class="published">Hôm nay</span>
-                                                <span class="local"><i class="fa fa-map-marker"></i><a href="#">{{$row->convince}}</a></span>
+                                                <span class="local"><i class="fa fa-map-marker"></i><a href="#">Hồ Chí Minh</a></span>
                                                 <h4 class="title vip">
-                                                    <a href="#" target="_blank"><i class="fa fa-check-circle" aria-hidden="true" title="Được xác nhận thông tin"></i>{{"$row->name"}}&nbsp;</a>
+                                                    <a href="#" target="_blank"><i class="fa fa-check-circle" aria-hidden="true" title="Được xác nhận thông tin"></i>Phòng chung cư mini 1007/77/8 Lạc Long Quân, P.11, Q.Tân Bình&nbsp;</a>
                                                 </h4>
                                                 <div class="price-area vip">
                                                     <div class="price">
-                                                        <span>{{$row->price}}</span>
+                                                        <span>3 triệu</span><i>/tháng</i>
                                                     </div>
+                                                    <dl class="area">
+                                                        <dt><span><i class="fa fa-arrows-alt"></i></span> 20 m<sup>2</sup></dt>
+                                                    </dl>
                                                 </div>
                                                 <dl class="address">
-                                                    <dt><span><i class="fa fa-map-marker"></i></span> {{$row->address}}&nbsp;</dt>
+                                                    <dt><span><i class="fa fa-map-marker"></i></span> 1007/77/8 Lạc Long Quân, P.11, Q.Tân Bình&nbsp;, Tân Bình</dt>
                                                 </dl>
                                             </div>							
                                         </div>
                                     </div>
-                                    @endforeach
+                                    <div class="item vip" title="Phòng chung cư mini 1007/77/8 Lạc Long Quân, P.11, Q.Tân Bình&nbsp;">
+                                        <div class="border">
+                                            <div class="image">
+                                                <a href="#" style="background-image:url('https://tromoi.com/uploads/static/ho_chi_minh/f3(4).jpg')"></a>
+                                            </div>
+                                            <div class="info col">
+                                                <span class="published">Hôm nay</span>
+                                                <span class="local"><i class="fa fa-map-marker"></i><a href="#">Hồ Chí Minh</a></span>
+                                                <h4 class="title vip">
+                                                    <a href="#"><i class="fa fa-check-circle" aria-hidden="true" title="Được xác nhận thông tin"></i> Phòng chung cư mini 1007/77/8 Lạc Long Quân, P.11, Q.Tân Bình&nbsp;</a>
+                                                </h4>
+                                                <div class="price-area vip">
+                                                    <div class="price">
+                                                        <span>3 triệu</span><i>/tháng</i>
+                                                    </div>
+                                                    <dl class="area">
+                                                        <dt><span><i class="fa fa-arrows-alt"></i></span> 20 m<sup>2</sup></dt>
+                                                    </dl>
+                                                </div>
+                                                <dl class="address">
+                                                    <dt><span><i class="fa fa-map-marker"></i></span> 1007/77/8 Lạc Long Quân, P.11, Q.Tân Bình&nbsp;, Tân Bình</dt>
+                                                </dl>
+                                            </div>							
+                                        </div>
+                                    </div>
+                                    <div class="item vip" title="Phòng chung cư mini 1007/77/8 Lạc Long Quân, P.11, Q.Tân Bình&nbsp;">
+                                        <div class="border">
+                                            <div class="image">
+                                                <a href="#" style="background-image:url('https://tromoi.com/uploads/static/ho_chi_minh/f3(4).jpg')"></a>
+                                            </div>
+                                            <div class="info col">
+                                                <span class="published">Hôm nay</span>
+                                                <span class="local"><i class="fa fa-map-marker"></i><a href="#">Hồ Chí Minh</a></span>
+                                                <h4 class="title vip">
+                                                    <a href="#"><i class="fa fa-check-circle" aria-hidden="true" title="Được xác nhận thông tin"></i> Phòng chung cư mini 1007/77/8 Lạc Long Quân, P.11, Q.Tân Bình&nbsp;</a>
+                                                </h4>
+                                                <div class="price-area vip">
+                                                    <div class="price">
+                                                        <span>3 triệu</span><i>/tháng</i>
+                                                    </div>
+                                                    <dl class="area">
+                                                        <dt><span><i class="fa fa-arrows-alt"></i></span> 20 m<sup>2</sup></dt>
+                                                    </dl>
+                                                </div>
+                                                <dl class="address">
+                                                    <dt><span><i class="fa fa-map-marker"></i></span> 1007/77/8 Lạc Long Quân, P.11, Q.Tân Bình&nbsp;, Tân Bình</dt>
+                                                </dl>
+                                            </div>							
+                                        </div>
+                                    </div>
+                                    <div class="item vip" title="Phòng chung cư mini 1007/77/8 Lạc Long Quân, P.11, Q.Tân Bình&nbsp;">
+                                        <div class="border">
+                                            <div class="image">
+                                                <a href="#" style="background-image:url('https://tromoi.com/uploads/static/ho_chi_minh/f3(4).jpg')"></a>
+                                            </div>
+                                            <div class="info col">
+                                                <span class="published">Hôm nay</span>
+                                                <span class="local"><i class="fa fa-map-marker"></i><a href="#">Hồ Chí Minh</a></span>
+                                                <h4 class="title vip">
+                                                    <a href="#"><i class="fa fa-check-circle" aria-hidden="true" title="Được xác nhận thông tin"></i> Phòng chung cư mini 1007/77/8 Lạc Long Quân, P.11, Q.Tân Bình&nbsp;</a>
+                                                </h4>
+                                                <div class="price-area vip">
+                                                    <div class="price">
+                                                        <span>3 triệu</span><i>/tháng</i>
+                                                    </div>
+                                                    <dl class="area">
+                                                        <dt><span><i class="fa fa-arrows-alt"></i></span> 20 m<sup>2</sup></dt>
+                                                    </dl>
+                                                </div>
+                                                <dl class="address">
+                                                    <dt><span><i class="fa fa-map-marker"></i></span> 1007/77/8 Lạc Long Quân, P.11, Q.Tân Bình&nbsp;, Tân Bình</dt>
+                                                </dl>
+                                            </div>							
+                                        </div>
+                                    </div>
+                                    <div class="item vip" title="Phòng chung cư mini 1007/77/8 Lạc Long Quân, P.11, Q.Tân Bình&nbsp;">
+                                        <div class="border">
+                                            <div class="image">
+                                                <a href="#" style="background-image:url('https://tromoi.com/uploads/static/ho_chi_minh/f3(4).jpg')"></a>
+                                            </div>
+                                            <div class="info col">
+                                                <span class="published">Hôm nay</span>
+                                                <span class="local"><i class="fa fa-map-marker"></i><a href="#">Hồ Chí Minh</a></span>
+                                                <h4 class="title vip">
+                                                    <a href="#"><i class="fa fa-check-circle" aria-hidden="true" title="Được xác nhận thông tin"></i> Phòng chung cư mini 1007/77/8 Lạc Long Quân, P.11, Q.Tân Bình&nbsp;</a>
+                                                </h4>
+                                                <div class="price-area vip">
+                                                    <div class="price">
+                                                        <span>3 triệu</span><i>/tháng</i>
+                                                    </div>
+                                                    <dl class="area">
+                                                        <dt><span><i class="fa fa-arrows-alt"></i></span> 20 m<sup>2</sup></dt>
+                                                    </dl>
+                                                </div>
+                                                <dl class="address">
+                                                    <dt><span><i class="fa fa-map-marker"></i></span> 1007/77/8 Lạc Long Quân, P.11, Q.Tân Bình&nbsp;, Tân Bình</dt>
+                                                </dl>
+                                            </div>							
+                                        </div>
+                                    </div>
+                                    <div class="item vip" title="Phòng chung cư mini 1007/77/8 Lạc Long Quân, P.11, Q.Tân Bình&nbsp;">
+                                        <div class="border">
+                                            <div class="image">
+                                                <a href="#" style="background-image:url('https://tromoi.com/uploads/static/ho_chi_minh/f3(4).jpg')"></a>
+                                            </div>
+                                            <div class="info col">
+                                                <span class="published">Hôm nay</span>
+                                                <span class="local"><i class="fa fa-map-marker"></i><a href="#">Hồ Chí Minh</a></span>
+                                                <h4 class="title vip">
+                                                    <a href="#"><i class="fa fa-check-circle" aria-hidden="true" title="Được xác nhận thông tin"></i> Phòng chung cư mini 1007/77/8 Lạc Long Quân, P.11, Q.Tân Bình&nbsp;</a>
+                                                </h4>
+                                                <div class="price-area vip">
+                                                    <div class="price">
+                                                        <span>3 triệu</span><i>/tháng</i>
+                                                    </div>
+                                                    <dl class="area">
+                                                        <dt><span><i class="fa fa-arrows-alt"></i></span> 20 m<sup>2</sup></dt>
+                                                    </dl>
+                                                </div>
+                                                <dl class="address">
+                                                    <dt><span><i class="fa fa-map-marker"></i></span> 1007/77/8 Lạc Long Quân, P.11, Q.Tân Bình&nbsp;, Tân Bình</dt>
+                                                </dl>
+                                            </div>							
+                                        </div>
+                                    </div>
+                                    <div class="item vip" title="Phòng chung cư mini 1007/77/8 Lạc Long Quân, P.11, Q.Tân Bình&nbsp;">
+                                        <div class="border">
+                                            <div class="image">
+                                                <a href="#" style="background-image:url('https://tromoi.com/uploads/static/ho_chi_minh/f3(4).jpg')"></a>
+                                            </div>
+                                            <div class="info col">
+                                                <span class="published">Hôm nay</span>
+                                                <span class="local"><i class="fa fa-map-marker"></i><a href="#">Hồ Chí Minh</a></span>
+                                                <h4 class="title vip">
+                                                    <a href="#"><i class="fa fa-check-circle" aria-hidden="true" title="Được xác nhận thông tin"></i> Phòng chung cư mini 1007/77/8 Lạc Long Quân, P.11, Q.Tân Bình&nbsp;</a>
+                                                </h4>
+                                                <div class="price-area vip">
+                                                    <div class="price">
+                                                        <span>3 triệu</span><i>/tháng</i>
+                                                    </div>
+                                                    <dl class="area">
+                                                        <dt><span><i class="fa fa-arrows-alt"></i></span> 20 m<sup>2</sup></dt>
+                                                    </dl>
+                                                </div>
+                                                <dl class="address">
+                                                    <dt><span><i class="fa fa-map-marker"></i></span> 1007/77/8 Lạc Long Quân, P.11, Q.Tân Bình&nbsp;, Tân Bình</dt>
+                                                </dl>
+                                            </div>							
+                                        </div>
+                                    </div>
                                 </div>
                             <div class="viewmore"><a href="#">Xem tất cả <i class="fa fa-angle-right"></i></a></div>
                         </div>
                     </div>
                 </div>
+                <div class="ads"></div>
                 <div class="container main">
                     <div id="bottom">
                         <div class="box-block-group">      
@@ -184,9 +337,12 @@
                                     <div class="box box-form_type">
                                         <div class="box-header"><h2 class="box-title">Loại hình</h2></div>
                                         <div class="box-body">
-                                            @foreach($cat as $row)
-                                            <div class="item"><a href="#">{{$row->category->name}}<span>({{$row->total}})</span></a></div>
-                                            @endforeach
+                                            <div class="item"><a href="#">Phòng trọ <span>(2950)</span></a></div>
+                                            <div class="item"><a href="#">Căn hộ, nhà nguyên căn <span>(602)</span></a></div>
+                                            <div class="item"><a href="#">Chung cư mini <span>(368)</span></a></div>
+                                            <div class="item"><a href="#">Ký túc xá <span>(82)</span></a></div>
+                                            <div class="item"><a href="#">Tìm ở ghép <span>(108)</span></a></div>
+                                            <div class="item"><a href="#">Homestay <span>(44)</span></a></div>
                                         </div>
                                     </div>					
                                     <div class="py-10"></div>
@@ -217,7 +373,8 @@
                     </div>           
                 </div>
             </div>
-            <!--MAIN--> 
+            <!--MAIN-->
+            <div class="ads"></div>
             <!--NEWS-->
             <div class="news">
                 <div class="container">
@@ -313,4 +470,5 @@
                     </div>
                 </div>
             </div>
+            <!--CONTACT-->
 @endsection
