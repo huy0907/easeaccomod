@@ -88,6 +88,27 @@
                                     </div>
                                 </div>
                             </div>
+                            
+                            <section class="comment-wrapper clearfix kcblist-inited">
+                                @if(isset($user))
+                                <form action = "comment/{{$post->id}}" role = "form">
+                                <div class = "form-group">
+                                    <textarea class = "" rows = "3" name = "content" method = "post"></textarea>
+                                    <input type="hidden" name = "_token" value = "{{csrf_token()}}"/>
+                                </div>
+                                <button type = "submit" class = "btn btn-primary">Gửi</button>
+                                @endif
+                                <div class="comment_list">
+                                    <span class="box-head">Bình luận (0)</span>
+                                    <div class="lst-comment" id="listComment">
+                                        <ul data-view="listcm"></ul>
+                                    </div>
+                                    <p class="text-no-comment" data-view="nocomment" style="">
+                                        Hiện chưa có bình luận nào, hãy là người đầu tiên bình luận
+                                    </p>
+                                    <a class="viewmore-comment" href="" id="viewmorecm" data-act="viewmore" title="Xem thêm bình luận" style="display: none;">Xem thêm bình luận</a>
+                                </div>
+                            </section>
                         </div>  
                         <div id="sidebar" class="sidebar" style="">
                             <div class="py-10"></div>

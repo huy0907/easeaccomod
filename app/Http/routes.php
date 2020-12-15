@@ -67,3 +67,4 @@ Route::post('login','PageController@postlogin');
 Route::get('logout', 'PageController@getlogout');
 Route::get('profile/{id}', 'PageController@getprofile');
 Route::get('post', 'PageController@getpost');
+Route::get('comment', 'CommentController@postComment');

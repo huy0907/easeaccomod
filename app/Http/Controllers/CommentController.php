@@ -16,5 +16,5 @@ class CommentController extends Controller
         $cm->delete();
         return redirect('admin/post/edit/'.$post_id)->with('notify', 'Delete comment sucessfully!');
     }
-
+    
 }
