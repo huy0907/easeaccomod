@@ -53,19 +53,6 @@
                                 <label>Price</label>
                                 <input class="form-control" name="price" placeholder="Please Enter price" />
                             </div>
-                            <div class="form-group">
-                                <label>Bedroom</label>
-                                <input class="form-control" name="bedroom" placeholder="Please Enter bedroom" />
-                            </div>
-                            <div class="form-group">
-                                <label>Air conditioning</label>
-                                <label class="radio-inline">
-                                    <input name="air" value="Có" checked="" type="radio">Yes
-                                </label>
-                                <label class="radio-inline">
-                                    <input name="air" value="Không" type="radio">No
-                                </label>
-                            </div>
                             <button type="submit" class="btn btn-default">Post Add</button>
                             <button type="reset" class="btn btn-default">Reset</button>
                         <form>

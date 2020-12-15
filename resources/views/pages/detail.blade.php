@@ -14,7 +14,7 @@
                                         <div class="title">
                                                 <span class="type">{{$post->category->name}}</span>
                                                 <h3>{{$post->name}}</h3>
-                                                <a href="#" class="province">{{$post->convince}}</a>
+                                                <a href="#" class="province">{{$post->province_id}}</a>
                                             </div>
                                         </div>
                                     </div>
