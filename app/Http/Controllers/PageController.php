@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\category;
 use App\post;
+use App\comment;
 use DB;
 use Illuminate\Support\Facades\Auth;
 class PageController extends Controller
@@ -35,7 +36,8 @@ class PageController extends Controller
     {
         $post = post::find($id);
         $post_relate = post::where('category_id', '=', $post->category_id)->take(4)->get();
-        return view('pages.detail', ['post' => $post, 'post_relate' => $post_relate]);
+        $count_cmt = comment::where('post_id', '=', $post->id)->count();
+        return view('pages.detail', ['post' => $post, 'post_relate' => $post_relate, 'count' => $count_cmt]);
     }
     
     public function getlogin()
