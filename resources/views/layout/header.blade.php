@@ -19,8 +19,13 @@
                         <div class="box-user">
                                 <ul class="nav_user">
                                     <li class="li_add-new"><a class="btn red add-new t frm-login" href="">Đăng tin</a></li>
-                                    <li class="li_register"><a class="register frm-login" href="register.html">Đăng ký</a></li>
-                                    <li class="li_login"><a class="login frm-login" href="login.html">Đăng nhập</a></li>
+                                    @if(!isset($user))
+                                    <li class="li_register"><a class="register frm-login" href="register">Đăng ký</a></li>
+                                    <li class="li_login"><a class="login frm-login" href="login">Đăng nhập</a></li>
+                                    @else
+                                    <li class="li_login"><a class="login frm-login" href="">{{$user->name}}</a></li>
+                                    <li class="li_login"><a class="login frm-login" href="logout">Đăng xuất</a></li>
+                                    @endif
                                 </ul>			
                             <div class="clear"></div>
                     </div>

@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use App\category;
 use App\post;
 use DB;
+use Illuminate\Support\Facades\Auth;
 class PageController extends Controller
 {
     /**
@@ -16,6 +17,13 @@ class PageController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    function __construct()
+    {
+        if(Auth::check())
+        {
+            view()->share('user', Auth::user());
+        }
+    }
     public function index()
     {
         $post = post::take(8)->get();
@@ -29,69 +37,30 @@ class PageController extends Controller
         $post_relate = post::where('category_id', '=', $post->category_id)->take(4)->get();
         return view('pages.detail', ['post' => $post, 'post_relate' => $post_relate]);
     }
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    
+    public function getlogin()
     {
-        //
+        return view('pages/login');
     }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function getlogout()
     {
-        //
+        Auth::logout();
+        return redirect('index');
     }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+    public function postlogin(Request $req)
     {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+        $email = $req->email;
+        $password = $req->password;
+        $this->validate($req,
+        ['email' => 'required',
+        'password' => 'required|min:6'],
+        ['email.required' => "Email cannot empty",
+        'password.required' => "Password cannot empty",
+        'password.length' => "Password lengt must be at least 6 characters"]);
+        if(Auth::attempt(['email' => $req->email, 'password' => $req->password]))
+        {
+            return redirect('index');
+        }
+        else return redirect('login')->with('notify','Wrong email or password. Please try again!  ');
     }
 }
