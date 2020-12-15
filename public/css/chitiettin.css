@@ -11,17 +11,6 @@ body {
     font-weight: 400;
 }
 
-
-.page.main {
-    padding-top: 121px;
-}
-
-.page {
-    padding-top: 123px;
-    width: 100%;
-    position: relative;
-}
-
  .container {
     width: 100%;
     max-width: 1070px;
@@ -292,6 +281,12 @@ header .block-search .block-inner .box-search #top-search .search-form-label .ic
     overflow: hidden;
 }
 
+.box-contact {
+    padding-top: 0px;
+    position: relative;
+    border-top: 1px solid #34495e;
+    margin-top: 30px;
+}
 
 @media only screen and (max-width: 1100px) {
     .box-contact.right, .sidebar .py-10 {
@@ -302,9 +297,6 @@ header .block-search .block-inner .box-search #top-search .search-form-label .ic
     }
 }
 
-.sidebar .box-contact {
-    padding-top: 0px;
-}
 
 .box-contact .contacts {
     padding: 15px;
