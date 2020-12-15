@@ -225,7 +225,7 @@ header .block-search .block-inner .box-search #top-search .search-form-label .ic
 }
 .drop_menu_child:hover{
     background-color: grey;
-    display:block;
+    display:block;}
 
 #main-body {
     min-height: 400px;
