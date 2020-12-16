@@ -196,7 +196,6 @@ class PostController extends Controller
         $post->description = $req->description;
         $post->address = $req->address;
         $post->province_id = $req->province;
-        $post->idOwner = Auth::user()->id;
         if($req->hasFile('image'))
         {
             $file = $req->file('image');

@@ -68,8 +68,12 @@ Route::get('logout', 'PageController@getlogout');
 Route::get('register', 'PageController@getregister');
 Route::post('register', 'PageController@postregister');
 Route::get('profile/{id}', 'PageController@getprofile');
-Route::get('post', 'PageController@getpost');
+
 Route::get('comment/{id}', 'CommentController@postComment');
 Route::get('editprofile/{id}', 'PageController@getEdit');
-Route::get('editpost/{id}', 'PageController@getEditPost');
 Route::get('filter', 'PageController@getFilter');
+Route::get('editpost/{id}', 'PageController@getEditPost');
+Route::post('editpost/{id}', 'PageController@postEditPost');
+Route::get('post', 'PageController@getpost');
+Route::post('post', 'PageController@postPost' );
+
