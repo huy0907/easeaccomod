@@ -113,4 +113,9 @@ class PageController extends Controller
         }
         else return redirect('login')->with('notify','Wrong email or password. Please try again!  ');
     }
+    
+    public function getEditPost($id)
+    {
+        return view('pages/editPost');
+    }
 }
