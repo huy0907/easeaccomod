@@ -30,7 +30,9 @@ class PageController extends Controller
     {
         $post = post::take(8)->get();
         $cat_info = post::groupBy('category_id')->select('category_id', DB::raw('count(*) as total'))->get();
-        return view('pages.firstpage', ['cat' => $cat_info, 'top_post' => $post]);
+        $prov_info = post::groupBy('province_id')->select('province_id', DB::raw('count(*) as total'))->get();
+        $most_view = post::orderBy('views', 'desc')->take(6)->get();
+        return view('pages.firstpage', ['cat' => $cat_info, 'top_post' => $post, 'prov' => $prov_info, 'most_view' => $most_view ]);
     }
 
     public function detail($id)
@@ -38,7 +40,7 @@ class PageController extends Controller
         $post = post::find($id);
         $post->views = $post->views + 1;
         $post->save();
-        $post_relate = post::where('category_id', '=', $post->category_id)->take(4)->get();
+        $post_relate = post::where('category_id', '=', $post->category_id)->where('province_id', $post->province_id)->take(4)->get();
         $count_cmt = comment::where('post_id', '=', $post->id)->count();
         return view('pages.detail', ['post' => $post, 'post_relate' => $post_relate, 'count' => $count_cmt]);
     }
@@ -87,7 +89,9 @@ class PageController extends Controller
         return redirect('index');
     }
     public function getprofile($id){
-        return view('pages/profile');
+        $us = User::find($id);
+
+        return view('pages/profile', ['us' => $us]);
     }
     public function getEdit($id)
     {

@@ -14,7 +14,7 @@
                                         <div class="title">
                                                 <span class="type">{{$post->category->name}}</span>
                                                 <h3>{{$post->name}}</h3>
-                                                <a href="#" class="province">{{$post->province_id}}</a>
+                                                <a href="#" class="province">{{$post->province->name}}</a>
                                             </div>
                                         </div>
                                     </div>
@@ -62,7 +62,7 @@
                                             <div class="line"></div>
                                             <h2>Thông tin</h2>
                                             <div class="content-detail">
-                                                <div class="content"><p>{{$post->description}}</p>
+                                                <div class="content"><p>{!!$post->description!!}</p>
                                                 </div>
                                             </div>
                                             <div class="line"></div>
@@ -154,55 +154,15 @@
                                     <h2 class="box-title">Liên quan</h2>
                                 </div>
                                 <div class="box-body">
+                                    @foreach($post_relate as $row)
                                     <div class="item">
-                                        <span class="local"><i class="fa fa-map-marker"></i><a href="#">Hồ Chí Minh</a></span>
-                                        <a href="#" target="_blank">Phòng Trọ Quận 4 2tr5</a>
+                                        <span class="local"><i class="fa fa-map-marker"></i><a href="#">{{$row->province->name}}</a></span>
+                                        <a href="detail/{{$row->id}}" target="_blank">{{$row->name}}</a>
                                         <div class="price">
-                                            <span>2.5 triệu</span><i>/tháng</i>
+                                            <span>{{$row->price/1000000}} triệu</span><i>/tháng</i>
                                         </div>
                                     </div>
-                                    <div class="item">
-                                        <span class="local"><i class="fa fa-map-marker"></i><a href="#">Hồ Chí Minh</a></span>
-                                        <a href="#" target="_blank">Phòng Trọ Quận 4 2tr5</a>
-                                        <div class="price">
-                                            <span>2.5 triệu</span><i>/tháng</i>
-                                        </div>
-                                    </div>
-                                    <div class="item">
-                                        <span class="local"><i class="fa fa-map-marker"></i><a href="#">Hồ Chí Minh</a></span>
-                                        <a href="#" target="_blank">Phòng Trọ Quận 4 2tr5</a>
-                                        <div class="price">
-                                            <span>2.5 triệu</span><i>/tháng</i>
-                                        </div>
-                                    </div>
-                                    <div class="item">
-                                        <span class="local"><i class="fa fa-map-marker"></i><a href="#">Hồ Chí Minh</a></span>
-                                        <a href="#" target="_blank">Phòng Trọ Quận 4 2tr5</a>
-                                        <div class="price">
-                                            <span>2.5 triệu</span><i>/tháng</i>
-                                        </div>
-                                    </div>
-                                    <div class="item">
-                                        <span class="local"><i class="fa fa-map-marker"></i><a href="#">Hồ Chí Minh</a></span>
-                                        <a href="#" target="_blank">Phòng Trọ Quận 4 2tr5</a>
-                                        <div class="price">
-                                            <span>2.5 triệu</span><i>/tháng</i>
-                                        </div>
-                                    </div>
-                                    <div class="item">
-                                        <span class="local"><i class="fa fa-map-marker"></i><a href="#">Hồ Chí Minh</a></span>
-                                        <a href="#" target="_blank">Phòng Trọ Quận 4 2tr5</a>
-                                        <div class="price">
-                                            <span>2.5 triệu</span><i>/tháng</i>
-                                        </div>
-                                    </div>
-                                    <div class="item">
-                                        <span class="local"><i class="fa fa-map-marker"></i><a href="#">Hồ Chí Minh</a></span>
-                                        <a href="#" target="_blank">Phòng Trọ Quận 4 2tr5</a>
-                                        <div class="price">
-                                            <span>2.5 triệu</span><i>/tháng</i>
-                                        </div>
-                                    </div>
+                                    @endforeach
                                 </div>
                             </div>
                         </div>

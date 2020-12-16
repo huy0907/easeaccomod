@@ -20,20 +20,20 @@
                                             </div>
                                             <div class="info col">
                                                 <span class="published">Hôm nay</span>
-                                                <span class="local"><i class="fa fa-map-marker"></i><a href="#">{{$row->convince}}</a></span>
+                                                <span class="local"><i class="fa fa-map-marker"></i><a href="#">{{$row->province->name}}</a></span>
                                                 <h4 class="title vip">
                                                     <a href="#" target="_blank"><i class="fa fa-check-circle" aria-hidden="true" title="Được xác nhận thông tin"></i>{{$row->name}}&nbsp;</a>
                                                 </h4>
                                                 <div class="price-area vip">
                                                     <div class="price">
-                                                        <span>3 triệu</span><i>/tháng</i>
+                                                        <span>{{$row->price/1000000}} triệu</span><i>/tháng</i>
                                                     </div>
                                                     <dl class="area">
-                                                        <dt><span><i class="fa fa-arrows-alt"></i></span> 20 m<sup>2</sup></dt>
+                                                        <dt><span><i class="fa fa-arrows-alt"></i></span> {{$row->area}} m<sup>2</sup></dt>
                                                     </dl>
                                                 </div>
                                                 <dl class="address">
-                                                    <dt><span><i class="fa fa-map-marker"></i></span> 1007/77/8 Lạc Long Quân, P.11, Q.Tân Bình&nbsp;, Tân Bình</dt>
+                                                    <dt><span><i class="fa fa-map-marker"></i></span> {{$row->address}}</dt>
                                                 </dl>
                                             </div>							
                                         </div>
@@ -53,131 +53,34 @@
                                     <div class="main">
                                         <div class="header hot">Lựa chọn HOT</div>
                                         <div class="modulecontent">							
+                                            @foreach($most_view as $row)
                                             <div class="item hot column" title="Cho thuê phòng trọ Đường Dương Thiệu Tước giá sinh viên">
                                                 <div class="border">
                                                     <div class="image">
-                                                        <a href="https://tromoi.com/s/10351" style="background-image:url('https://tromoi.com/uploads/guest/o_1e9q2r6da1lqk1g7v10uh1oomc3uq.jpg')" target="_blank"></a>
+                                                        <a href="detail/{{$row->id}}" style="background-image:url('image/{{$row->image}}')" target="_blank"></a>
                                                     </div>
                                                     <div class="info col">
                                                         <span class="local"><i class="fa fa-map-marker"></i> 
-                                                            <a href="">Thừa Thiên Huế</a>											</span>
+                                                            <a href="">{{$row->province->name}}</a>											</span>
                                                         <h4 class="title hot">
-                                                            <a href="https://tromoi.com/s/10351" target="_blank"><i class="fa fa-check-circle" aria-hidden="true" title="Được xác nhận thông tin"></i> Cho thuê phòng trọ Đường Dương Thiệu Tước giá sinh viên</a>
+                                                            <a href="detail/{{$row->id}}" target="_blank"><i class="fa fa-check-circle" aria-hidden="true" title="Được xác nhận thông tin"></i> {{$row->name}}</a>
                                                         </h4>
                                                         <div class="price-area hot">
                                                             <div class="price">
-                                                                <span>800 ngàn</span><i>/tháng</i>
+                                                                <span>{{$row->price/1000000}} triệu</span><i>/tháng</i>
                                                             </div>
                                                             <dl class="area">
-                                                                <dt><span><i class="fa fa-arrows-alt"></i></span> 15 m<sup>2</sup></dt>
+                                                                <dt><span><i class="fa fa-arrows-alt"></i></span> {{$row->area}} m<sup>2</sup></dt>
                                                             </dl>
                                                         </div>				
                                                         <dl class="address">
-                                                            <dt><span><i class="fa fa-map-marker"></i></span>  27B kiệt 50 Dương Thiệu Tước, Thủy Dương, Hương Thủy, Hương Thủy</dt>
+                                                            <dt><span><i class="fa fa-map-marker"></i></span>  {{$row->address}}</dt>
+                                                            <dt><span><i class="fa fa-eye"></i></span>  {{$row->views}}</dt>
                                                         </dl>
                                                     </div>
                                                 </div>										
                                             </div>
-                                            <div class="item hot column" title="Cho thuê phòng trọ Đường Dương Thiệu Tước giá sinh viên">
-                                                <div class="border">
-                                                    <div class="image">
-                                                        <a href="#" style="background-image:url('https://tromoi.com/uploads/guest/o_1e9q2r6da1lqk1g7v10uh1oomc3uq.jpg')" ></a>
-                                                    </div>
-                                                    <div class="info col">
-                                                        <span class="local"><i class="fa fa-map-marker"></i> 
-                                                            <a href="">Thừa Thiên Huế</a>											</span>
-                                                        <h4 class="title hot">
-                                                            <a href="#"><i class="fa fa-check-circle" aria-hidden="true" title="Được xác nhận thông tin"></i> Cho thuê phòng trọ Đường Dương Thiệu Tước giá sinh viên</a>
-                                                        </h4>
-                                                        <div class="price-area hot">
-                                                            <div class="price">
-                                                                <span>800 ngàn</span><i>/tháng</i>
-                                                            </div>
-                                                            <dl class="area">
-                                                                <dt><span><i class="fa fa-arrows-alt"></i></span> 15 m<sup>2</sup></dt>
-                                                            </dl>
-                                                        </div>				
-                                                        <dl class="address">
-                                                            <dt><span><i class="fa fa-map-marker"></i></span>  27B kiệt 50 Dương Thiệu Tước, Thủy Dương, Hương Thủy, Hương Thủy</dt>
-                                                        </dl>
-                                                    </div>
-                                                </div>										
-                                            </div>
-                                            <div class="item hot column" title="Cho thuê phòng trọ Đường Dương Thiệu Tước giá sinh viên">
-                                                <div class="border">
-                                                    <div class="image">
-                                                        <a href="#" style="background-image:url('https://tromoi.com/uploads/guest/o_1e9q2r6da1lqk1g7v10uh1oomc3uq.jpg')"></a>
-                                                    </div>
-                                                    <div class="info col">
-                                                        <span class="local"><i class="fa fa-map-marker"></i> 
-                                                            <a href="">Thừa Thiên Huế</a>											</span>
-                                                        <h4 class="title hot">
-                                                            <a href="#"><i class="fa fa-check-circle" aria-hidden="true" title="Được xác nhận thông tin"></i> Cho thuê phòng trọ Đường Dương Thiệu Tước giá sinh viên</a>
-                                                        </h4>
-                                                        <div class="price-area hot">
-                                                            <div class="price">
-                                                                <span>800 ngàn</span><i>/tháng</i>
-                                                            </div>
-                                                            <dl class="area">
-                                                                <dt><span><i class="fa fa-arrows-alt"></i></span> 15 m<sup>2</sup></dt>
-                                                            </dl>
-                                                        </div>				
-                                                        <dl class="address">
-                                                            <dt><span><i class="fa fa-map-marker"></i></span>  27B kiệt 50 Dương Thiệu Tước, Thủy Dương, Hương Thủy, Hương Thủy</dt>
-                                                        </dl>
-                                                    </div>
-                                                </div>										
-                                            </div>
-                                            <div class="item hot column" title="Cho thuê phòng trọ Đường Dương Thiệu Tước giá sinh viên">
-                                                <div class="border">
-                                                    <div class="image">
-                                                        <a href="#" style="background-image:url('https://tromoi.com/uploads/guest/o_1e9q2r6da1lqk1g7v10uh1oomc3uq.jpg')" ></a>
-                                                    </div>
-                                                    <div class="info col">
-                                                        <span class="local"><i class="fa fa-map-marker"></i> 
-                                                            <a href="">Thừa Thiên Huế</a>											</span>
-                                                        <h4 class="title hot">
-                                                            <a href="#"><i class="fa fa-check-circle" aria-hidden="true" title="Được xác nhận thông tin"></i> Cho thuê phòng trọ Đường Dương Thiệu Tước giá sinh viên</a>
-                                                        </h4>
-                                                        <div class="price-area hot">
-                                                            <div class="price">
-                                                                <span>800 ngàn</span><i>/tháng</i>
-                                                            </div>
-                                                            <dl class="area">
-                                                                <dt><span><i class="fa fa-arrows-alt"></i></span> 15 m<sup>2</sup></dt>
-                                                            </dl>
-                                                        </div>				
-                                                        <dl class="address">
-                                                            <dt><span><i class="fa fa-map-marker"></i></span>  27B kiệt 50 Dương Thiệu Tước, Thủy Dương, Hương Thủy, Hương Thủy</dt>
-                                                        </dl>
-                                                    </div>
-                                                </div>										
-                                            </div>
-                                            <div class="item hot column" title="Cho thuê phòng trọ Đường Dương Thiệu Tước giá sinh viên">
-                                                <div class="border">
-                                                    <div class="image">
-                                                        <a href="#" style="background-image:url('https://tromoi.com/uploads/guest/o_1e9q2r6da1lqk1g7v10uh1oomc3uq.jpg')" ></a>
-                                                    </div>
-                                                    <div class="info col">
-                                                        <span class="local"><i class="fa fa-map-marker"></i> 
-                                                            <a href="">Thừa Thiên Huế</a>											</span>
-                                                        <h4 class="title hot">
-                                                            <a href="#"><i class="fa fa-check-circle" aria-hidden="true" title="Được xác nhận thông tin"></i> Cho thuê phòng trọ Đường Dương Thiệu Tước giá sinh viên</a>
-                                                        </h4>
-                                                        <div class="price-area hot">
-                                                            <div class="price">
-                                                                <span>800 ngàn</span><i>/tháng</i>
-                                                            </div>
-                                                            <dl class="area">
-                                                                <dt><span><i class="fa fa-arrows-alt"></i></span> 15 m<sup>2</sup></dt>
-                                                            </dl>
-                                                        </div>				
-                                                        <dl class="address">
-                                                            <dt><span><i class="fa fa-map-marker"></i></span>  27B kiệt 50 Dương Thiệu Tước, Thủy Dương, Hương Thủy, Hương Thủy</dt>
-                                                        </dl>
-                                                    </div>
-                                                </div>										
-                                            </div>
+                                            @endforeach
                                         </div>
                                         <div class="viewmore"><a href="#">Xem tất cả <i class="fa fa-angle-right"></i></a></div>
                                     </div>
@@ -202,21 +105,11 @@
                                     <div class="box box-province">
                                         <div class="box-header"><h2 class="box-title">Khu vực nổi bật</h2></div>
                                         <div class="box-body">
+                                            @foreach($prov as $row)
                                             <div class="item">
-                                                <a href="#">Hồ Chí Minh <span>(2196)</span></a>
+                                                <a href="#">{{$row->province->name}}<span>({{$row->total}})</span></a>
                                             </div>
-                                            <div class="item">
-                                                <a href="#">Hà Nội <span>(522)</span></a>
-                                            </div>
-                                            <div class="item">
-                                                <a href="#">Thừa Thiên Huế <span>(504)</span></a>
-                                            </div>
-                                            <div class="item">
-                                                <a href="#">Đà Nẵng <span>(378)</span></a>
-                                            </div>
-                                            <div class="item">
-                                                <a href="#">Cần Thơ <span>(31)</span></a>
-                                            </div>
+                                            @endforeach
                                         </div>
                                     </div>					
                                     <div class="py-10"></div>
