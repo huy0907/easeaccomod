@@ -11,6 +11,10 @@ class post extends Model
     {
         return $this->belongsTo('App\category', 'category_id', 'id');
     }
+    public function province()
+    {
+        return $this->belongsTo('App\province', 'province_id', 'id');
+    }
     public function user()
     {
         return $this->belongsTo('App\User', 'idOwner', 'id');
@@ -19,4 +23,5 @@ class post extends Model
     {
         return $this->hasMany('App\comment', 'post_id', 'id');
     }
+
 }
