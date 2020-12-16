@@ -26,9 +26,9 @@
                 <p>Email</p>
                 <input type="email" name="email" placeholder="Nhập email của bạn">
                 <p>Mật khẩu</p>
-                <input type="password" name="password" placeholder="abcdefg">
+                <input type="password" name="password" placeholder="Nhập mật khẩu">
                 <p>Nhập lại mật khẩu</p>
-                <input type="password" name="password_again" placeholder="******">
+                <input type="password" name="password_again" placeholder="Nhập lại mật khẩu">
                 <label class="">
                     <input name="role" value="2" type="radio">Người tìm nhà
                     <input name="role" value="1" type="radio">Người đăng bài

@@ -24,9 +24,9 @@
             <form action = "login" method = "post">
             <input type="hidden" name = "_token" value = "{{csrf_token()}}"/>
                 <p>Tài khoản</p>
-                <input type="email" name="email" placeholder="">
+                <input type="email" name="email" placeholder="Nhập tài khoản">
                 <p>Mật khẩu</p>
-                <input type="password" name="password" placeholder="">
+                <input type="password" name="password" placeholder="Nhập mật khẩu">
                 <input type="submit" name="" value="Đăng nhập">
                 <a href="#">Quên mật khẩu?</a><br>
                 <a href="register">Chưa có tài khoản? Đăng ký?</a>
