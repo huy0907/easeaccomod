@@ -16,7 +16,7 @@
                                     <div class="item vip" title="{{$row->name}}&nbsp;">
                                         <div class="border">
                                             <div class="image">
-                                                <a href="#" style="background-image:url('image/{{$row->image}}')"></a>
+                                                <a href="detail/{{$row->id}}" style="background-image:url('image/{{$row->image}}')"></a>
                                             </div>
                                             <div class="info col">
                                                 <span class="published">Hôm nay</span>

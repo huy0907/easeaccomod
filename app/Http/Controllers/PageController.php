@@ -36,6 +36,8 @@ class PageController extends Controller
     public function detail($id)
     {
         $post = post::find($id);
+        $post->views = $post->views + 1;
+        $post->save();
         $post_relate = post::where('category_id', '=', $post->category_id)->take(4)->get();
         $count_cmt = comment::where('post_id', '=', $post->id)->count();
         return view('pages.detail', ['post' => $post, 'post_relate' => $post_relate, 'count' => $count_cmt]);
@@ -86,6 +88,10 @@ class PageController extends Controller
     }
     public function getprofile($id){
         return view('pages/profile');
+    }
+    public function getEdit($id)
+    {
+        return view('pages/editprofile');
     }
     public function postlogin(Request $req)
     {

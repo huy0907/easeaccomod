@@ -27,7 +27,7 @@
                                         <ul class="drop_menu">
                                         <li class="drop_menu_child"><a href="#" >Tài Khoản:<b>HuyUET</b></a></li>
                                             <li class="drop_menu_child"><a href="#">Số Dư:<b>0VNĐ</b></a></li>
-                                            <li><button><a href="#">Trang cá nhân</a></button></li>
+                                            <li><button><a href="profile/{{$user->id}}">Trang cá nhân</a></button></li>
                                             <hr>
                                             <li class="drop_menu_child"><a href="#">Nạp Tiền</a></li>
                                             <li class="drop_menu_child"><a href="#">Quản lý tin</a></li>
