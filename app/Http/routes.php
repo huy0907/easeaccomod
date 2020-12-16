@@ -72,3 +72,4 @@ Route::get('post', 'PageController@getpost');
 Route::get('comment/{id}', 'CommentController@postComment');
 Route::get('editprofile/{id}', 'PageController@getEdit');
 Route::get('editpost/{id}', 'PageController@getEditPost');
+Route::get('filter', 'PageController@getFilter');

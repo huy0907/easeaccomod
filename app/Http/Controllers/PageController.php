@@ -118,4 +118,8 @@ class PageController extends Controller
     {
         return view('pages/editPost');
     }
+    public function getFilter()
+    {
+        return view('pages/filter');
+    }
 }
