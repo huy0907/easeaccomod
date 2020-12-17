@@ -8,14 +8,14 @@
         <div id="main-content" class="main" style="position: relative;">
             <div id="center">
                 <div class="hostel hostel-detail">
-
                     <div class="module">
                         <div class="moduletitle">
                             <div class="blog-title">
-                            <div class="title">
-                                    <span class="type">{{$post->category->name}}</span>
-                                    <h3>{{$post->name}}</h3>
-                                    <a href="#" class="province">{{$post->province->name}}</a>
+                                <div class="title">
+                                        <span class="type">{{$post->category->name}}</span>
+                                        <h3>{{$post->name}}</h3>
+                                        <a href="#" class="province">{{$post->province->name}}</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -109,8 +109,9 @@
                             <input type="hidden" name = "_token" value = "{{csrf_token()}}"/>
                         </div>
                         <button type = "submit" class = "btn btn-primary">Bình luận</button>
-                        @endif
                     </div>
+                    </form>
+                    @endif
                     <div class="comment_list">
                         <span class="box-head">Bình luận ({{$count}})</span>
                         <div class = "commentlist">
@@ -119,12 +120,12 @@
                             </div>
                             <ul>
                             @foreach($post->comment as $row)
-                            <l1>{{$row->user->name}}({{$row->updated_at}}) : {{$row->content}}</li></br>
+                            <li>{{$row->user->name}}({{$row->updated_at}}) : {{$row->content}}</li></br>
                             @endforeach
                             </ul>
                         </div>
                     </div>
-                </section>
+                    </section>
                 </div>
                 <div id="sidebar" class="sidebar" style="">
                     <div class="py-10"></div>
@@ -166,9 +167,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
             </div>  
-            
         </div>
     </div>
 </div>
