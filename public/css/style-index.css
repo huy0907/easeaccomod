@@ -159,6 +159,7 @@ header .block-search .block-inner {
     margin: 0px;
     top: 60px;
     left: 0px;
+    z-index: 1;
 }
 
 header .block-search .block-inner .box-search {
