@@ -202,20 +202,21 @@ header .block-search .block-inner .box-search #top-search .search-form-label .ic
 }
 
 #searchbar {
-    position: fixed;
-    width: 100%;
-    left: 0px;
-    background: #ffdc9a;
-    z-index: 100;
-}
-
-#searchbar form {
     padding-top: 55.5px;
     position: fixed;
     width: 100%;
     left: 0px;
     background: #ffdc9a;
     z-index: -1;
+}
+
+#searchbar form {
+    background: #ffdc9a;
+    padding: 15px;
+    padding-left: 0px;
+    border-radius: 5px;
+    display: block;
+    position: relative;
 }
 
 .searchform {
