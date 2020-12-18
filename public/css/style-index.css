@@ -463,6 +463,15 @@ b, strong {
     margin-bottom: 5px;
 }
 
+.container .header.vip {
+    text-align: left;
+    padding: 0px;
+    font-size: 25px;
+    line-height: 30px;
+    font-weight: normal;
+    margin-bottom: 5px;
+}
+
 .hostel.hostel-list.vip .modulecontent {
     margin: 0 -8px;
 }
@@ -470,6 +479,12 @@ b, strong {
 .hostel.hostel-list .modulecontent {
     display: flex;
     flex-wrap: wrap;
+}
+
+.container .header.vip .modulecontent {
+    padding: 0px;
+    background: #FFF;
+    position: relative;
 }
 
 .modulecontent {
