@@ -12,26 +12,12 @@ body {
 }
 
 
-.page.main {
-    padding-top: 121px;
-}
-@media only screen and (max-width: 615px) {
-    .page.main {
-        padding-top: 260px;
-    }
-}
-
-@media only screen and (max-width: 321px) {
-    .page.main {
-        padding-top: 370px;
-    }
-}
-
 .page {
-    padding-top: 123px;
+    padding-top: 115.5px;
     width: 100%;
     position: relative;
 }
+
 
  .container {
     width: 100%;
@@ -216,12 +202,11 @@ header .block-search .block-inner .box-search #top-search .search-form-label .ic
 }
 
 #searchbar {
-    padding-top: 55.5px;
     position: fixed;
     width: 100%;
     left: 0px;
     background: #ffdc9a;
-    z-index: -1;
+    z-index: 100;
 }
 
 #searchbar form {
@@ -442,8 +427,19 @@ b, strong {
 #main-body {
     min-height: 400px;
     z-index: 1;
+    padding-top: 100px;
+}
+@media only screen and (max-width: 615px) {
+    #main-body {
+        padding-top: 150px;
+    }
 }
 
+@media only screen and (max-width: 321px) {
+    #main-body {
+        padding-top: 250px;
+    }
+}
 .block.block-vip {
     padding-bottom: 20px;
 }
