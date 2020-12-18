@@ -15,6 +15,17 @@ body {
 .page.main {
     padding-top: 121px;
 }
+@media only screen and (max-width: 615px) {
+    .page.main {
+        padding-top: 260px;
+    }
+}
+
+@media only screen and (max-width: 321px) {
+    .page.main {
+        padding-top: 370px;
+    }
+}
 
 .page {
     padding-top: 123px;
@@ -201,7 +212,205 @@ header .block-search .block-inner .box-search #top-search .search-form-label .ic
     right: 0;
     height: 100%;
     border-radius: 10px;
+
 }
+
+#searchbar {
+    padding-top: 55.5px;
+    position: fixed;
+    width: 100%;
+    left: 0px;
+    background: #ffdc9a;
+    z-index: -1;
+}
+
+#searchbar form {
+    background: #ffdc9a;
+    padding: 15px;
+    padding-left: 0px;
+    border-radius: 5px;
+    display: block;
+    position: relative;
+}
+}
+.searchform {
+    background: #f1f1f1;
+    box-sizing: border-box;
+}
+
+#searchbar .search_field {
+    padding: 0;
+}
+
+.clearfix {
+    display: block;
+}
+
+#searchbar .search_field_item:first-of-type {
+    margin-left: 0;
+}
+
+#searchbar .search_field_item {
+    float: left;
+    margin-left: 5px;
+    margin-bottom: 0;
+    width: 142px;
+}
+.searchform .search_field_item {
+    margin-bottom: 15px;
+}
+
+#searchbar .search_field_item_label {
+    display: block;
+    font-size: .9rem;
+    font-weight: 700;
+    margin: 0 0 3px;
+}
+.searchform .search_field_item .search_field_item_label {
+    margin-bottom: 3px;
+    display: block;
+}
+
+#searchbar .form-control {
+    box-shadow: none;
+    font-size: 12px;
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 12px;
+    line-height: 22px;
+    color: #000;
+    vertical-align: middle;
+    background-color: #fff;
+    background-image: none;
+    border: 0;
+    border-radius: 2px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    -webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+.select2-hidden-accessible {
+    border: 0!important;
+    clip: rect(0 0 0 0)!important;
+    height: 1px!important;
+    margin: -1px!important;
+    overflow: hidden!important;
+    padding: 0!important;
+    position: absolute!important;
+    width: 1px!important;
+}
+.form-control {
+    display: block;
+    width: 100%;
+    height: 40px;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    box-sizing: border-box;
+}
+.select2-hidden-accessible {
+    border: 0!important;
+    clip: rect(0 0 0 0)!important;
+    height: 1px!important;
+    margin: -1px!important;
+    overflow: hidden!important;
+    padding: 0!important;
+    position: absolute!important;
+    width: 1px!important;
+}
+
+button, select {
+    text-transform: none;
+}
+
+button, input, optgroup, select, textarea {
+    font-family: inherit;
+    font-size: 100%;
+    line-height: 1.15;
+    margin: 0;
+}
+button, select {
+    text-transform: none;
+}
+button, input, optgroup, select, textarea {
+    font-family: inherit;
+    font-size: 100%;
+    line-height: 1.15;
+    margin: 0;
+}
+
+b, strong {
+    font-weight: bolder;
+}
+b, strong {
+    font-weight: bolder;
+}
+
+.search_field_item.search_field_item_submit {
+    width: 84px;
+}
+
+#searchbar .search_field_item {
+    float: left;
+    margin-left: 5px;
+    margin-bottom: 0;
+    width: 142px;
+}
+.searchform .search_field_item {
+    margin-bottom: 15px;
+}
+
+#searchbar .search_field_item_label {
+    display: block;
+    font-size: .9rem;
+    font-weight: 700;
+    margin: 0 0 3px;
+}
+.searchform .search_field_item.search_field_item_submit .search_field_item_label {
+    display: none;
+}
+.searchform .search_field_item .search_field_item_label {
+    margin-bottom: 3px;
+    display: block;
+}
+
+#searchbar .btn_search_box {
+    background: #ffa80f;
+    color: #fff;
+    border: 1px solid #ffa80f;
+    height: 34px;
+    border-radius: 3px;
+}
+.searchform .btn_search_box {
+    width: 100%;
+    height: 40px;
+    border-radius: 3px;
+    border: 0;
+    background: #26b115;
+    font-weight: 700;
+    color: #fff;
+}
+
+
+.clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+
 .drop_menu{
     display: none;
     width: 300px;
