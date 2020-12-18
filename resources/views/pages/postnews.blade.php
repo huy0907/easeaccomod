@@ -90,8 +90,10 @@
                                     <li><input type = "checkbox" name = "bus"  value = 1>  Trạm xe bus</li>
                                 </ul>
                             </div>
-                            <button type="submit" class="btn btn-default">Post Add</button>
-                            <button type="reset" class="btn btn-default">Reset</button>
+                            <div class = "submit">
+                                <button type="submit" class="btn btn-default">Post Add</button>
+                                <button type="reset" class="btn btn-default">Reset</button>
+                            </div>
                         <form>
                     </div>
                 </div>
