@@ -20,8 +20,12 @@
                             </div>
                             <div class = "social-date">
                                 <a href = "#" class = "tag sticked">
-                                <i class = "fa fa-bookmark-o"> </i> Lưu tin
+                                <i class="far fa-bookmark"></i> Lưu tin
                                 </a>
+                                <a href="#"><i class="fas fa-flag" style="" >
+	                            </i> report
+                                  
+                                 </a>
                             </div>
                         </div>
                         <div class="modulecontent">
