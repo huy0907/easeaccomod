@@ -611,11 +611,11 @@ form .form-group .textarea {
 }
 
 .formcomment .btn-primary {
-    border-radius: 2px;
-    background-color: #e74c3c;
-    padding: 8px 12px;
-    font-size: 13px;
-    margin-top: 6px;
+    background:#E74C3C;
+    color: #fff;
+    border: 1px solid #E74C3C;
+    height: 34px;
+    border-radius: 3px;
 }
 
 .comment-wrapper .comment_list .box-head {

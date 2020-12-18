@@ -4,15 +4,16 @@
 @endsection
 
 @section('content')
-<div class = "container">
-<div id="page-wrapper">
+<div class = "main-body">
+    <div class = "container">
+        <div id="page-wrapper">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">Đăng tin</h1>
                     </div>
                     <!-- /.col-lg-12 -->
-                    <div class="col-lg-7" style="padding-bottom:120px">
+                    <div class="col-lg-7" style="padding-bottom:20px">
                         @if(count($errors) > 0)
                             <div class = "alert alert-danger">
                                 @foreach($errors->all() as $err)
@@ -67,24 +68,27 @@
                             </div>
                             <div class="form-group">
                                 <label>Facility</label>
-                                <li><input type = "checkbox" name = "wash_machine" value = 1 >  Máy giặt</li>
-                                <li><input type = "checkbox" name = "wifi" value = 1 >  Wifi</li>
-                                <li><input type = "checkbox" name = "tv"  value = 1>  Tivi</li>
-                                <li><input type = "checkbox" name = "air_con" value = 1 >  Điều hòa</li>
-                                <li><input type = "checkbox" name = "camera" value = 1 >  Camera</li>
-                                <li><input type = "checkbox" name = "garden" value = 1>  Sân vườn</li>
-                                <li><input type = "checkbox" name = "heater" value = 1 >  Bình nóng lạnh</li>
-                                <li><input type = "checkbox" name = "pool"  value = 1>  Bể bơi</li>
+                                <ul class = "box">
+                                    <li><input type = "checkbox" name = "wash_machine" value = 1 >  Máy giặt</li>
+                                    <li><input type = "checkbox" name = "wifi" value = 1 >  Wifi</li>
+                                    <li><input type = "checkbox" name = "tv"  value = 1>  Tivi</li>
+                                    <li><input type = "checkbox" name = "air_con" value = 1 >  Điều hòa</li>
+                                    <li><input type = "checkbox" name = "camera" value = 1 >  Camera</li>
+                                    <li><input type = "checkbox" name = "garden" value = 1>  Sân vườn</li>
+                                    <li><input type = "checkbox" name = "heater" value = 1 >  Bình nóng lạnh</li>
+                                    <li><input type = "checkbox" name = "pool"  value = 1>  Bể bơi</li>
+                                </ul>
                             </div>
                             <div class="form-group">
                                 <label>Around</label>
-                                <li><input type = "checkbox" name = "market"  value = 1>  Siêu thị</li>
-                                <li><input type = "checkbox" name = "hospital" value = 1>  Bệnh viện</li>
-                                <li><input type = "checkbox" name = "park"  value = 1>  Công viên</li>
-                                <li><input type = "checkbox" name = "stadium"  value = 1>  Sân vận động</li>
-                                <li><input type = "checkbox" name = "school"  value = 1>  Trường học</li>
-                                <li><input type = "checkbox" name = "bus"  value = 1>  Trạm xe bus</li>
-        
+                                <ul class = "box">
+                                    <li><input type = "checkbox" name = "market"  value = 1>  Siêu thị</li>
+                                    <li><input type = "checkbox" name = "hospital" value = 1>  Bệnh viện</li>
+                                    <li><input type = "checkbox" name = "park"  value = 1>  Công viên</li>
+                                    <li><input type = "checkbox" name = "stadium"  value = 1>  Sân vận động</li>
+                                    <li><input type = "checkbox" name = "school"  value = 1>  Trường học</li>
+                                    <li><input type = "checkbox" name = "bus"  value = 1>  Trạm xe bus</li>
+                                </ul>
                             </div>
                             <button type="submit" class="btn btn-default">Post Add</button>
                             <button type="reset" class="btn btn-default">Reset</button>
@@ -95,5 +99,6 @@
             </div>
             <!-- /.container-fluid -->
         </div>
+    </div>
 </div>
 @endsection

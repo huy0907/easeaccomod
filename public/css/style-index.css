@@ -141,6 +141,10 @@ header .container .container-inner .box-user ul.nav_user li a {
     border-radius: 5px;
 }
 
+.btn.red:hover {
+    background:#9b2e22;
+}
+
 .clear {
     clear: both;
 }

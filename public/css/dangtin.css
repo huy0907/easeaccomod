@@ -20,9 +20,17 @@ body {
     position: relative;
 }
 
+.main-body {
+    background: #efefef;
+    padding-bottom: 10px;
+}
+
 .container #page-wrapper {
     padding-left: 10px;
     padding-right: 10px;
+    background: white;
+    border-radius: 10px;
+    
 }
 
 .container #page-wrapper .row .form-group label {
@@ -53,4 +61,29 @@ li {
 
 .container #page-wrapper .row .form-group textarea #demo {
     height: auto;
+}
+
+.container #page-wrapper .row .form-group ul.box {
+    border: 1px solid #eaeaea;
+    padding: 16px;
+    border-radius: 3px;
+    margin: 5px 0;
+}
+
+.container #page-wrapper .row .form-group ul.box li {
+    display: inline-block;
+    width: 40%;
+    padding-bottom: 16px;
+}
+
+.container #page-wrapper .row button {
+    background:#E74C3C;
+    color: #fff;
+    border: 1px solid #E74C3C;
+    height: 34px;
+    border-radius: 3px;
+}
+
+.container #page-wrapper .row button:hover {
+    background:#9b2e22;
 }
