@@ -18,6 +18,11 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class = "social-date">
+                                <a href = "#" class = "tag sticked">
+                                <i class = "fa fa-bookmark-o"> </i> Lưu tin
+                                </a>
+                            </div>
                         </div>
                         <div class="modulecontent">
                             <div class="box-content">
@@ -63,7 +68,7 @@
                                 <div class="line"></div>
                                 <h2>Thông tin</h2>
                                 <div class="content-detail">
-                                    <div class="content"><p>{!!$post->description!!}</p>
+                                    <div class="content">{!!$post->description!!}
                                     </div>
                                 </div>
                                 <div class="line"></div>
@@ -171,4 +176,8 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('script')
+    <script src = "js/test.js" type = "text/javascript" ></script>
 @endsection
