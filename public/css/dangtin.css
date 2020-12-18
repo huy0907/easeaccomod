@@ -1,0 +1,56 @@
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    -webkit-text-size-adjust: none;
+    position: relative;
+    line-height: 1.4;
+    color: #333;
+    font-size: 15px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+}
+
+.container {
+    width: 100%;
+    max-width: 1070px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 10px;
+    position: relative;
+}
+
+.container #page-wrapper {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.container #page-wrapper .row .form-group label {
+    margin-bottom: 3px;
+}
+
+.container #page-wrapper .row .form-group .form-control {
+    box-shadow: none;
+    background: #F7F7F7;
+}
+
+.container #page-wrapper .row .form-group {
+    padding-bottom: 20px;
+}
+
+
+
+label, input, button, select, textarea {
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 20px;
+}
+
+
+li {
+    list-style: none;
+}
+
+.container #page-wrapper .row .form-group textarea #demo {
+    height: auto;
+}

@@ -1,10 +1,10 @@
 @extends('layout.index')
 @section('css')
-<!-- <link rel="stylesheet" type="text/css" href="css/chitiettin.css"> -->
+<link rel="stylesheet" type="text/css" href="css/dangtin.css">
 @endsection
 
 @section('content')
-
+<div class = "container">
 <div id="page-wrapper">
             <div class="container-fluid">
                 <div class="row">
@@ -29,6 +29,14 @@
                         <form action="post" method="POST" enctype = "multipart/form-data">
                         <input type="hidden" name = "_token" value = "{{csrf_token()}}"/>
                             <div class="form-group">
+                                <label>Name</label>
+                                <input class="form-control" name="name" placeholder="Please Enter address" />
+                            </div>
+                            <div class="form-group">
+                                <label>Address</label>
+                                <input class="form-control" name="address" placeholder="Please Enter address" />
+                            </div>
+                            <div class="form-group">
                                 <label>Category</label>
                                 <select class="form-control" name = "category">
                                     @foreach($cat as $row)
@@ -44,21 +52,14 @@
                                     @endforeach
                                 </select>
                             </div>
-                            <div class="form-group">
-                                <label>Name</label>
-                                <input class="form-control" name="name" placeholder="Please Enter address" />
-                            </div>
-                            <div class="form-group">
-                                <label>Address</label>
-                                <input class="form-control" name="address" placeholder="Please Enter address" />
-                            </div>
+                            
                             <div class="form-group">
                                 <label>Image</label>
                                 <input class="form-control" name="image" type = "file" />
                             </div>
                             <div class="form-group">
                                 <label>Description</label>
-                                <textarea id='demo' class="form-control ckeditor" rows="3" name = "description"></textarea>
+                                <textarea id='demo' class="form-control ckeditor" rows="3" name = "description" style="height:220px; width:100%"></textarea>
                             </div>
                             <div class="form-group">
                                 <label>Price</label>
@@ -94,5 +95,5 @@
             </div>
             <!-- /.container-fluid -->
         </div>
-
+</div>
 @endsection
