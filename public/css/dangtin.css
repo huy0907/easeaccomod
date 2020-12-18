@@ -76,6 +76,10 @@ li {
     padding-bottom: 16px;
 }
 
+.container #page-wrapper .row .submit {
+    text-align: center;
+}
+
 .container #page-wrapper .row button {
     background:#E74C3C;
     color: #fff;
