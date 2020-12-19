@@ -159,6 +159,7 @@ header .block-search .block-inner {
     margin: 0px;
     top: 60px;
     left: 0px;
+    z-index: 1;
 }
 
 header .block-search .block-inner .box-search {
@@ -405,7 +406,7 @@ b, strong {
     display: none;
     width: 300px;
     position: absolute;
-    z-index: 1;
+    z-index: 2;
 
 
 }
@@ -463,6 +464,15 @@ b, strong {
     margin-bottom: 5px;
 }
 
+.container .header.vip {
+    text-align: left;
+    padding: 0px;
+    font-size: 25px;
+    line-height: 30px;
+    font-weight: normal;
+    margin-bottom: 5px;
+}
+
 .hostel.hostel-list.vip .modulecontent {
     margin: 0 -8px;
 }
@@ -470,6 +480,12 @@ b, strong {
 .hostel.hostel-list .modulecontent {
     display: flex;
     flex-wrap: wrap;
+}
+
+.container .header.vip .modulecontent {
+    padding: 0px;
+    background: #FFF;
+    position: relative;
 }
 
 .modulecontent {
