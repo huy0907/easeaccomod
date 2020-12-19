@@ -406,7 +406,7 @@ b, strong {
     display: none;
     width: 300px;
     position: absolute;
-    z-index: 1;
+    z-index: 2;
 
 
 }
