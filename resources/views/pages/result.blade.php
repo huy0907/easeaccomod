@@ -1,68 +1,10 @@
-@extends('layout.index')
-@section('css')
-<link rel="stylesheet" type="text/css" href="css/style-index.css"> 
-<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"> 
-@endsection
-
-@section('content')
-<div class="greyBg">
-    <div class="container">
-		<div class="wrapper">
-		  @if(count($data)!="0")
-		    <div class="row">
-		    		<div class="col-xs-6 col-sm-3">
-                        <select id="catID">
-                            <option value="">Chọn danh mục</option>
-                            @foreach($cat as $cList)
-                            <option class="option" value="{{$cList->id}}">{{$cList->name}}</option>
-                            @endforeach
-                        </select>
-				    </div>
-                    <div class="col-xs-6 col-sm-3">
-                        <select id="province">
-                            <option value="">Chọn tỉnh thành</option>
-                            @foreach($prov as $row)
-                            <option class="option" value="{{$row->id}}">{{$row->name}}</option>
-                            @endforeach
-                        </select>
-				    </div>
-                    <div class="col-xs-6 col-sm-3">
-                    <select id="area">
-						    <option value="">Chọn diện tích</option>
-						    <option value="0-20">Dưới 20 m2</option>
-						    <option value="20-30">20-30 m2</option>
-						    <option value="30-50">30-50 m2</option>
-						    <option value="50-100">50-100 m2</option>
-						</select>
-				    </div>
-				    <div class="col-xs-6 col-sm-3">
-						<select id="priceID">
-						    <option value="">Chọn tầm giá</option>
-						    <option value="0-1">0-1 triệu</option>
-						    <option value="1-3">1-3 triệu</option>
-						    <option value="3-5">3-5 triệu</option>
-						    <option value="5-10">5-10 triệu</option>
-						</select>
-                    </div>
-
-                    <div class="col-sm-6 hidden-xs">
-                        <div class="row">
-
-                            <div class="col-sm-4 pull-right">
-                                <button id="findBtn" class="btn btn-success">Tìm kiếm</button>
-                            </div>
-                        </div>
-                    </div>
-        @endif
-		</div>
-
-        <div class="container main" id = "productData" >
+<div class="container main" id = "productData" >
                     <div id="bottom">
                         <div class="box-block-group">      
                             <div class="block block-hot">
                                 <div class="hostel hostel-list hot">
                                     <div class="main">
-                                       
+                                        <div class="header hot">{{$data->count()}} kết quả phù hợp</div>
                                         <div class="modulecontent">							
                                             @foreach($data as $row)
                                             <div class="item hot column" title="Cho thuê phòng trọ Đường Dương Thiệu Tước giá sinh viên">
@@ -101,29 +43,3 @@
                     </div>           
                 </div>
 	</div>
-</div>
-
-@endsection
-
-@section('script')
-<script>
-$(document).ready(function(){
-  $("#findBtn").click(function(){
-    var cat = $("#catID").val();
-    var price = $('#priceID').val();
-    var area = $('#area').val();
-    var province = $('#province').val();
-    $.ajax({
-      type: 'get',
-      dataType: 'html',
-      url: '{{url('/getResult')}}',
-      data: 'cat_id=' + cat + "&price=" + price + "&area=" + area + "&province=" + province, 
-      success:function(response){
-        console.log(response);
-        $("#productData").html(response);
-      }
-    });
-  });
-});
-</script>
-@endsection

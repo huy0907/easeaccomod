@@ -359,6 +359,44 @@ class PageController extends Controller
     }
     public function getFilter()
     {
-        return view('pages/filter');
+        $data = post::all();
+        $cat = category::all();
+        $prov = province::all();
+        return view('pages/filter',[ "data" => $data, "cat" => $cat, "prov" => $prov]);
+    }
+    public function getResult(Request $req)
+    {
+
+        $cat = category::all();
+        $data = post::query();
+        if($req->has('cat_id'))
+        {
+            $data->where('category_id', $req->cat_id);
+        }
+        if($req->has('province'))
+        {
+            $data->where('province_id', $req->province);
+        }
+        if($req->has('price'))
+        {
+            $price = explode("-",$req->price);
+            $start = $price[0];
+            $end = $price[1];
+            $data->where('price', '>=', $start * 1000000 );
+            $data->where('price', '<=', $end * 1000000 );
+        }
+        if($req->has('area'))
+        {
+            $area = explode("-",$req->area);
+            $start = $area[0];
+            $end = $area[1];
+            $data->where('area', '>=', $start * 1000000 );
+            $data->where('area', '<=', $end * 1000000 );
+        }
+        if(count($data->get()) == 0)
+        {
+            echo "<h1 align='center'>Không tìm thấy kết quả</h1>";
+        }
+        else return view('pages/result', ['data' => $data->get(), 'cat' => $cat]);
     }
 }
