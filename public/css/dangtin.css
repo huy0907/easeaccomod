@@ -23,6 +23,7 @@ body {
 .main-body {
     background: #efefef;
     padding-bottom: 10px;
+    padding-top: 5px;
 }
 
 .container #page-wrapper {
