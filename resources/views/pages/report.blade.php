@@ -5,7 +5,7 @@
 @section('content')
 <div class="container">
 <h1 id="title">Báo Cáo</h1>
-<p id="description">Đề nghị các bạn cung cấp các nội dung chính xác, việc báo cáo chính xác giúp cho công động tốt hơn  </p>
+<p id="description">Đề nghị các bạn cung cấp các nội dung chính xác, việc báo cáo chính xác giúp cho công động phát triển tốt hơn  </p>
 <p></p>
 
 <div id="body">
