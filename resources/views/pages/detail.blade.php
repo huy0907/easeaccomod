@@ -22,7 +22,7 @@
                                 <a href = "#" class = "tag sticked">
                                 <i class="far fa-bookmark"></i> Lưu tin
                                 </a>
-                                <a href="#"><i class="fas fa-flag" style="" >
+                                <a href="report.php"><i class="fas fa-flag" style="" >
 	                            </i> report
                                   
                                  </a>
