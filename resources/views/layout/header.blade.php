@@ -9,10 +9,11 @@
                         </div>
                         <div class="menu">
                             <ul class="nav_top">
-                            <li class="" id = "1-cat">Phòng trọ</li>
-                            <li class="" id = "2-cat"> Chung cư mini</li>
-                            <li class="" id = "3-cat"> Nhà nguyên căn</li>
-                            <li class="" id = "4-cat"> Chung cư nguyên căn</li>
+                                <li class="" id = "1-cat"><a href="#">Phòng trọ</a></li>
+                                <li class="" id = "2-cat"><a href="#">Chung cư mini</a></li>
+                                <li class="" id = "3-cat"><a href="#">Nhà nguyên căn</a></li>
+                                <li class="" id = "4-cat"><a href="#">Chung cư nguyên căn</a></li>
+                                <li class="li_news"><a href="#">Tin tức</a></li>
                             </ul>
                         </div>
                         <div class="box-user">

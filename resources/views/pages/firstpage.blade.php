@@ -1,56 +1,63 @@
 @extends('layout.index')
 @section('css')
 <link rel="stylesheet" type="text/css" href="css/style-index.css">
-<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"> 
+
 @endsection
 
 @section('content')
 <!--MAIN-->
-<div class="wrapper">
-		    <div class="row">
-		    		<div class="col-xs-6 col-sm-3">
-                        <select id="catID">
-                            <option value="">Chọn danh mục</option>
-                            @foreach($cat_list as $cList)
-                            <option class="option" value="{{$cList->id}}">{{$cList->name}}</option>
-                            @endforeach
-                        </select>
-				    </div>
-                    <div class="col-xs-6 col-sm-3">
-                        <select id="provID">
-                            <option value="">Chọn tỉnh thành</option>
-                            @foreach($prov_list as $row)
-                            <option class="option" value="{{$row->id}}">{{$row->name}}</option>
-                            @endforeach
-                        </select>
-				    </div>
-                    <div class="col-xs-6 col-sm-3">
+<div class="search-bar-filter">
+    <div class = "container">
+        <div class="row">
+                <div class="col-xs-6 col-sm-3">
+                    <label class="search_field_item_label">Chọn danh mục</label>
+                    <select id="catID">
+                        <option value="">Chọn danh mục</option>
+                        @foreach($cat_list as $cList)
+                        <option class="option" value="{{$cList->id}}">{{$cList->name}}</option>
+                        @endforeach
+                    </select>
+                </div>
+                <div class="col-xs-6 col-sm-3">
+                    <label class="search_field_item_label">Chọn tỉnh thành</label>
+                    <select id="provID">
+                        <option value="">Chọn tỉnh thành</option>
+                        @foreach($prov_list as $row)
+                        <option class="option" value="{{$row->id}}">{{$row->name}}</option>
+                        @endforeach
+                    </select>
+                </div>
+                <div class="col-xs-6 col-sm-3">
+                    <label class="search_field_item_label">Chọn diện tích</label>
                     <select id="area">
-						    <option value="">Chọn diện tích</option>
-						    <option value="0-20">Dưới 20 m2</option>
-						    <option value="20-30">20-30 m2</option>
-						    <option value="30-50">30-50 m2</option>
-						    <option value="50-100">50-100 m2</option>
-						</select>
-				    </div>
-				    <div class="col-xs-6 col-sm-3">
-						<select id="priceID">
-						    <option value="">Chọn tầm giá</option>
-						    <option value="0-1">0-1 triệu</option>
-						    <option value="1-3">1-3 triệu</option>
-						    <option value="3-5">3-5 triệu</option>
-						    <option value="5-10">5-10 triệu</option>
-						</select>
-                    </div>
+                        <option value="">Chọn diện tích</option>
+                        <option value="0-20">Dưới 20 m2</option>
+                        <option value="20-30">20-30 m2</option>
+                        <option value="30-50">30-50 m2</option>
+                        <option value="50-100">50-100 m2</option>
+                    </select>
+                </div>
+                <div class="col-xs-6 col-sm-3">
+                    <label class="search_field_item_label">Chọn diện tích</label>
+                    <select id="priceID">
+                        <option value="">Chọn tầm giá</option>
+                        <option value="0-1">0-1 triệu</option>
+                        <option value="1-3">1-3 triệu</option>
+                        <option value="3-5">3-5 triệu</option>
+                        <option value="5-10">5-10 triệu</option>
+                    </select>
+                </div>
 
-                    <div class="col-sm-6 hidden-xs">
-                        <div class="row">
+                <div class="col-sm-6 hidden-xs" style="padding-top:12.5px">
+                    <div class="row">
 
-                            <div class="col-sm-4 pull-right">
-                                <button id="findBtn" class="btn btn-success">Tìm kiếm</button>
-                            </div>
+                        <div class="col-sm-4 pull-right">
+                            <button id="findBtn" class="btn btn-success">Tìm kiếm</button>
                         </div>
                     </div>
+                </div>
+        </div>
+    </div>
 </div>
 <div id="main-body">
                 <div class="block block-vip">
