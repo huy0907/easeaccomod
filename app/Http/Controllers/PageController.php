@@ -30,10 +30,13 @@ class PageController extends Controller
     public function index()
     {
         $post = post::take(8)->get();
+        $cat_list = category::all();
+        $prov_list = province::all();
         $cat_info = post::groupBy('category_id')->select('category_id', DB::raw('count(*) as total'))->get();
         $prov_info = post::groupBy('province_id')->select('province_id', DB::raw('count(*) as total'))->get();
         $most_view = post::orderBy('views', 'desc')->take(6)->get();
-        return view('pages.firstpage', ['cat' => $cat_info, 'top_post' => $post, 'prov' => $prov_info, 'most_view' => $most_view ]);
+        return view('pages.firstpage', ['cat' => $cat_info, 'top_post' => $post, 'prov' => $prov_info, 'most_view' => $most_view ,
+        'cat_list' =>  $cat_list, 'prov_list' => $prov_list]);
     }
 
     public function detail($id)

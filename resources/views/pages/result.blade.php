@@ -1,4 +1,4 @@
-<div class="container main" id = "productData" >
+<div class="container main" >
                     <div id="bottom">
                         <div class="box-block-group">      
                             <div class="block block-hot">

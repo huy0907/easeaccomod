@@ -8,7 +8,6 @@
 <div class="greyBg">
     <div class="container">
 		<div class="wrapper">
-		  @if(count($data)!="0")
 		    <div class="row">
 		    		<div class="col-xs-6 col-sm-3">
                         <select id="catID">
@@ -53,7 +52,7 @@
                             </div>
                         </div>
                     </div>
-        @endif
+
 		</div>
 
         <div class="container main" id = "productData" >
