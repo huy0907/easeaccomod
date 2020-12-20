@@ -192,6 +192,12 @@ header .block-search .block-inner .box-search #top-search .search-form-label .ic
     border-radius: 10px;
 }
 
+#main-body {
+    min-height: 400px;
+    z-index: 1;
+    padding-top: 0px;
+}
+
 
 #main-body #main-content {
     width: 100%;

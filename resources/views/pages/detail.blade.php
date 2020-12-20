@@ -18,7 +18,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class = "social-date">
+                            <div class = "social-date" style = "padding-left:10px;">
                                 <a href = "#" class = "tag sticked">
                                 <i class="far fa-bookmark"></i> Lưu tin
                                 </a>

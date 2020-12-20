@@ -64,7 +64,7 @@
                     
                     <div class="hostel hostel-list vip">
                         <div class="container main">
-                            <div class="header vip">Trọ mới</div>
+                            <div class="header vip">DANH SÁCH TRỌ MỚI</div>
                                 <div class="modulecontent">						
                                     @foreach($top_post as $row)
                                     <div class="item vip" title="{{$row->name}}&nbsp;">
