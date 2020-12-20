@@ -44,9 +44,13 @@ class PageController extends Controller
         $post = post::find($id);
         $post->views = $post->views + 1;
         $post->save();
+        $cat_list = category::all();
+        $prov_list = province::all();
+        $cat_info = post::groupBy('category_id')->select('category_id', DB::raw('count(*) as total'))->get();
         $post_relate = post::where('category_id', '=', $post->category_id)->where('province_id', $post->province_id)->take(4)->get();
         $count_cmt = comment::where('post_id', '=', $post->id)->count();
-        return view('pages.detail', ['post' => $post, 'post_relate' => $post_relate, 'count' => $count_cmt]);
+        return view('pages.detail', ['post' => $post, 'post_relate' => $post_relate, 'count' => $count_cmt, 'cat' => $cat_info,
+        'cat_list' =>  $cat_list, 'prov_list' => $prov_list]);
     }
     public function getregister()
     {
@@ -402,4 +406,11 @@ class PageController extends Controller
         }
         else return view('pages/result', ['data' => $data->get(), 'cat' => $cat]);
     }
+
+    public function getReport($id)
+    {
+        
+        return view('pages/report', ['post_id' => $id]);
+    }
+    
 }

@@ -79,4 +79,6 @@ Route::post('post', 'PageController@postPost' );
 
 Route::get('filter', 'PageController@getFilter');
 Route::get('getResult', 'PageController@getResult');
+Route::get('report/{id}','PageController@getReport');
+Route::post('report/{id}', 'ReportController@postReport');
 
