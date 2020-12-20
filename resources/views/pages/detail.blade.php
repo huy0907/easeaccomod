@@ -6,6 +6,11 @@
 <div id="main-body">
     <div class="container">
         <div id="main-content" class="main" style="position: relative;">
+            @if(session('notify'))
+                <div class = "alert alert-danger">  
+                    {{session('notify')}}
+                </div>
+            @endif
             <div id="center">
                 <div class="hostel hostel-detail">
                     <div class="module">
@@ -22,7 +27,7 @@
                                 <a href = "#" class = "tag sticked">
                                 <i class="far fa-bookmark"></i> Lưu tin
                                 </a>
-                                <a href="report.php"><i class="fas fa-flag" style="" >
+                                <a href="report/{{$post->id}}"><i class="fas fa-flag" style="" >
 	                            </i> report
                                   
                                  </a>
