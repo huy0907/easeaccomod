@@ -95,7 +95,19 @@ ul, ol {
     margin: 0;
 }
 
-header .container .container-inner .menu ul.nav_top li a {
+header .container .container-inner .menu ul.nav_top li{
+    display: block;
+    padding: 0 5px;
+    margin: 0 5px;
+    color: #000;
+    font-weight: 500;
+    white-space: nowrap;
+    line-height: 30px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+header .container .container-inner .menu ul.nav_top li a{
     display: block;
     padding: 0 5px;
     margin: 0 5px;
@@ -105,6 +117,7 @@ header .container .container-inner .menu ul.nav_top li a {
     line-height: 30px;
     text-transform: uppercase;
 }
+
 
 header .container .container-inner .box-user {
     position: relative;
@@ -136,6 +149,10 @@ header .container .container-inner .box-user ul.nav_user li a {
     line-height: 30px;
 }
 header .container .container-inner .menu ul.nav_top li a:hover {
+    color: #0062C4;
+}
+
+header .container .container-inner .menu ul.nav_top li:hover {
     color: #0062C4;
 }
 .btn.red {
@@ -957,6 +974,11 @@ h2 {
     padding: 2px 0 10px;
     margin-bottom: 10px;
     border-bottom: 1px solid #e6e6e6;
+    cursor: pointer;
+}
+
+#bottom .box.box-province .item:hover, #bottom .box.box-form_type .item:hover {
+    color: #0062C4;
 }
 
 #bottom .box.box-province .item:last-child, #bottom .box.box-form_type .item:last-child {
