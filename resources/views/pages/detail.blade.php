@@ -181,7 +181,3 @@
     </div>
 </div>
 @endsection
-
-@section('script')
-    <script src = "js/test.js" type = "text/javascript" ></script>
-@endsection

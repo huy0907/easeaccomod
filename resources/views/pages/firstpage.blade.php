@@ -1,11 +1,64 @@
 @extends('layout.index')
 @section('css')
 <link rel="stylesheet" type="text/css" href="css/style-index.css">
+
 @endsection
 
 @section('content')
 <!--MAIN-->
+<div class="search-bar-filter">
+    <div class = "container">
+        <div class="row">
+                <div class="col-xs-6 col-sm-3">
+                    <label class="search_field_item_label">Chọn danh mục</label>
+                    <select id="catID">
+                        <option value="">Chọn danh mục</option>
+                        @foreach($cat_list as $cList)
+                        <option class="option" value="{{$cList->id}}">{{$cList->name}}</option>
+                        @endforeach
+                    </select>
+                </div>
+                <div class="col-xs-6 col-sm-3">
+                    <label class="search_field_item_label">Chọn tỉnh thành</label>
+                    <select id="provID">
+                        <option value="">Chọn tỉnh thành</option>
+                        @foreach($prov_list as $row)
+                        <option class="option" value="{{$row->id}}">{{$row->name}}</option>
+                        @endforeach
+                    </select>
+                </div>
+                <div class="col-xs-6 col-sm-3">
+                    <label class="search_field_item_label">Chọn diện tích</label>
+                    <select id="area">
+                        <option value="">Chọn diện tích</option>
+                        <option value="0-20">Dưới 20 m2</option>
+                        <option value="20-30">20-30 m2</option>
+                        <option value="30-50">30-50 m2</option>
+                        <option value="50-100">50-100 m2</option>
+                    </select>
+                </div>
+                <div class="col-xs-6 col-sm-3">
+                    <label class="search_field_item_label">Chọn diện tích</label>
+                    <select id="priceID">
+                        <option value="">Chọn tầm giá</option>
+                        <option value="0-1">0-1 triệu</option>
+                        <option value="1-3">1-3 triệu</option>
+                        <option value="3-5">3-5 triệu</option>
+                        <option value="5-10">5-10 triệu</option>
+                    </select>
+                </div>
 
+                <div class="col-sm-6 hidden-xs" style="padding-top:12.5px">
+                    <div class="row">
+
+                        <div class="col-sm-4 pull-right">
+                            <button id="findBtn" class="btn btn-success">Tìm kiếm</button>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+</div>
 <div id="main-body">
                 <div class="block block-vip">
                     
@@ -98,7 +151,7 @@
                                         <div class="box-header"><h2 class="box-title">Loại hình</h2></div>
                                         <div class="box-body">
                                             @foreach($cat as $row)
-                                            <div class="item"><a href="#">{{$row->category->name}}<span>({{$row->total}})</span></a></div>
+                                            <div class="item" id = "cat-{{$row->category_id}}">{{$row->category->name}}<span>({{$row->total}})</span></div>
                                             @endforeach
                                         </div>
                                     </div>					
@@ -107,8 +160,8 @@
                                         <div class="box-header"><h2 class="box-title">Khu vực nổi bật</h2></div>
                                         <div class="box-body">
                                             @foreach($prov as $row)
-                                            <div class="item">
-                                                <a href="#">{{$row->province->name}}<span>({{$row->total}})</span></a>
+                                            <div class="item" id = "prov-{{$row->province_id}}">
+                                                {{$row->province->name}}<span>({{$row->total}})</span>
                                             </div>
                                             @endforeach
                                         </div>
@@ -123,49 +176,6 @@
             <!--MAIN-->
             <div class="ads"></div>
             <!--NEWS-->
-            <div class="news">
-                <div class="container">
-                <div class="news-header">
-                    <h2 class="header-title">Tin mới nhất</h2>
-                </div>
-                <div class="news-content">
-                    <div class="item">
-                        <div class="image">
-                            <a href="#"><img src="https://tromoi.com/uploads/members/hiephoang/thang%208/27_08/PHONG%20TH%E1%BB%A6Y%20PHONG%20TR%E1%BB%8C%20(2).png"></a>
-                        </div>
-                        <div class="content">
-                            <h4 class="title"><a href="#">Thuê nhà trọ: Bạn cần lưu ý những điều gì?</a></h4>
-                            <span class="published">22-10-2020 15:31:33</span>
-                            <div class="description">Thuê nhà  trọ tại các thành phố lớn là hoạt động vẫn luôn giữ được sự sôi động nhờ số lượng người dân sinh sống và làm việc đông đúc. Thời gian gần đây, dù ảnh hưởng của dịch bệnh Covid-19 nhưng nhu cầu tìm thuê nhà tại các tỉnh thành lớn vẫn tăng cao. Tuy nhiên, nếu là người đi thuê nhà trong thời điểm này, bạn cần phải lưu ý để tránh “tiền mất tật mang”. Cùng tromoi.com tìm hiểu về những lưu ý khi tìm thuê nhà nhé!
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="image">
-                            <a href="#"><img src="https://tromoi.com/uploads/members/hiephoang/Thang%209/PHONG%20TH%E1%BB%A6Y%20PHONG%20TR%E1%BB%8C(1).png"></a>
-                        </div>
-                        <div class="content">
-                            <h4 class="title"><a href="#">Thuê phòng trọ với 5 bí kíp đơn giản nhất!</a></h4>
-                            <span class="published">22-10-2020 15:31:33</span>
-                            <div class="description">Phòng trọ tại các thành phố lớn luôn được rất nhiều khách hàng tìm kiếm. Tuy nhiên, để tìm thuê phòng trọ tại các thành phố lớn thì bạn cần lưu ý những gì? Hãy tham khảo ngay 5 bí kíp đơn giản nhất được chia sẻ dưới đây để tìm phòng nhanh nhất!
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="image">
-                            <a href="#"><img src="https://tromoi.com/uploads/members/hiephoang/thang%208/27_08/PHONG%20TH%E1%BB%A6Y%20PHONG%20TR%E1%BB%8C%20(2).png"></a>
-                        </div>
-                        <div class="content">
-                            <h4 class="title"><a href="#">Thuê nhà trọ: Bạn cần lưu ý những điều gì?</a></h4>
-                            <span class="published">22-10-2020 15:31:33</span>
-                            <div class="description">Thuê nhà  trọ tại các thành phố lớn là hoạt động vẫn luôn giữ được sự sôi động nhờ số lượng người dân sinh sống và làm việc đông đúc. Thời gian gần đây, dù ảnh hưởng của dịch bệnh Covid-19 nhưng nhu cầu tìm thuê nhà tại các tỉnh thành lớn vẫn tăng cao. Tuy nhiên, nếu là người đi thuê nhà trong thời điểm này, bạn cần phải lưu ý để tránh “tiền mất tật mang”. Cùng tromoi.com tìm hiểu về những lưu ý khi tìm thuê nhà nhé!
-                            </div>
-                        </div>
-                    </div>
-                    <div class="viewmore"><a href="https://tromoi.com/danh-sach">Xem thêm <i class="fa fa-angle-right"></i></a></div>
-                </div>
-                </div>
-            </div>
             <!--NEWS-->
             <!--CONTACT-->
             <div class="box-contact">
@@ -218,4 +228,76 @@
                 </div>
             </div>
             <!--CONTACT-->
+</div>
+@endsection
+
+@section('script')
+<script>
+$(document).ready(function(){
+  $("#findBtn").click(function(){
+    var cat = $("#catID").val();
+    var price = $('#priceID').val();
+    var area = $('#area').val();
+    var province = $('#provID').val();
+    $.ajax({
+      type: 'get',
+      dataType: 'html',
+      url: '{{url('/getResult')}}',
+      data: 'cat_id=' + cat + "&price=" + price + "&area=" + area + "&province=" + province, 
+      success:function(response){
+        console.log(response);
+        $("#main-body").html(response);
+      }
+    });
+  });
+  @foreach($cat as $row)
+  $("#cat-{{$row->category_id}}").click(function(){
+    var cat = {{$row->category_id}};
+    $("#catID option[value='{{$row->category_id}}']").attr("selected","selected");
+    $.ajax({
+      type: 'get',
+      dataType: 'html',
+      url: '{{url('/getResult')}}',
+      data: 'cat_id=' + cat , 
+      success:function(response){
+        console.log(response);
+        $("#main-body").html(response);
+      }
+    });
+  });
+  @endforeach
+  @foreach($prov as $row)
+  $("#prov-{{$row->province_id}}").click(function(){
+    var province = {{$row->province_id}};
+    $("#provID option[value='{{$row->province_id}}']").attr("selected","selected");
+    $.ajax({
+      type: 'get',
+      dataType: 'html',
+      url: '{{url('/getResult')}}',
+      data: 'province=' + province , 
+      success:function(response){
+        console.log(response);
+        $("#main-body").html(response);
+      }
+    });
+  });
+  @endforeach
+  @for($i = 1; $i < 5; $i++)
+  $("#{{$i}}-cat").click(function(){
+    var cat = {{$i}};
+    $("#catID option[value='{{$i}}']").attr("selected","selected");
+    $.ajax({
+      type: 'get',
+      dataType: 'html',
+      url: '{{url('/getResult')}}',
+      data: 'cat_id=' + cat , 
+      success:function(response){
+        console.log(response);
+        $("#main-body").html(response);
+      }
+    });
+  });
+  @endfor
+});
+</script>
 @endsection
