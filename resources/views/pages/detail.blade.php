@@ -45,14 +45,12 @@
                                 <div class="line"></div>
                                 <div class="info-wrapper">
                                     <dl><dt>Địa chỉ:</dt><dd> {{$post->address}}</dd></dl>
-                                    <dl><dt>Giá:</dt><dd>Khoảng {{$post->price}} đồng/tháng</dd></dl>
+                                    <dl><dt>Giá:</dt><dd>Khoảng {{$post->price/1000000}} triệu đồng/tháng</dd></dl>
                                     <div class="info">
                                         <div class="i-left">
                                             <dl><dt>Hình thức:</dt><dd>{{$post->category->name}}</dd></dl>
                                             <dl><dt>Diện tích:</dt><dd>Khoảng {{$post->area}} m2</dd></dl>
-                                            <dl><dt>Số phòng:</dt><dd>{{$post->bedRoom}}</dd></dl>
-                                            <dl><dt>Ở tối đa:</dt><dd></dd></dl>
-                                            
+                                            <dl><dt>Ngày đăng:</dt><dd>{{$post->created_at}}</dd></dl>  
                                         </div>
                                         <div class="i-right">
                                             <dl>
@@ -67,10 +65,6 @@
                                                 <dt>Email:</dt>
                                                 <dd>{{$post->user->email}}</dd>
                                             </dl>
-                                            <dl>
-                                                <dt>Ngày cập nhật:</dt>
-                                                <dd class="published">{{$post->updated_at}}</dd>
-                                            </dl>
                                         </div>
                                     </div>
                                 </div>
@@ -84,33 +78,58 @@
                                 <h2>Tiện nghi</h2>
                                 <div class="box-check">
                                     <ul>
-                                        <li><i class="ico icon"></i><span title="Wifi">Wifi</span></li>
-                                        <li><i class="ico icon"></i><span title="Vệ sinh trong">Vệ sinh trong</span></li>
-                                        <li><i class="ico icon"></i><span title="Bình nóng lạnh">Bình nóng lạnh</span></li>
-                                        <li><i class="ico icon"></i><span title="Kệ bếp">Kệ bếp</span></li>
+                                        @if($post->value("wash_machine") == 1)
                                         <li><i class="ico icon"></i><span title="Máy giặt">Máy giặt</span></li>
+                                        @endif
+                                        @if($post->value("wifi") == 1)
+                                        <li><i class="ico icon"></i><span title="Wifi">Wifi</span></li>
+                                        @endif
+                                        @if($post->value("tv") == 1)
+                                        <li><i class="ico icon"></i><span title="Tivi">Tivi</span></li>
+                                        @endif
+                                        @if($post->value("air_con") == 1)
                                         <li><i class="ico icon"></i><span title="Điều hòa">Điều hòa</span></li>
-                                        <li><i class="ico icon"></i><span title="Tủ lạnh">Tủ lạnh</span></li>
-                                        <li><i class="ico icon"></i><span title="Giường nệm">Giường nệm</span></li>
-                                        <li><i class="ico icon"></i><span title="Tủ quần áo">Tủ quần áo</span></li>
-                                        <li><i class="ico icon"></i><span title="Ban công/sân thượng">Ban công/sân thượng</span></li>
-                                        <li><i class="ico icon"></i><span title="Bãi để xe riêng">Bãi để xe riêng</span></li>
-                                        <li><i class="ico icon"></i><span title="Camera an ninh">Camera an ninh</span></li>
+                                        @endif
+                                        @if($post->value("camera") == 1)
+                                        <li><i class="ico icon"></i><span title="Camera">Camera</span></li>
+                                        @endif
+                                        @if($post->value("garden") == 1)
+                                        <li><i class="ico icon"></i><span title="Sân vườn">Sân vườn</span></li>
+                                        @endif
+                                        @if($post->value("heater") == 1)
+                                        <li><i class="ico icon"></i><span title="Bình nóng lạnh">Bình nóng lạnh</span></li>
+                                        @endif
+                                        @if($post->value("pool") == 1)
+                                        <li><i class="ico icon"></i><span title="Bể bơi">Bể bơi</span></li>
+                                        @endif
+                                        
                                     </ul>
                                 </div>
                                 <div class="line"></div>
-                                <div class="line"></div>
-                                <h2>Liên hệ Chính chủ</h2>
-                                <div class="box-info-bottom">
-                                    <dl>
-                                        <dt><i class="fa fa-user"></i></dt>
-                                        <dd><h3>Đức Khôi</h3></dd>
-                                    </dl>
-                                    <dl>
-                                    <dt><i class="fa fa-phone"></i></dt>
-                                    <dd><h3>0962462692</h3></dd>
-                                    </dl>
+                                <h2>Tiện ích xung quanh</h2>
+                                <div class="box-check">
+                                    <ul>
+                                    @if($post->value("market") == 1)
+                                        <li><i class="ico icon"></i><span title="Siêu thị">Siêu thị</span></li>
+                                        @endif
+                                        @if($post->value("hospital") == 1)
+                                        <li><i class="ico icon"></i><span title="Bệnh viện">Wifi</span></li>
+                                        @endif
+                                        @if($post->value("park") == 1)
+                                        <li><i class="ico icon"></i><span title="Công viên">Công viên</span></li>
+                                        @endif
+                                        @if($post->value("school") == 1)
+                                        <li><i class="ico icon"></i><span title="Trường học">Trường học</span></li>
+                                        @endif
+                                        @if($post->value("bus") == 1)
+                                        <li><i class="ico icon"></i><span title="Điểm chờ xe buýt">Camera</span></li>
+                                        @endif
+                                        @if($post->value("stadium") == 1)
+                                        <li><i class="ico icon"></i><span title="Sân vân động">Sân vận động</span></li>
+                                        @endif
+                                    </ul>
                                 </div>
+                                <div class="line"></div>
                             </div>
                         </div>
                     </div>
@@ -153,11 +172,11 @@
                             <div class="contacts">
                                 <dl>
                                     <dt><i class="fa fa-user"></i></dt>
-                                    <dd><h3>Đức Khôi</h3></dd>
+                                    <dd><h3>{{$post->user->name}}</h3></dd>
                                 </dl>
                                 <dl>
                                     <dt><i class="fa fa-mobile"></i></dt>
-                                    <dd><h3>0962462692</h3></dd>
+                                    <dd><h3>{{$post->user->phone}}</h3></dd>
                                 </dl>
                             </div>
                         </div>
