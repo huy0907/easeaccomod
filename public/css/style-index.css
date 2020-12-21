@@ -514,32 +514,32 @@ b, strong {
 
 @media only screen and (max-width: 732px) {
     #main-body {
-        padding-top: 100px;
+        padding-top: 150px;
     }
 }
 
 
 @media only screen and (max-width: 615px) {
     #main-body {
-        padding-top: 100px;
+        padding-top: 150px;
     }
 }
 
 @media only screen and (max-width: 413px) {
     #main-body {
-        padding-top: 150px;
+        padding-top: 200px;
     }
 }
 
 @media only screen and (max-width: 321px) {
     #main-body {
-        padding-top: 200px;
+        padding-top: 250px;
     }
 }
 
 @media only screen and (max-width: 253px) {
     #main-body {
-        padding-top: 250px;
+        padding-top: 300px;
     }
 }
 
