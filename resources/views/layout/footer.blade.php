@@ -33,7 +33,7 @@
                                 <div class="block block-4">
                                     <h2>Liên hệ chúng tôi</h2>
                                     <ul>
-                                        <li>Hotline 1: <a href="tel:0911067111">0911 067 111</a></li>
+                                        <li>Hotline 1: <a href="tel:0911067111">096 2462 692</a></li>
                                         <li>Hotline 2: <a href="tel:0869988279">086 9988 279</a></li>
                                         <li>Email: <a href="mailto:info@tromoi.com" target="_blank">info@tromoi.com</a></li>
                                     </ul>
@@ -44,7 +44,7 @@
                 </div>
                 <div class="copyright">
                     <div class="container">
-                        Copyright © 2018 - 2020 OHI Co.Ltd
+                        Copyright © 2018 - 2020
                     </div>
                 </div>
             </footer>
