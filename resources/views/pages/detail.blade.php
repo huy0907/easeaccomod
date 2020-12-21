@@ -26,8 +26,8 @@
                             <div class = "social-date" style = "padding-left:10px;">
                                 @if(isset($user))
                                 @if($user->favorite->where('post_id', $post->id)->count() > 0)
-                                <i class="">Đã lưu tin</i> 
-                                @else <i id ="favor" class="">Lưu tin</i> 
+                                <span style="color: #0062C4"><i class="far fa-bookmark"></i> Đã lưu tin </span>
+                                @else <span style="color: #0062C4"><i class="far fa-bookmark" id="favor"></i> Lưu tin </span>
                                 @endif
                                 @endif
                                 <a href="report/{{$post->id}}"><i class="fas fa-flag" style="" >
