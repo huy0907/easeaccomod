@@ -62,25 +62,23 @@ Route::group(['prefix'=>'admin', 'middleware' => 'adminLogin'], function(){
 });
 Route::get('index', 'PageController@index');
 Route::get('detail/{id}', 'PageController@detail');
-Route::get('login','PageController@getlogin');
-Route::post('login','PageController@postlogin');
-Route::get('logout', 'PageController@getlogout');
-Route::get('register', 'PageController@getregister');
-Route::post('register', 'PageController@postregister');
+//Auth
+Route::get('login','LoginController@getlogin');
+Route::post('login','LoginController@postlogin');
+Route::get('logout', 'LoginController@getlogout');
+Route::get('register', 'LoginController@getregister');
+Route::post('register', 'LoginController@postregister');
+
 Route::get('profile/{id}', 'PageController@getprofile');
-
 Route::get('comment/{id}', 'CommentController@postComment');
-Route::get('editprofile/{id}', 'PageController@getEdit');
-Route::get('editpost/{id}', 'PageController@getEditPost');
-Route::post('editpost/{id}', 'PageController@postEditPost');
-Route::get('post', 'PageController@getpost');
-Route::post('post', 'PageController@postPost' );
-
-
 Route::get('filter', 'PageController@getFilter');
 Route::get('getResult', 'PageController@getResult');
-Route::get('report/{id}','PageController@getReport');
-Route::post('report/{id}', 'ReportController@postReport');
-
 Route::get('cat/{id}', 'PageController@getHeader');
-
+//Middeware check for pages must login to access
+Route::get('editpost/{id}', 'PageController@getEditPost')->middleware('logincheck');
+Route::get('editprofile/{id}', 'PageController@getEdit')->middleware('logincheck');
+Route::post('editpost/{id}', 'PageController@postEditPost')->middleware('logincheck');
+Route::get('post','PageController@getpost')->middleware('logincheck');
+Route::post('post', 'PageController@postPost' )->middleware('logincheck');
+Route::get('report/{id}','PageController@getReport')->middleware('logincheck');
+Route::post('report/{id}', 'ReportController@postReport')->middleware('logincheck');

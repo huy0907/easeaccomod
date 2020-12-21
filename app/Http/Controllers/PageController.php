@@ -52,41 +52,7 @@ class PageController extends Controller
         return view('pages.detail', ['post' => $post, 'post_relate' => $post_relate, 'count' => $count_cmt, 'cat' => $cat_info,
         'cat_list' =>  $cat_list, 'prov_list' => $prov_list]);
     }
-    public function getregister()
-    {
-        return view('pages/register');
-    }
-    public function postregister(Request $req)
-    {
-        $this->validate($req,
-        ['role' => 'required',
-        'password' => 'required|min:6',
-        'email' => 'required|unique:users,email',
-        ],
-        [
-        'role.required' => "Bạn hãy chọn loại người dùng",
-        'email.required' => "Your email cannot empty",
-        'password.required' => "Your password cannot empty",
-        'password.min' => "Your password length must be at least 6 characters",
-        'email.unique' => "Your email must be unique",
-        
-        ]);
-        $user = new User;
-        $user->idRole= $req->role;
-        $user->email = $req->email;
-        $user->password = bcrypt($req->password);
-        if($user->idRole == 1)
-        {
-            $user->isConfirm = 0;
-        }
-        else  $user->isConfirm = 1;
-        $user->save();
-        return redirect('register')->with('notify', 'Register succesfully!');
-    }
-    public function getlogin()
-    {
-        return view('pages/login');
-    }
+    
     public function getpost()
     {
         $cat = category::all();
@@ -215,11 +181,6 @@ class PageController extends Controller
         $post->save();
         return redirect('post')->with('notify', 'Tin đăng của bạn đang được xét duyệt. Bạn sẽ nhận được thông báo khi thành công');
     }
-    public function getlogout()
-    {
-        Auth::logout();
-        return redirect('index');
-    }
     public function getprofile($id){
         $us = User::find($id);
 
@@ -229,22 +190,7 @@ class PageController extends Controller
     {
         return view('pages/editprofile');
     }
-    public function postlogin(Request $req)
-    {
-        $email = $req->email;
-        $password = $req->password;
-        $this->validate($req,
-        ['email' => 'required',
-        'password' => 'required|min:6'],
-        ['email.required' => "Email cannot empty",
-        'password.required' => "Password cannot empty",
-        'password.length' => "Password lengt must be at least 6 characters"]);
-        if(Auth::attempt(['email' => $req->email, 'password' => $req->password]))
-        {
-            return redirect('index');
-        }
-        else return redirect('login')->with('notify','Wrong email or password. Please try again!  ');
-    }
+    
     
     public function getEditPost($id)
     {

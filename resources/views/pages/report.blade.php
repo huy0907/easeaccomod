@@ -32,7 +32,7 @@
 
   <div style="text-align: center; font-size:30px">Chi tiết</div>
   <br><br>
-<textarea "name="descrition" rows="4" cols="75" required placeholder="Nhập chi tiết về vần đề cần báo cáo tại đây"></textarea>
+<textarea name="descrition" rows="4" cols="75" required placeholder="Nhập chi tiết về vần đề cần báo cáo tại đây"></textarea>
 <br>
 <button class='submit' type="submit" >Submit</button>
             
