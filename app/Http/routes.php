@@ -82,3 +82,5 @@ Route::get('getResult', 'PageController@getResult');
 Route::get('report/{id}','PageController@getReport');
 Route::post('report/{id}', 'ReportController@postReport');
 
+Route::get('cat/{id}', 'PageController@getHeader');
+

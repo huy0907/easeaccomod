@@ -35,11 +35,9 @@
                                             </div>
                                             @endforeach
                                         </div>
-                                        <div class="viewmore"><a href="#">Xem tất cả <i class="fa fa-angle-right"></i></a></div>
                                     </div>
                                 </div>		
                             </div>
                         </div>  
                     </div>           
-                </div>
-	</div>
+</div>

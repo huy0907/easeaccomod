@@ -295,22 +295,6 @@ $(document).ready(function(){
       }
     });
   });
-  @foreach($cat as $row)
-  $("#cat-{{$row->category_id}}").click(function(){
-    var cat = {{$row->category_id}};
-    $("#catID option[value='{{$row->category_id}}']").attr("selected","selected");
-    $.ajax({
-      type: 'get',
-      dataType: 'html',
-      url: '{{url('/getResult')}}',
-      data: 'cat_id=' + cat , 
-      success:function(response){
-        console.log(response);
-        $("#main-body").html(response);
-      }
-    });
-  });
-  @endforeach
   @foreach($prov as $row)
   $("#prov-{{$row->province_id}}").click(function(){
     var province = {{$row->province_id}};
@@ -327,22 +311,6 @@ $(document).ready(function(){
     });
   });
   @endforeach
-  @for($i = 1; $i < 5; $i++)
-  $("#{{$i}}-cat").click(function(){
-    var cat = {{$i}};
-    $("#catID option[value='{{$i}}']").attr("selected","selected");
-    $.ajax({
-      type: 'get',
-      dataType: 'html',
-      url: '{{url('/getResult')}}',
-      data: 'cat_id=' + cat , 
-      success:function(response){
-        console.log(response);
-        $("#main-body").html(response);
-      }
-    });
-  });
-  @endfor
 });
 </script>
 @endsection

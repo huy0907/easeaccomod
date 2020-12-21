@@ -412,5 +412,12 @@ class PageController extends Controller
         
         return view('pages/report', ['post_id' => $id]);
     }
-    
+    public function getHeader($id)
+    {
+        $cat = category::all();
+        $prov=  province::all();
+        $data = post::query();
+        $data->where('category_id', $id);
+        return view('pages/filter', ['data' => $data->get(), 'cat' => $cat, 'cat_id' => $id, 'prov' => $prov]);
+    }
 }

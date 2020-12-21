@@ -9,10 +9,10 @@
                         </div>
                         <div class="menu">
                             <ul class="nav_top">
-                                <li class="" id = "1-cat">Phòng trọ</li>
-                                <li class="" id = "2-cat">Chung cư mini</li>
-                                <li class="" id = "3-cat">Nhà nguyên căn</li>
-                                <li class="" id = "4-cat">Chung cư nguyên căn</li>
+                                <a href = "cat/1"><li class="" id = "1-cat">Phòng trọ</li></a>
+                                <a href = "cat/2"><li class="" id = "2-cat">Chung cư mini</li></a>
+                                <a href = "cat/3"><li class="" id = "3-cat">Nhà nguyên căn</li></a>
+                                <a href = "cat/4"><li class="" id = "4-cat">Chung cư nguyên căn</li></a>
                                 <li class="li_news"><a href="#">Tin tức</a></li>
                             </ul>
                         </div>
@@ -56,22 +56,6 @@
                                 </ul>			
                             <div class="clear"></div>
                     </div>
-                </div>
-                <div class="block-search">
-                    <div class="block-inner">
-                        <div class="container">
-                            <div class="box-search">
-                                <form id="top-search" name="top-search" method="get">
-                                    <label class="search-form-label">
-                                        <input type="search" id="search" placeholder="Tìm kiếm..." />
-                                        <button class="icon"><i class="fa fa-search"></i></button>  	
-                                    </label>
-                                </form>
-                            </div>
-                            <div class="box-search-menu">
-                            </div>
-                        </div>
-                    </div>    
                 </div>
                 <div class="container">
 </div>
