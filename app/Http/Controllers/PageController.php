@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use App\category;
 use App\post;
 use App\comment;
+use App\favorite;
 use App\province;
 use DB;
 use App\User;
@@ -365,5 +366,13 @@ class PageController extends Controller
         $data = post::query();
         $data->where('category_id', $id);
         return view('pages/filter', ['data' => $data->get(), 'cat' => $cat, 'cat_id' => $id, 'prov' => $prov]);
+    }
+    public function getAddFavor(Request $req)
+    {
+        $favor = new favorite;
+        $favor->user_id = $req->user_id;
+        $favor->post_id = $req->post_id;
+        $favor->save();
+        echo "Đã thêm vào danh sách tin yêu thích";
     }
 }

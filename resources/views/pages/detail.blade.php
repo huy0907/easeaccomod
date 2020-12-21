@@ -24,11 +24,14 @@
                                 </div>
                             </div>
                             <div class = "social-date" style = "padding-left:10px;">
-                                <a href = "#" class = "tag sticked">
-                                <i class="far fa-bookmark"></i> Lưu tin
-                                </a>
+                                @if(isset($user))
+                                @if($user->favorite->where('post_id', $post->id)->count() > 0)
+                                <i class="">Đã lưu tin</i> 
+                                @else <i id ="favor" class="">Lưu tin</i> 
+                                @endif
+                                @endif
                                 <a href="report/{{$post->id}}"><i class="fas fa-flag" style="" >
-	                            </i> report
+	                            </i> Report
                                   
                                  </a>
                             </div>
@@ -205,3 +208,25 @@
     </div>
 </div>
 @endsection
+
+@section('script')
+<script>
+$(document).ready(function(){
+    $("#favor").click(function(){
+    @if(isset($user))
+    var user_id = {{$user->id}};
+    var post_id = {{$post->id}};
+    $.ajax({
+      type: 'get',
+      dataType: 'html',
+      url: '{{url('/addFavor')}}',
+      data: 'user_id=' + user_id + "&post_id=" + post_id , 
+      success:function(response){
+        $("#favor").html("Đã lưu");
+      }
+    });
+    @endif
+  });
+});
+</script>
+@endsection     

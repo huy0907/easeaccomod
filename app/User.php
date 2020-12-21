@@ -51,7 +51,7 @@ class User extends Model implements AuthenticatableContract,
     }
     public function favorite()
     {
-        return $this->hasMany('App\favorite', 'user_id', 'id');
+        return $this->hasMany('App\favorite','user_id', 'id');
     }
     public function role()
     {
