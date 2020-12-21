@@ -33,9 +33,9 @@
                                 <div class="block block-4">
                                     <h2>Liên hệ chúng tôi</h2>
                                     <ul>
-                                        <li>Hotline 1: <a href="tel:0911067111">096 2462 692</a></li>
-                                        <li>Hotline 2: <a href="tel:0869988279">086 9988 279</a></li>
-                                        <li>Email: <a href="mailto:info@tromoi.com" target="_blank">info@tromoi.com</a></li>
+                                        <li>Hotline 1: 096 2462 692</li>
+                                        <li>Hotline 2: 086 9988 279</li>
+                                        <li>Email: timtro@gmail.com</li>
                                     </ul>
                                 </div>
                             </div>
