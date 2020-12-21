@@ -13,7 +13,7 @@ body {
 
 
 .page {
-    padding-top: 115.5px;
+    padding-top: 64px;
     width: 100%;
     position: relative;
 }
@@ -509,7 +509,7 @@ b, strong {
 #main-body {
     min-height: 400px;
     z-index: 1;
-    padding-top: 50px;
+    padding-top: 105px;
 }
 
 @media only screen and (max-width: 732px) {

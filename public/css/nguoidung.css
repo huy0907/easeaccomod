@@ -13,7 +13,7 @@ body {
 
 
 .page.main {
-    padding-top: 121px;
+    padding-top: 0px;
 }
 
 .page {
@@ -205,6 +205,7 @@ header .container .container-inner .box-user ul.nav_user li a {
 #main-body {
     min-height: 400px;
     z-index: 1;
+    padding-top: 65px;
 }
 
 @media only screen and (max-width: 1200px) {
