@@ -138,15 +138,12 @@
                     </div>
                     <section class="comment-wrapper clearfix kcblist-inited">
                     @if(isset($user))
-                    <form action = "comment/{{$post->id}}" role = "form">
                     <div class = "formcomment"> 
                         <div class = "form-group">
-                            <textarea class = "textarea" rows = "3" name = "content" method = "post"></textarea>
-                            <input type="hidden" name = "_token" value = "{{csrf_token()}}"/>
+                            <textarea class = "textarea" rows = "3" id = "cmt" name = "content"></textarea>
                         </div>
-                        <button type = "submit" class = "btn btn-primary">Bình luận</button>
+                        <button class = "btn btn-primary" id = "post_cmt">Bình luận</button>
                     </div>
-                    </form>
                     @endif
                     <div class="comment_list">
                         <span class="box-head">Bình luận ({{$count}})</span>
@@ -154,9 +151,9 @@
                             <div class="list-comment" id="listComment">
                                 <ul data-view="listcm"></ul>
                             </div>
-                            <ul>
+                            <ul id = "comment_list">
                             @foreach($post->comment as $row)
-                            <li>{{$row->user->name}}({{$row->updated_at}}) : {{$row->content}}</li></br>
+                            <li>{{$row->user->name}} : {{$row->content}}</li></br>
                             @endforeach
                             </ul>
                         </div>
@@ -225,6 +222,29 @@ $(document).ready(function(){
         $("#favor").html("Đã lưu");
       }
     });
+    @endif
+  });
+  $("#post_cmt").click(function(){
+    @if(isset($user))
+    var comment_content = $('#cmt').val();
+    if(comment_content =="")
+    {
+        alert("Bạn chưa nhập nội dung comment");
+    }
+    else
+    {
+        $.ajax({
+      type: 'get',
+      dataType: 'html',
+      url: '{{url('/comment')}}',
+      data: 'post_id=' + {{$post->id}} + "&content=" + comment_content, 
+      success:function(response){
+        $("#cmt").val("");
+        $("#comment_list").append("<li>{{$user->name}}" + " : " + comment_content+"</li>");
+      }
+    });
+    }
+    
     @endif
   });
 });
