@@ -80,7 +80,7 @@
                         </div>
                     </div>
                     @endif
-                    <div class="module module-hostel">
+                    <div class="module module-hostel" style="top: 10px;/* bottom: 10px; */margin-bottom: 20px;">
                         <div class="module-header">
                             Danh sách tin đã lưu
                         </div>
