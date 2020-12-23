@@ -7,8 +7,6 @@
         <link rel="stylesheet" type="text/css" href="css/style-index.css">
         <script src = "https://code.jquery.com/jquery-3.5.1.min.js" type = "text/javascript"></script> 
         <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" data-auto-a11y="true"></script>
-        <link rel="stylesheet" href=".https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-        <link rel="stylesheet" href=".https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
         @yield('css')
     </head>
     <body>
