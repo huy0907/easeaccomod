@@ -9,8 +9,8 @@
 <div class="search-bar-filter">
     <div class = "container">
         <div class="row">
-            <div class="col-xs-6 col-sm-3">
-                <label class="search_field_item_label">Chọn danh mục</label>
+            <div class="col-xs-6 col-sm-2">
+            <label class="search_field_item_label">Chọn danh mục</label>
                 <select id="catID">
                     <option value="">Chọn danh mục</option>
                     @foreach($cat_list as $cList)
@@ -18,8 +18,8 @@
                     @endforeach
                 </select>
             </div>
-            <div class="col-xs-6 col-sm-3">
-                <label class="search_field_item_label">Chọn tỉnh thành</label>
+            <div class="col-xs-6 col-sm-2">
+            <label class="search_field_item_label">Chọn tỉnh thành</label>
                 <select id="provID">
                     <option value="">Chọn tỉnh thành</option>
                     @foreach($prov_list as $row)
@@ -27,8 +27,8 @@
                     @endforeach
                 </select>
             </div>
-            <div class="col-xs-6 col-sm-3">
-                <label class="search_field_item_label">Chọn diện tích</label>
+            <div class="col-xs-6 col-sm-2">
+            <label class="search_field_item_label">Chọn diện tích</label>
                 <select id="area">
                     <option value="">Chọn diện tích</option>
                     <option value="0-20">Dưới 20 m2</option>
@@ -37,14 +37,23 @@
                     <option value="50-100">50-100 m2</option>
                 </select>
             </div>
-            <div class="col-xs-6 col-sm-3">
-                <label class="search_field_item_label">Chọn diện tích</label>
+            <div class="col-xs-6 col-sm-2">
+            <label class="search_field_item_label">Chọn mức giá</label>
                 <select id="priceID">
                     <option value="">Chọn tầm giá</option>
                     <option value="0-1">0-1 triệu</option>
                     <option value="1-3">1-3 triệu</option>
                     <option value="3-5">3-5 triệu</option>
                     <option value="5-10">5-10 triệu</option>
+                </select>
+            </div>
+            <div class="col-xs-6 col-sm-2">
+            <label class="search_field_item_label">Thêm</label>
+                <select id="more">
+                    <option value="">Thêm tiêu chí</option>
+                    <option value="1">Phòng trọ</option>
+                    <option value="2">Ký túc xá</option>
+                    
                 </select>
             </div>
 
@@ -56,7 +65,7 @@
                     </div>
                 </div>
             </div>
-            <div class="box-search">
+            <div class="box-search" >
                 <form id="top-search" name="top-search" method="get">
                     <label class="search-form-label">
                         <input type="search" id="search" placeholder="Tìm kiếm..." />
