@@ -132,7 +132,6 @@ input[type="number"], input[type="text"], input[type="password"], textarea, text
 }
 
 button.btn, .btn {
-    height: 44px;
     margin: 0;
     padding: 0 40px;
     vertical-align: middle;
