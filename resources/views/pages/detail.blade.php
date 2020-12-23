@@ -140,7 +140,7 @@
                     @if(isset($user))
                     <div class = "formcomment"> 
                         <div class = "form-group">
-                            <textarea class = "textarea" rows = "3" id = "cmt" name = "content"></textarea>
+                            <textarea class = "textarea" rows = "3" cols = "60"  id = "cmt" name = "content"></textarea>
                         </div>
                         <button class = "btn btn-primary" id = "post_cmt">Bình luận</button>
                     </div>
