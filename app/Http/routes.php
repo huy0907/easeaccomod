@@ -70,7 +70,7 @@ Route::get('register', 'LoginController@getregister');
 Route::post('register', 'LoginController@postregister');
 
 Route::get('profile/{id}', 'PageController@getprofile');
-Route::get('comment/{id}', 'CommentController@postComment');
+Route::get('comment', 'CommentController@postComment');
 Route::get('filter', 'PageController@getFilter');
 Route::get('getResult', 'PageController@getResult');
 Route::get('cat/{id}', 'PageController@getHeader');

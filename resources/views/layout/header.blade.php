@@ -29,26 +29,14 @@
                                     <li  class="li_admin"><a class="login frm-login" href="">{{$user->name}}</a>
                                         <ul class="drop_menu">
                                         <li class="drop_menu_child"><a href="#" >Tài Khoản:<b>{{$user->name}}</b></a></li>
-                                            <li class="drop_menu_child"><a href="#">Số Dư:<b>0VNĐ</b></a></li>
                                             <li><button><a href="profile/{{$user->id}}">Trang cá nhân</a></button></li>
                                             <hr>
-                                            <li class="drop_menu_child"><a href="#">Nạp Tiền</a></li>
                                             <li class="drop_menu_child"><a href="#">Quản lý tin</a></li>
                                             <li class="drop_menu_child"><a href="#">Đăng tin</a></li>
                                             <li class="drop_menu_child"><a href="#">Tin đã lưu</a></li>
-                                            <li class="drop_menu_child"><a href="#">Lịch sử xem tin</a></li>
-                                            <hr>
-                                            <li class="drop_menu_child"><a href="#">Lịch sử giao dịch</a></li>
-                                            <hr>
                                             <li class="drop_menu_child"><a href="#">Quản lý tài khoản</a></li>
-                                            <li class="drop_menu_child"><a href="#">Thay mật khẩu</a></li>
                                             <hr>
-                                            <li class="drop_menu_child"><a href="#">Hướng dẫn sử dụng</a></li>
-                                            <li class="drop_menu_child"><a href="#">Báo giá</a></li>
-
-                                           
-                                            
-                                            
+                                            <li class="drop_menu_child"><a href="#">Hướng dẫn sử dụng</a></li>     
                                         </ul>
                                     </li>
                                     <li class="li_login"><a class="login frm-login" href="logout">Đăng xuất</a></li>

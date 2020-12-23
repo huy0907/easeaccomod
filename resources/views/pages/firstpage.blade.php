@@ -301,6 +301,7 @@ $(document).ready(function(){
     var price = $('#priceID').val();
     var area = $('#area').val();
     var province = $('#provID').val();
+    $("#main-body").html('<div id="loading" class = "fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="" >Loading</div>');
     $.ajax({
       type: 'get',
       dataType: 'html',
@@ -321,6 +322,21 @@ $(document).ready(function(){
       dataType: 'html',
       url: '{{url('/getResult')}}',
       data: 'province=' + province , 
+      success:function(response){
+        console.log(response);
+        $("#main-body").html(response);
+      }
+    });
+  });
+  @endforeach
+  @foreach($cat as $row)
+  $("#cat-{{$row->category_id}}").click(function(){
+    $("#catID option[value='{{$row->category_id}}']").attr("selected","selected");
+    $.ajax({
+      type: 'get',
+      dataType: 'html',
+      url: '{{url('/getResult')}}',
+      data: 'cat_id=' +  {{$row->category_id}}, 
       success:function(response){
         console.log(response);
         $("#main-body").html(response);

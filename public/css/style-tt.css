@@ -1,0 +1,174 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    font-weight: 300;
+    color: #888;
+    line-height: 28px;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.main {
+    width: 100%;
+    padding-top: 30px;
+}
+
+.main .container {
+    width: 75%;
+}
+.container {
+    margin: 0 auto;
+    height: 100%;
+}
+
+.main .container .panel {
+    margin: 20px 0;
+    background-color: #fff;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+.main .container .panel .panel-content .heading {
+    background: #3b5998;
+    color: #fff;
+    padding: 40px 110px;
+    border-radius: 4px 4px 0 0;
+    -webkit-border-radius: 4px 4px 0 0;
+    font-size: 22px;
+    font-weight: 300;
+}
+
+.main .container .panel .panel-content .heading h2 {
+    color: #FFF;
+    text-align: left;
+}
+h1, h2 {
+    margin-top: 10px;
+    font-size: 34px;
+    font-weight: 100;
+    color: #555;
+    line-height: 48px;
+}
+
+.main .container .panel .panel-content .content {
+    padding: 15px;
+    color: #89817e;
+}
+
+.main .container .panel .panel-content .content .frame {
+    background-color: #f8f8f8;
+    padding: 15px 15px 5px;
+    border: 1px solid #eee;
+    border-top-width: 2px;
+    min-height: 0;
+}
+
+.main .container .panel .panel-content .content .frame .inforow {
+    padding: 0 0 10px;
+    border-bottom: 0;
+    position: relative;
+}
+.main .container .panel .panel-content .content .inforow {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.main .container .panel .panel-content .content .inforow label {
+    font-weight: 400;
+}
+.main .container .panel .panel-content .content .inforow > label {
+    width: 100%;
+    font-weight: 500;
+    font-size: 18px;
+}
+label {
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+.main .container .panel .panel-content .content .frame .inforow .infotext {
+    margin: 0 0 0 150px;
+}
+
+.clear {
+    clear: both;
+}
+
+.main .container .panel .panel-content .content .frame .inforow .subform_input {
+    border: 1px solid #aaa;
+    width: 100%;
+}
+input[type="number"], input[type="text"], input[type="password"], textarea, textarea.form-control {
+    height: 44px;
+    margin: 0;
+    padding: 0 15px;
+    vertical-align: middle;
+    background: #fff;
+    border: 3px solid #fff;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 44px;
+    color: #888;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    -o-transition: all .3s;
+    -moz-transition: all .3s;
+    -webkit-transition: all .3s;
+    -ms-transition: all .3s;
+    transition: all .3s;
+}
+
+button.btn, .btn {
+    margin: 0;
+    padding: 0 40px;
+    vertical-align: middle;
+    background: #3b5998;
+    border: 1px solid #fff;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 44px;
+    color: #fff;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    text-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    -o-transition: all .3s;
+    -moz-transition: all .3s;
+    -webkit-transition: all .3s;
+    -ms-transition: all .3s;
+    transition: all .3s;
+}
+
+.main .container .panel .panel-content .content .frame .inforow.right .btn.cancel {
+    margin-left: 10px;
+    background: #555;
+}
+.main .container .panel .panel-content .content .inforow a {
+    float: right;
+}
+
+a {
+    color: #3b5998;
+    text-decoration: none;
+    -moz-transition: 0.3s all ease;
+    -o-transition: 0.3s all ease;
+    -webkit-transition: 0.3s all ease;
+    transition: 0.3s all ease;
+}
