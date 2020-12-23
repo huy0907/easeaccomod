@@ -146,7 +146,7 @@
                     </div>
                     @endif
                     <div class="comment_list">
-                        <span class="box-head">Bình luận ({{$count}})</span>
+                        <span class="box-head" id = "count_cmt">Bình luận ({{$count}})</span>
                         <div class = "commentlist">
                             <div class="list-comment" id="listComment">
                                 <ul data-view="listcm"></ul>
@@ -227,6 +227,7 @@ $(document).ready(function(){
   $("#post_cmt").click(function(){
     @if(isset($user))
     var comment_content = $('#cmt').val();
+    var count_cmt = {{$count}};
     if(comment_content =="")
     {
         alert("Bạn chưa nhập nội dung comment");
@@ -241,6 +242,8 @@ $(document).ready(function(){
       success:function(response){
         $("#cmt").val("");
         $("#comment_list").append("<li>{{$user->name}}" + " : " + comment_content+"</li>");
+        count_cmt =  count_cmt + 1;
+        $("#count_cmt").html("Bình luận (" + count_cmt + ")");
       }
     });
     }
