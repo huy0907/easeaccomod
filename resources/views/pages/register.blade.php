@@ -23,6 +23,8 @@
             @endif
             <form action = "register" method = "POST">
             <input type="hidden" name = "_token" value = "{{csrf_token()}}"/>
+                <p>Tên</p>
+                <input type = "name" name="name" placeholder="Nhập tên của bạn">
                 <p>Email</p>
                 <input type="email" name="email" placeholder="Nhập email của bạn">
                 <p>Mật khẩu</p>

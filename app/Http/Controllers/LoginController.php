@@ -46,7 +46,9 @@ class LoginController extends Controller
         'password.length' => "Password lengt must be at least 6 characters"]);
         if(Auth::attempt(['email' => $req->email, 'password' => $req->password]))
         {
-           return redirect(session('link'));
+            if(session('link') == "http://localhost/easeaccomod/public/register")
+            return redirect('index');
+            else return redirect(session('link'));
         }
         else return redirect('login')->with('notify','Wrong email or password. Please try again!  ');
     }
@@ -70,6 +72,7 @@ class LoginController extends Controller
         
         ]);
         $user = new User;
+        $user->name = $req->name;
         $user->idRole= $req->role;
         $user->email = $req->email;
         $user->password = bcrypt($req->password);

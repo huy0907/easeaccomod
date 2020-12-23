@@ -55,7 +55,7 @@ class PostController extends Controller
         $post->price = $req->price;
         $post->description = $req->description;
         $post->address = $req->address;
-        $post->isConfirm = 1;
+        $post->isConfirm = 0;
         
         
         if($req->hasFile('image'))

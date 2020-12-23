@@ -58,7 +58,12 @@ class PageController extends Controller
     {
         $cat = category::all();
         $province = province::all();
-        return view('pages/postnews', ['cat'=> $cat, 'province' => $province]);
+
+        if(Auth::user()->isConfirm == 0)
+        {
+            return view("pages/refuse");
+        }
+        else return view('pages/postnews', ['cat'=> $cat, 'province' => $province]);
     }
 
     public function postPost(Request $req)
