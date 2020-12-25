@@ -64,8 +64,8 @@ header .container .container-inner .logo img {
 
 img {
     max-width: 100%;
-    height: auto;
-    width: auto\9;
+    height: 486px;
+    width: 100%;
 }
 
 header .container .container-inner .menu ul.nav_top {
