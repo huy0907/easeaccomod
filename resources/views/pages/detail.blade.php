@@ -17,10 +17,9 @@
                         <div class="moduletitle">
                             <div class="blog-title">
                                 <div class="title">
-                                        <span class="type">{{$post->category->name}}</span>
-                                        <h3>{{$post->name}}</h3>
-                                        <a href="#" class="province">{{$post->province->name}}</a>
-                                    </div>
+                                    <span class="type">{{$post->category->name}}</span>
+                                    <h3>{{$post->name}}</h3>
+                                    <a href="#" class="province">{{$post->province->name}}</a>
                                 </div>
                             </div>
                             <div class = "social-date" style = "padding-left:10px;">
@@ -41,49 +40,49 @@
                                 <div class="line"></div>
                                 <h2>Hình ảnh</h2>
                                 <div class="slideshow-container">
-                                                @foreach (explode('?',$post->image) as $row)
-                                                <div class="mySlides fade">
-                                                  <img src="image/{{explode('?',$row)[0]}}" style="width:100%" >
-                                                </div>
-                                                @endforeach
-                                                <div>
-                                                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                                                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
-                                                </div>
-                                              <br>
-                                              <div style="text-align:center">
-                                                @for($i = 1; $i <= count(explode('?',$post->image)); $i++)
-                                                <span class="dot" onclick="currentSlide(i)"></span>
-                                                @endfor
-                                              </div>
-                                              <script>
-                                                var slideIndex = 1;
-                                                showSlides(slideIndex);
-                                                
-                                                function plusSlides(n) {
-                                                  showSlides(slideIndex += n);
-                                                }
-                                                
-                                                function currentSlide(n) {
-                                                  showSlides(slideIndex = n);
-                                                }
-                                                
-                                                function showSlides(n) {
-                                                  var i;
-                                                  var slides = document.getElementsByClassName("mySlides");
-                                                  var dots = document.getElementsByClassName("dot");
-                                                  if (n > slides.length) {slideIndex = 1}    
-                                                  if (n < 1) {slideIndex = slides.length}
-                                                  for (i = 0; i < slides.length; i++) {
-                                                      slides[i].style.display = "none";  
-                                                  }
-                                                  for (i = 0; i < dots.length; i++) {
-                                                      dots[i].className = dots[i].className.replace(" active", "");
-                                                  }
-                                                  slides[slideIndex-1].style.display = "block";  
-                                                  dots[slideIndex-1].className += " active";
-                                                }
-                                                </script>
+                                    @foreach (explode('?',$post->image) as $row)
+                                    <div class="mySlides fade">
+                                        <img src="image/{{explode('?',$row)[0]}}" style="width:400px height:200px" >
+                                    </div>
+                                    @endforeach
+                                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                                </div>
+                                <br>
+                                <div style="text-align:center">
+                                    @for($i = 1; $i <= count(explode('?',$post->image)); $i++)
+                                    <span class="dot" onclick="currentSlide(i)"></span>
+                                    @endfor
+                                </div>
+                                <script>
+                                    var slideIndex = 1;
+                                    showSlides(slideIndex);
+                                    
+                                    function plusSlides(n) {
+                                        showSlides(slideIndex += n);
+                                    }
+                                    
+                                    function currentSlide(n) {
+                                        showSlides(slideIndex = n);
+                                    }
+                                    
+                                    function showSlides(n) {
+                                        var i;
+                                        var slides = document.getElementsByClassName("mySlides");
+                                        var dots = document.getElementsByClassName("dot");
+                                        if (n > slides.length) {slideIndex = 1}    
+                                        if (n < 1) {slideIndex = slides.length}
+                                        for (i = 0; i < slides.length; i++) {
+                                            slides[i].style.display = "none";  
+                                        }
+                                        for (i = 0; i < dots.length; i++) {
+                                            dots[i].className = dots[i].className.replace(" active", "");
+                                        }
+                                        slides[slideIndex-1].style.display = "block";  
+                                        dots[slideIndex-1].className += " active";
+                                    }
+                                </script>
+                                    
                             </div>
                                 <div class="line"></div>
                                 <div class="info-wrapper">
