@@ -49,14 +49,90 @@
             </div>
             <div class="col-xs-6 col-sm-2">
             <label class="search_field_item_label">Thêm</label>
-                <select id="more">
-                    <option value="">Thêm tiêu chí</option>
-                    <option value="1">Phòng trọ</option>
-                    <option value="2">Ký túc xá</option>
+            <style> 
+                .multipleSelection { 
+                     width: 145px;  
+                } 
+  
+                .selectBox { 
+                     position: relative; 
+                } 
+  
+                .selectBox select { 
+                    width: 100%; 
                     
+                 } 
+  
+                 .overSelect { 
+                    position: absolute; 
+                    left: 0; 
+                    right: 0; 
+                    top: 0; 
+                    bottom: 0; 
+                 } 
+  
+                 #checkBoxes { 
+                    background-color:white;
+                    display: none; 
+                    border: 0.5px black solid; 
+                } 
+  
+                #checkBoxes label { 
+                    display: block; 
+                } 
+  
+                 #checkBoxes label:hover { 
+                    background-color: #0062C4; 
+        } 
+    </style> 
+                <form>
+                <div class="multipleSelection">
+                <div class="selectBox" 
+                onclick="showCheckboxes()">
+                <select id="more">
+                    <option value="" > Thêm tiêu chí</option>
                 </select>
+            
+                <div class="overSelect"></div>
+                </div>
+                <div id="checkBoxes"> 
+                <label for="first"> 
+                    <input type="checkbox" id="first" /> 
+                    điều kiện 1
+                </label> 
+                  
+                <label for="second"> 
+                    <input type="checkbox" id="second" /> 
+                    điều kiện 2
+                </label> 
+                <label for="third"> 
+                    <input type="checkbox" id="third" /> 
+                    điều kiện 3
+                </label> 
+                <label for="fourth"> 
+                    <input type="checkbox" id="fourth" /> 
+                    điều kiện 4
+                </label> 
+            </div> 
+                </div>
+                </form>
             </div>
-
+            <script> 
+        var show = true; 
+  
+        function showCheckboxes() { 
+            var checkboxes =  
+                document.getElementById("checkBoxes"); 
+  
+            if (show) { 
+                checkboxes.style.display = "block"; 
+                show = false; 
+            } else { 
+                checkboxes.style.display = "none"; 
+                show = true; 
+            } 
+        } 
+    </script>
             <div class="col-sm-6 hidden-xs" style="padding-top:12.5px">
                 <div class="row">
 
