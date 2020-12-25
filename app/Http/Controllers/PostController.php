@@ -62,12 +62,18 @@ class PostController extends Controller
         
         if($req->hasFile('image'))
         {
-            $file = $req->file('image');
-            $name = $file->getClientOriginalName();
-
-            $name = str_random(4)."_".$name;
-            $file->move("image", $name);
-            $post->image = $name;
+            $imageNameArr = [];
+            foreach ($req->image as $file) {
+                $imageName = $file->getClientOriginalName();
+                $imageName = str_random(4)."_".$imageName;
+                $file->move("image", $imageName);
+                $imageNameArr[] = $imageName;
+            }
+            
+            
+            // $name = str_random(4)."_".$name;
+            // $file->move("image", $name);
+            $post->image = implode("?",$imageNameArr);
         }
         else
         {
@@ -152,6 +158,8 @@ class PostController extends Controller
         else $post->bus = 0;
         $post->save();
         return redirect('admin/post/add')->with('notify', 'Add post sucessfully!');
+        
+        
     }
 
     /**

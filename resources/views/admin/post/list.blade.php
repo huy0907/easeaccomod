@@ -32,7 +32,7 @@
                             <tr class="odd gradeX" align="center">
                                 <td>{{$row->id}}</td>
                                 <td><p>{{$row->name}}</p>
-                                <img width = "100px" height = "100px" src = "image/{{$row->image}}">
+                                <img width = "100px" height = "100px" src = "image/{{explode('?',$row->image)[0]}}">
                                 </td>
                                 <td>{{$row->category->name}}
                                 <td>{{$row->address}}</td>

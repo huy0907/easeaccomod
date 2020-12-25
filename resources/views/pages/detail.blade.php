@@ -41,27 +41,20 @@
                                 <div class="line"></div>
                                 <h2>Hình ảnh</h2>
                                 <div class="slideshow-container">
+                                                @foreach (explode('?',$post->image) as $row)
                                                 <div class="mySlides fade">
-                                                  <div class="numbertext">1 / 3</div>
-                                                  <img src="./images/background-login.jpg" style="width:100%">
+                                                  <img src="image/{{explode('?',$row)[0]}}" style="width:400px height:200px" >
                                                 </div>
-                                                <div class="mySlides fade">
-                                                  <div class="numbertext">2 / 3</div>
-                                                  <img src="./images/background.jpg" style="width:100%">
-                                                </div>
-                                                <div class="mySlides fade">
-                                                  <div class="numbertext">3 / 3</div>
-                                                  <img src="./images/logomain.jpg" style="width:100%">
-                                                 
+                                                @endforeach
                                                 </div>
                                                 <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
                                                 <a class="next" onclick="plusSlides(1)">&#10095;</a>
                                               </div>
                                               <br>
                                               <div style="text-align:center">
-                                                <span class="dot" onclick="currentSlide(1)"></span>
-                                                <span class="dot" onclick="currentSlide(2)"></span>
-                                                <span class="dot" onclick="currentSlide(3)"></span>
+                                                @for($i = 1; $i <= count(explode('?',$post->image)); $i++)
+                                                <span class="dot" onclick="currentSlide(i)"></span>
+                                                @endfor
                                               </div>
                                               <script>
                                                 var slideIndex = 1;

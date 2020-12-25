@@ -51,7 +51,7 @@
                             </div>
                             <div class="form-group">
                                 <label>Image</label>
-                                <input class="form-control" name="image" type = "file" />
+                                <input class="form-control" name="image[]" type = "file" multiple />
                             </div>
                             <div class="form-group">
                                 <label>Description</label>
