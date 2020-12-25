@@ -31,6 +31,8 @@
                                         <li class="drop_menu_child"><a href="#" >Tài Khoản:<b>{{$user->name}}</b></a></li>
                                             <li><button><a href="profile/{{$user->id}}">Trang cá nhân</a></button></li>
                                             <hr>
+                                            <li> 
+                                            <li class="drop_menu_child"><a href="notify">Thông báo</a></li>
                                             <li class="drop_menu_child"><a href="#">Quản lý tin</a></li>
                                             <li class="drop_menu_child"><a href="#">Đăng tin</a></li>
                                             <li class="drop_menu_child"><a href="#">Tin đã lưu</a></li>

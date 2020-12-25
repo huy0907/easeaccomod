@@ -13,7 +13,12 @@
                             <!-- /input-group -->
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                            <a href=""><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                        </li>
+
+                        <li>
+                            <a href="admin/statistic"><i class="fa fa-bar-chart-o fa-fw"></i> Statistic<span class="fa arrow"></span></a>
+                            <!-- /.nav-second-level -->
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Categories<span class="fa arrow"></span></a>
@@ -44,6 +49,11 @@
 
                         <li>
                             <a href="admin/pendinguser/list"><i class="fa fa-bar-chart-o fa-fw"></i> Pending User<span class="fa arrow"></span></a>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        
+                        <li>
+                            <a href="admin/pendingpost/list"><i class="fa fa-bar-chart-o fa-fw"></i> Pending Post<span class="fa arrow"></span></a>
                             <!-- /.nav-second-level -->
                         </li>
 
