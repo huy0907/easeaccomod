@@ -17,6 +17,7 @@ Route::get('/', function () {
 Route::get('/admin/login','UserController@getAdminLogin');
 Route::post('/admin/login','UserController@postAdminLogin');
 Route::get('/admin/logout','UserController@getAdminLogout');
+Route::get('/admin/statistic', 'PostController@getStatistic' )->middleware('adminLogin');
 Route::group(['prefix'=>'admin', 'middleware' => 'adminLogin'], function(){
     //admin/category/list
     Route::group(['prefix'=>'category'], function(){
@@ -52,6 +53,13 @@ Route::group(['prefix'=>'admin', 'middleware' => 'adminLogin'], function(){
         Route::get('delete/{id}', 'PendingUserController@getDelete');
         Route::get('recover/{id}', 'PendingUserController@getRecover');
         Route::get('refuse/{id}', 'PendingUserController@getRefuse');
+    });
+    Route::group(['prefix'=>'pendingpost'], function(){
+        Route::get('list', 'PendingPostController@getList');
+        Route::get('accept/{id}', 'PendingPostController@getAccept');
+        Route::get('delete/{id}', 'PendingPostController@getDelete');
+        Route::get('recover/{id}', 'PendingPostController@getRecover');
+        Route::get('refuse/{id}', 'PendingPostController@getRefuse');
     });
 
     Route::group(['prefix'=>'comment'], function(){

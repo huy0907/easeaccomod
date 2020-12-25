@@ -13,7 +13,7 @@ use App\User;
 use App\roles;
 use App\notify;
 
-class PendingUserController extends Controller
+class PendingPostController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -22,40 +22,41 @@ class PendingUserController extends Controller
      */
     public function getList()
     {
-        $user = User::where('isConfirm', '=', '0')->get();
-        $refuse = User::where('isConfirm', '=', '2')->get();
-        return view('admin/pendinguser/list', ['user' => $user, 'refuse' => $refuse]);
+        $user = post::where('isConfirm', '=', '0')->get();
+        $refuse = post::where('isConfirm', '=', '2')->get();
+        return view('admin/pendingpost/list', ['post' => $user, 'refuse' => $refuse]);
     }
 
     public function getAccept($id)
     {
-        $user = User::find($id);
-        $user->isConfirm = 1;
-        $user->save();
+        $post = post::find($id);
+        $post->isConfirm = 1;
+        $post->save();
+
         $not = new notify;
         $not->user_id = $user->id;
-        $not->state = 1;
+        $not->state = 2;
         $not->save();
         return $this->getList();
     }
     public function getRefuse($id)
     {
-        $user = User::find($id);
-        $user->isConfirm = 2;
-        $user->save();
+        $post = post::find($id);
+        $post->isConfirm = 2;
+        $post->save();
         return $this->getList();
     }
     public function getRecover($id)
     {
-        $user = User::find($id);
-        $user->isConfirm = 0;
-        $user->save();
+        $post = post::find($id);
+        $post->isConfirm = 0;
+        $post->save();
         return $this->getList();
     }
     public function getDelete($id)
     {
-        $user = User::find($id);
-        $user->delete();
+        $post = post::find($id);
+        $post->delete();
         return $this->getList();
     }
 }

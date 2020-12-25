@@ -10,7 +10,9 @@ use App\category;
 use App\post;
 use App\comment;
 use App\facility;
+use App\user;
 use App\province;
+use DB;
 use Illuminate\Support\Facades\Auth;
 class PostController extends Controller
 {
@@ -312,8 +314,17 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function getStatistic()
     {
-        //
+        $cat_info = post::groupBy('category_id')->select('category_id', DB::raw('count(*) as total'))->get();
+        $prov_info = post::groupBy('province_id')->select('province_id', DB::raw('count(*) as total'))->get();
+        $post_count = post::count();
+        $user_count = User::count();
+        $view_count = post::sum('views');
+        $most_view = post::orderBy('views', 'desc')->take(5)->get();
+        return view('admin/post/statistic', ["cat" => $cat_info, "prov" => $prov_info,
+         "post_count" => $post_count, "view_count" => $view_count, "most_view" => $most_view,
+         "user_count" => $user_count
+         ]);
     }
 }
