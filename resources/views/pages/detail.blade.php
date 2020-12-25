@@ -43,13 +43,13 @@
                                 <div class="slideshow-container">
                                                 @foreach (explode('?',$post->image) as $row)
                                                 <div class="mySlides fade">
-                                                  <img src="image/{{explode('?',$row)[0]}}" style="width:400px height:200px" >
+                                                  <img src="image/{{explode('?',$row)[0]}}" style="width:100%" >
                                                 </div>
                                                 @endforeach
+                                                <div>
+                                                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                                                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
                                                 </div>
-                                                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                                                <a class="next" onclick="plusSlides(1)">&#10095;</a>
-                                              </div>
                                               <br>
                                               <div style="text-align:center">
                                                 @for($i = 1; $i <= count(explode('?',$post->image)); $i++)
@@ -84,6 +84,7 @@
                                                   dots[slideIndex-1].className += " active";
                                                 }
                                                 </script>
+                            </div>
                                 <div class="line"></div>
                                 <div class="info-wrapper">
                                     <dl><dt>Địa chỉ:</dt><dd> {{$post->address}}</dd></dl>
