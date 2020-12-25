@@ -57,4 +57,8 @@ class User extends Model implements AuthenticatableContract,
     {
         return $this->belongsTo('App\roles', 'idRole', 'id');
     }
+    public function notify()
+    {
+        return $this->hasMany('App\notify', 'user_id','id');
+    }
 }

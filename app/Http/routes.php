@@ -83,3 +83,4 @@ Route::post('post', 'PageController@postPost' )->middleware('logincheck');
 Route::get('report/{id}','PageController@getReport')->middleware('logincheck');
 Route::post('report/{id}', 'ReportController@postReport')->middleware('logincheck');
 Route::get('addFavor','PageController@getAddFavor')->middleware('logincheck');
+Route::get('notify', 'PageController@getNotify')->middleware('logincheck');

@@ -219,6 +219,7 @@ $(document).ready(function(){
       url: '{{url('/addFavor')}}',
       data: 'user_id=' + user_id + "&post_id=" + post_id , 
       success:function(response){
+        alert("Đã thêm vào danh sách đã lưu");
         $("#favor").html("Đã lưu");
       }
     });

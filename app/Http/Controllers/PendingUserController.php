@@ -11,6 +11,8 @@ use App\post;
 use App\comment;
 use App\User;
 use App\roles;
+use App\notify;
+
 class PendingUserController extends Controller
 {
     /**
@@ -30,6 +32,9 @@ class PendingUserController extends Controller
         $user = User::find($id);
         $user->isConfirm = 1;
         $user->save();
+        $not = new notify;
+        $not->user_id = $user->id;
+        $not->state = 1;
         return $this->getList();
     }
     public function getRefuse($id)

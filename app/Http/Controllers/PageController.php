@@ -11,6 +11,7 @@ use App\post;
 use App\comment;
 use App\favorite;
 use App\province;
+use App\notify;
 use DB;
 use App\User;
 use Illuminate\Support\Facades\Auth;
@@ -379,5 +380,9 @@ class PageController extends Controller
         $favor->post_id = $req->post_id;
         $favor->save();
         echo "Đã thêm vào danh sách tin yêu thích";
+    }
+    public function getNotify()
+    {
+        return view('pages/notify');
     }
 }
