@@ -82,6 +82,8 @@
                                         dots[slideIndex-1].className += " active";
                                     }
                                 </script>
+                                    
+                            </div>
                                 <div class="line"></div>
                                 <div class="info-wrapper">
                                     <dl><dt>Địa chỉ:</dt><dd> {{$post->address}}</dd></dl>
