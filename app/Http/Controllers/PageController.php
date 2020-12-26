@@ -428,4 +428,9 @@ class PageController extends Controller
     {
         return view('pages/notify');
     }
+    public function getDeletepost(Request $req)
+    {
+        $post = post::find($req->id);
+        $post->delete();
+    }
 }

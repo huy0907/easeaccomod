@@ -14,14 +14,14 @@
                         <div class="module-content">
                             <form action="" id="appForm" name="appForm" enctype="multipart/form-data" method="post">	
                                 @foreach($user->post as $row)
-                                <table border="0" cellspacing="0" cellpadding="0" class="manager">
+                                <table border="0" cellspacing="0" cellpadding="0" class="manager" id = "table_{{$row->id}}">
                                     <tbody>
                                         <tr>
                                             <td>
-                                                <a class="title" href="detail/{{$row}}" target="_blank">{{$row->name}}</a><br>
+                                                <a class="title" href="detail/{{$row->id}}" target="_blank">{{$row->name}}</a><br>
                                                 <p class="block_action">
-                                                    <a href="detail/{{$row}}" class="action edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Sửa tin</a>
-                                                    <a href="javascript:void(0)" class="action trash"><i class="fa fa-trash-o" aria-hidden="true"></i> Xoá tin</a>
+                                                <a href="editpost/{{$row->id}}"><i class="fas fa-edit"></i> Sửa tin</i></a>
+                                                <i id = "{{$row->id}}_post_edit"><i class="fas fa-trash-alt"></i>Xoá tin</i>
                                                 <p class="detail">Mã tin: <span>{{$row->id}}</span></p>
                                                 <p class="detail block_hits">Lượt xem tin: <span>{{$row->views}}</span></p>
                                                 <p class="detail block_time"></p>
@@ -32,20 +32,36 @@
                                 </table>
                                 @endforeach
                             </form>
-                            <script type="text/javascript">
-                                function OnSubmitForm(url) { 
-                                    var flag = confirm('Bạn có đồng ý xóa tin này không?');
-                                    if(flag == true){
-                                        document.appForm.action = url;
-                                        document.appForm.submit();
-                                        return true;
-                                    }
-                                }
-                                Guest.OptionTin();
-                            </script>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+@endsection
+
+@section('script')
+<script>
+$(document).ready(function(){
+  @foreach($user->post as $row)
+  $("#{{$row->id}}_post_edit").click(function(){
+    var id = {{$row->id}};
+    var flag = confirm("Bạn có chắc chắn xóa tin này???");
+    if(flag == true)
+    {
+    $.ajax({
+      type: 'get',
+      dataType: 'html',
+      url: '{{url('/deletepost')}}',
+      data: 'id=' + id,
+      success:function(response){
+        console.log(response);
+        alert("Đã xóa");
+        $("#table_{{$row->id}}").html("");
+      }
+    });
+    }
+  });
+  @endforeach
+});
+</script>
 @endsection
