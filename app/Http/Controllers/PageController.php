@@ -196,6 +196,10 @@ class PageController extends Controller
 
         return view('pages/profile', ['us' => $us]);
     }
+    public function getSavePost()
+    {
+        return view('pages/savepost');
+    }
     public function getEdit($id)
     {
         return view('pages/editprofile');

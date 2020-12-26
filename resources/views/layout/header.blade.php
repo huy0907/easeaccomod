@@ -34,8 +34,8 @@
                                             <li> 
                                             <li class="drop_menu_child"><a href="notify">Thông báo</a></li>
                                             <li class="drop_menu_child"><a href="#">Quản lý tin</a></li>
-                                            <li class="drop_menu_child"><a href="#">Đăng tin</a></li>
-                                            <li class="drop_menu_child"><a href="#">Tin đã lưu</a></li>
+                                            <li class="drop_menu_child"><a href="post">Đăng tin</a></li>
+                                            <li class="drop_menu_child"><a href="savepost">Tin đã lưu</a></li>
                                             <li class="drop_menu_child"><a href="#">Quản lý tài khoản</a></li>
                                             <hr>
                                             <li class="drop_menu_child"><a href="#">Hướng dẫn sử dụng</a></li>     
