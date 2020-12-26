@@ -52,8 +52,8 @@
                                             <td>
                                                 <a class="title" href="detail/{{$row}}" target="_blank">{{$row->name}}</a><br>
                                                 <p class="block_action">
-                                                    <a href="detail/{{$row}}" class="action edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Sửa tin</a>
-                                                    <a href="javascript:void(0)" class="action trash"><i class="fa fa-trash-o" aria-hidden="true"></i> Xoá tin</a>
+                                                    <a href="detail/{{$row}}" class="action edit"><i class="fas fa-edit" aria-hidden="true"></i> Sửa tin</a>
+                                                    <a href="javascript:void(0)" class="action trash"><i class="fas fa-trash-alt" aria-hidden="true"></i> Xoá tin</a>
                                                 <p class="detail">Mã tin: <span>{{$row->id}}</span></p>
                                                 <p class="detail block_hits">Lượt xem tin: <span>{{$row->views}}</span></p>
                                                 <p class="detail block_time"></p>
