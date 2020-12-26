@@ -171,77 +171,15 @@ header .container .container-inner .menu ul.nav_top li:hover {
 
 
 .box-search {
-    padding: 16px 8px 10px 110px;
-    max-width: 300px;
+    padding: 17px 8px 10px 15px;
+    max-width: 170px;
 }
 
-@media only screen and (max-width: 1082px) {
+@media only screen and (max-width: 1100px) {
     .box-search {
-        padding: 16px 8px 10px 100px;
+        display: none;
     }
 }
-
-@media only screen and (max-width: 1073px) {
-    .box-search {
-        padding: 16px 8px 10px 92px;
-    }
-}
-
-@media only screen and (max-width: 1065px) {
-    .box-search {
-        padding: 16px 8px 10px 80px;
-    }
-}
-
-@media only screen and (max-width: 1053px) {
-    .box-search {
-        padding: 16px 8px 10px 72px;
-    }
-}
-
-@media only screen and (max-width: 1048px) {
-    .box-search {
-        padding: 16px 8px 10px 65px;
-    }
-}
-
-@media only screen and (max-width: 1038px) {
-    .box-search {
-        padding: 16px 8px 10px 57px;
-    }
-}
-
-@media only screen and (max-width: 1028px) {
-    .box-search {
-        padding: 16px 8px 10px 50px;
-    }
-}
-
-@media only screen and (max-width: 1022px) {
-    .box-search {
-        padding: 16px 8px 10px 43px;
-    }
-}
-
-@media only screen and (max-width: 1016px) {
-    .box-search {
-        padding: 16px 8px 10px 36px;
-    }
-}
-
-@media only screen and (max-width: 1008px) {
-    .box-search {
-        padding: 16px 8px 10px 30px;
-    }
-}
-
-
-@media only screen and (max-width: 1002px) {
-    .box-search {
-       display: none;
-    }
-}
-
 
 .box-search #top-search {
     display: block;
@@ -270,7 +208,7 @@ header .container .container-inner .menu ul.nav_top li:hover {
 .box-search #top-search .search-form-label .icon {
     outline: rgb(201, 198, 198);
     color: #fff;
-    width: 14%;
+    width: 22%;
     text-align: center;
     line-height: 19px;
     border: 1px solid transparent;
@@ -512,6 +450,12 @@ b, strong {
     padding-top: 105px;
 }
 
+@media only screen and (max-width: 893px) {
+    #main-body {
+        padding-top: 150px;
+    }
+}
+
 @media only screen and (max-width: 732px) {
     #main-body {
         padding-top: 150px;
@@ -525,21 +469,33 @@ b, strong {
     }
 }
 
+@media only screen and (max-width: 497px) {
+    #main-body {
+        padding-top: 200px;
+    }
+}
+
 @media only screen and (max-width: 413px) {
     #main-body {
         padding-top: 200px;
     }
 }
 
+@media only screen and (max-width: 337px) {
+    #main-body {
+        padding-top: 300px;
+    }
+}
+
 @media only screen and (max-width: 321px) {
     #main-body {
-        padding-top: 250px;
+        padding-top: 300px;
     }
 }
 
 @media only screen and (max-width: 253px) {
     #main-body {
-        padding-top: 300px;
+        padding-top: 350px;
     }
 }
 
