@@ -97,12 +97,14 @@ class PageController extends Controller
         
         if($req->hasFile('image'))
         {
-            $file = $req->file('image');
-            $name = $file->getClientOriginalName();
-
-            $name = str_random(4)."_".$name;
-            $file->move("image", $name);
-            $post->image = $name;
+            $imageNameArr = [];
+            foreach ($req->image as $file) {
+                $imageName = $file->getClientOriginalName();
+                $imageName = str_random(4)."_".$imageName;
+                $file->move("image", $imageName);
+                $imageNameArr[] = $imageName;
+            }
+            $post->image = implode("?",$imageNameArr);
         }
         else
         {
@@ -231,11 +233,14 @@ class PageController extends Controller
         $post->province_id = $req->province;
         if($req->hasFile('image'))
         {
-            $file = $req->file('image');
-            $name = $file->getClientOriginalName();
-            $name = str_random(4)."_".$name;
-            $file->move("image", $name);
-            $post->image = $name;
+            $imageNameArr = [];
+            foreach ($req->image as $file) {
+                $imageName = $file->getClientOriginalName();
+                $imageName = str_random(4)."_".$imageName;
+                $file->move("image", $imageName);
+                $imageNameArr[] = $imageName;
+            }
+            $post->image = implode("?",$imageNameArr);
         }
         if(isset($req->wash_machine))
         {

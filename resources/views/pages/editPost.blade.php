@@ -58,7 +58,7 @@
                             </div>
                             <div class="form-group">
                                 <label>Image</label>
-                                <p><img width = "400px" src = "image/{{$post->image}}"></p>
+                                <p><img width = "400px" src = "image/{{explode('?',$post->image)[0]}}"></p>
                                 <input class="form-control" name="image" type = "file" />
                             </div>
                             <div class="form-group">
