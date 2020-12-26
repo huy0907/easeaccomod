@@ -67,6 +67,10 @@
                                 <input class="form-control" name="price" placeholder="Please Enter price" />
                             </div>
                             <div class="form-group">
+                                <label>Area</label>
+                                <input class="form-control" name="area" placeholder="Please Enter area" />
+                            </div>
+                            <div class="form-group">
                                 <label>Facility</label>
                                 <ul class = "box">
                                     <li><input type = "checkbox" name = "wash_machine" value = 1 >  Máy giặt</li>

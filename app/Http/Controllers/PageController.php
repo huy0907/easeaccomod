@@ -94,7 +94,10 @@ class PageController extends Controller
         $post->description = $req->description;
         $post->address = $req->address;
         $post->isConfirm = 0;
-        
+        if(Auth::user()->idRole = 3)
+        {
+            $post->isConfirm = 1;
+        }
         
         if($req->hasFile('image'))
         {
