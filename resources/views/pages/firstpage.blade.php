@@ -301,7 +301,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="viewmore"><a href="https://tromoi.com/danh-sach">Xem thêm <i class="fa fa-angle-right"></i></a></div>
+                    <div class="viewmore"><a href="news">Xem thêm <i class="fa fa-angle-right"></i></a></div>
                 </div>
                 </div>
             </div>
