@@ -423,6 +423,34 @@ table tr td .block_action a.action {
     cursor: pointer;
 }
 
+table tr td .block_action a {
+    display: inline-block;
+    position: relative;
+    margin: 0 8px 10px 0;
+    text-align: left;
+    outline: 0;
+    background: rgba(125, 125, 125, 0.1);
+    border: 1px solid #dedede;
+    padding: 5px 10px;
+    border-radius: 8px;
+    color: #000;
+    cursor: pointer;
+}
+
+table tr td .block_action i {
+    display: inline-block;
+    position: relative;
+    margin: 0 8px 10px 0;
+    text-align: left;
+    outline: 0;
+    background: rgba(125, 125, 125, 0.1);
+    border: 1px solid #dedede;
+    padding: 5px 10px;
+    border-radius: 8px;
+    color: #000;
+    cursor: pointer;
+}
+
 table tr td .block_action a.action.edit i {
     color: #9c27b0;
 }
