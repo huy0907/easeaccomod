@@ -97,3 +97,4 @@ Route::get('savepost', 'PageController@getSavePost')->middleware('logincheck');
 Route::get('postlist', 'PageController@getPostList')->middleware('logincheck');
 
 Route::get('deletepost','PageController@getDeletepost');
+Route::get('news', 'PageController@getNews');

@@ -428,6 +428,10 @@ class PageController extends Controller
     {
         return view('pages/notify');
     }
+    public function getNews()
+    {
+        return view('pages/news');
+    }
     public function getDeletepost(Request $req)
     {
         $post = post::find($req->id);
