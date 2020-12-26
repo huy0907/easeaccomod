@@ -95,3 +95,5 @@ Route::get('addFavor','PageController@getAddFavor')->middleware('logincheck');
 Route::get('notify', 'PageController@getNotify')->middleware('logincheck');
 Route::get('savepost', 'PageController@getSavePost')->middleware('logincheck');
 Route::get('postlist', 'PageController@getPostList')->middleware('logincheck');
+
+Route::get('deletepost','PageController@getDeletepost');
