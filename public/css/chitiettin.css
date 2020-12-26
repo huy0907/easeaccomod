@@ -449,6 +449,15 @@ ul, ol {
     }
 }
 
+.vips {
+    display: flex;
+    flex-direction: row;
+}
+
+.vips .box-check {
+    width: 50%;
+}
+
 i.ico.icon {
     background-image: url(../images/icon.jpg);
 }
