@@ -13,55 +13,56 @@
                     <div class="content">
                         <h1>Thay đổi cá nhân</h1>
                         <form action="" onsubmit="return updatePersonal();" method="post">
+                        <input type="hidden" name = "_token" value = "{{csrf_token()}}"/>
                             <div class="frame" id="personal_edit">        
                                 <div class="inforow">
                                     <label>Họ tên:</label>
                                     <div class="infotext">
-                                        <input tabindex="1" type="text" value="" name="fullname" maxlength="40" class="subform_input updtinput">
+                                        <input tabindex="1" type="text" value="{{$user->name}}" name="fullname" maxlength="40" class="subform_input updtinput">
                                     </div>
-                                    <div class="clear"></div>
-                                </div>
-                                <div class="inforow">
-                                    <label>Giới tính:</label>
-                                    <div class="infotext">
-                                        <label class="sexradio"><input tabindex="2" name="gender" type="radio" value="1"> Nam</label>
-                                        <label class="sexradio"><input tabindex="3" name="gender" type="radio" value="0"> Nữ</label>
-                                        <div class="clr"></div>
-                                    </div> 
                                     <div class="clear"></div>
                                 </div>      
                                 <div class="inforow">
                                     <label>Số điện thoại:</label>
                                     <div class="infotext">
-                                        <input tabindex="7" type="text" value="" name="phone" maxlength="100" class="subform_input updtinput">
+                                        <input tabindex="7" type="text" value="{{$user->phone}}" name="phone" maxlength="100" class="subform_input updtinput">
                                     </div>
                                 </div>
                     
                                 <div class="inforow">
                                     <label>Địa chỉ:</label>
                                     <div class="infotext">
-                                        <input tabindex="7" type="text" value="" name="address" maxlength="100" class="subform_input updtinput">
+                                        <input tabindex="7" type="text" value="{{$user->address}}" name="address" maxlength="100" class="subform_input updtinput">
                                     </div>
                                     <div class="clear"></div>
                                 </div>
+
+                                <div class="inforow">
+                                    <label>Email:</label>
+                                    <div class="infotext">
+                                        <input tabindex="7" type="email" value="{{$user->email}}" name="email" maxlength="100" class="subform_input updtinput">
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+
                                 <div class="inforow">
                                     <label>Mật khẩu cũ:</label>
                                     <div class="infotext">
-                                        <input tabindex="1" type="text" value="" name="fullname" maxlength="40" class="subform_input updtinput">
+                                        <input tabindex="1" type="password" value="123" name="password" maxlength="40" class="subform_input updtinput">
                                     </div>
                                     <div class="clear"></div>
                                 </div>
                                 <div class="inforow">
                                     <label>Mật khẩu mới:</label>
                                     <div class="infotext">
-                                        <input tabindex="1" type="text" value="" name="fullname" maxlength="40" class="subform_input updtinput">
+                                        <input tabindex="1" type="password" value="" name="newpassword" maxlength="40" class="subform_input updtinput">
                                     </div>
                                     <div class="clear"></div>
                                 </div>
                                 <div class="inforow">
                                     <label>Nhập lại mật khẩu mới:</label>
                                     <div class="infotext">
-                                        <input tabindex="1" type="text" value="" name="fullname" maxlength="40" class="subform_input updtinput">
+                                        <input tabindex="1" type="password" value="" name="newpassword" maxlength="40" class="subform_input updtinput">
                                     </div>
                                     <div class="clear"></div>
                                 </div>
