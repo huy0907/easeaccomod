@@ -121,34 +121,34 @@
                                 <div class="box-check">
                                     <ul>
                                         @if($post->wash_machine == 1)
-                                        <li><i class="ico icon"></i><span title="Máy giặt">Máy giặt</span></li>
+                                        <li><i class="fas fa-dumpster-fire"></i><span title="Máy giặt">Máy giặt</span></li>
                                         @endif
 
                                         @if($post->wifi == 1)
-                                        <li><i class="ico icon"></i><span title="Wifi">Wifi</span></li>
+                                        <li><i class="fas fa-wifi"></i><span title="Wifi">Wifi</span></li>
                                         @endif
                                         
                                         @if($post->tv == 1)
-                                        <li><i class="ico icon"></i><span title="Tivi">Tivi</span></li>
+                                        <li><i class="fas fa-tv"></i><span title="Tivi">Tivi</span></li>
                                         @endif
                                         
                                         @if($post->air_con == 1)
-                                        <li><i class="ico icon"></i><span title="Điều hòa">Điều hòa</span></li>
+                                        <li><i class="fas fa-fan"></i><span title="Điều hòa">Điều hòa</span></li>
                                         @endif
                                         
                                         @if($post->camera == 1)
-                                        <li><i class="ico icon"></i><span title="Camera">Camera</span></li>
+                                        <li><i class="fas fa-video"></i><span title="Camera">Camera</span></li>
                                         @endif
                                        
                                         @if($post->garden == 1)
-                                        <li><i class="ico icon"></i><span title="Sân vườn">Sân vườn</span></li>
+                                        <li><i class="fas fa-mountain"></i><span title="Sân vườn">Sân vườn</span></li>
                                         @endif
                                         @if($post->heater == 1)
-                                        <li><i class="ico icon"></i><span title="Bình nóng lạnh">Bình nóng lạnh</span></li>
+                                        <li><i class="fas fa-hot-tub"></i><span title="Bình nóng lạnh">Bình nóng lạnh</span></li>
                                         @endif
                                         
                                         @if($post->pool == 1)
-                                        <li><i class="ico icon"></i><span title="Bể bơi">Bể bơi</span></li>
+                                        <li><i class="fas fa-swimmer"></i><span title="Bể bơi">Bể bơi</span></li>
                                         @endif
                                         
                                     </ul>
@@ -158,22 +158,22 @@
                                 <div class="box-check">
                                     <ul>
                                     @if($post->market == 1)
-                                        <li><i class="ico icon"></i><span title="Siêu thị">Siêu thị</span></li>
+                                        <li><i class="fas fa-hotel"></i><span title="Siêu thị">Siêu thị</span></li>
                                         @endif
                                         @if($post->hospital == 1)
-                                        <li><i class="ico icon"></i><span title="Bệnh viện">Wifi</span></li>
+                                        <li><i class="fas fa-hospital"></i><span title="Bệnh viện">Wifi</span></li>
                                         @endif
                                         @if($post->park == 1)
-                                        <li><i class="ico icon"></i><span title="Công viên">Công viên</span></li>
+                                        <li><i class="fas fa-tree"></i><span title="Công viên">Công viên</span></li>
                                         @endif
                                         @if($post->school == 1)
-                                        <li><i class="ico icon"></i><span title="Trường học">Trường học</span></li>
+                                        <li><i class="fas fa-school"></i><span title="Trường học">Trường học</span></li>
                                         @endif
                                         @if($post->bus == 1)
-                                        <li><i class="ico icon"></i><span title="Điểm chờ xe buýt">Điểm chờ xe buýt</span></li>
+                                        <li><i class="fas fa-bus-alt"></i><span title="Điểm chờ xe buýt">Điểm chờ xe buýt</span></li>
                                         @endif
                                         @if($post->stadium == 1)
-                                        <li><i class="ico icon"></i><span title="Sân vân động">Sân vận động</span></li>
+                                        <li><i class="fas fa-running"></i><span title="Sân vân động">Sân vận động</span></li>
                                         @endif
                                     </ul>
                                 </div>
