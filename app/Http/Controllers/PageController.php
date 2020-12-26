@@ -200,6 +200,10 @@ class PageController extends Controller
     {
         return view('pages/savepost');
     }
+    public function getPostList()
+    {
+        return view('pages/postlist');
+    }
     public function getEdit($id)
     {
         return view('pages/editprofile');
