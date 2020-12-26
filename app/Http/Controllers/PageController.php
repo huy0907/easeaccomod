@@ -31,7 +31,7 @@ class PageController extends Controller
     }
     public function index()
     {
-        $post = post::take(8)->get();
+        $post = post::where('isConfirm', '1')->orderBy('id', 'desc')->take(8)->get();
         $cat_list = category::all();
         $prov_list = province::all();
         $cat_info = post::groupBy('category_id')->select('category_id', DB::raw('count(*) as total'))->get();
@@ -90,6 +90,7 @@ class PageController extends Controller
         $post->idOwner = Auth::user()->id;
         $post->name = $req->name;
         $post->price = $req->price;
+        $post->area = $req->area;
         $post->description = $req->description;
         $post->address = $req->address;
         $post->isConfirm = 0;
@@ -228,6 +229,7 @@ class PageController extends Controller
         $post->category_id = $req->category;
         $post->name = $req->name;
         $post->price = $req->price;
+        $post->area = $req->area;
         $post->description = $req->description;
         $post->address = $req->address;
         $post->province_id = $req->province;
@@ -357,6 +359,34 @@ class PageController extends Controller
             $end = $area[1];
             $data->where('area', '>=', $start * 1000000 );
             $data->where('area', '<=', $end * 1000000 );
+        }
+        if($req->has('wash_machine'))
+        {
+            $data->where('wash_machine', 1 );
+        }
+        if($req->has('wifi'))
+        {
+            $data->where('wifi', 1 );
+        }
+        if($req->has('tv'))
+        {
+            $data->where('tv', 1 );
+        }
+        if($req->has('air_con'))
+        {
+            $data->where('air_con', 1 );
+        }
+        if($req->has('market'))
+        {
+            $data->where('market', 1 );
+        }
+        if($req->has('hospital'))
+        {
+            $data->where('hospital', 1 );
+        }
+        if($req->has('park'))
+        {
+            $data->where('park', 1 );
         }
         if(count($data->get()) == 0)
         {

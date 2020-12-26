@@ -95,24 +95,16 @@
             
                 <div class="overSelect"></div>
                 </div>
-                <div id="checkBoxes"> 
-                <label for="first"> 
-                    <input type="checkbox" id="first" /> 
-                    điều kiện 1
-                </label> 
-                  
-                <label for="second"> 
-                    <input type="checkbox" id="second" /> 
-                    điều kiện 2
-                </label> 
-                <label for="third"> 
-                    <input type="checkbox" id="third" /> 
-                    điều kiện 3
-                </label> 
-                <label for="fourth"> 
-                    <input type="checkbox" id="fourth" /> 
-                    điều kiện 4
-                </label> 
+                <div id="checkBoxes">
+                <label>Tiện nghi</label>
+                <li><input type = "checkbox" value = "wash_machine" class = "facility">  Máy giặt</li>
+                <li><input type = "checkbox" value = "wifi" class = "facility" >  Wifi</li>
+                <li><input type = "checkbox" value = "tv" class = "facility" >  Tivi</li>
+                <li><input type = "checkbox" value = "air_con" class = "facility">  Điều hòa</li>
+                <label>Xung quanh</label>
+                <li><input type = "checkbox" value = "market" class = "facility">  Siêu thị</li>
+                <li><input type = "checkbox" value = "hospital" class = "facility">  Bệnh viện</li>
+                <li><input type = "checkbox" value = "park" class = "facility" >  Công viên</li>
             </div> 
                 </div>
                 </form>
@@ -372,20 +364,27 @@
 @section('script')
 <script>
 $(document).ready(function(){
+
   $("#findBtn").click(function(){
     var cat = $("#catID").val();
     var price = $('#priceID').val();
     var area = $('#area').val();
     var province = $('#provID').val();
+    var param = "";
+    $('.facility:checkbox:checked').each(function(){
+        param = param + "&" + $(this).val() + "=1" ;
+    });
+    console.log(param);
     $("#main-body").html('<div id="loading" class = "fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="" >Loading</div>');
     $.ajax({
       type: 'get',
       dataType: 'html',
       url: '{{url('/getResult')}}',
-      data: 'cat_id=' + cat + "&price=" + price + "&area=" + area + "&province=" + province, 
+      data: 'cat_id=' + cat + "&price=" + price + "&area=" + area + "&province=" + province + param, 
       success:function(response){
         console.log(response);
         $("#main-body").html(response);
+        document.documentElement.scrollTop = 0;
       }
     });
   });
@@ -401,6 +400,7 @@ $(document).ready(function(){
       success:function(response){
         console.log(response);
         $("#main-body").html(response);
+        document.documentElement.scrollTop = 0; 
       }
     });
   });
@@ -416,6 +416,7 @@ $(document).ready(function(){
       success:function(response){
         console.log(response);
         $("#main-body").html(response);
+        document.documentElement.scrollTop = 0; 
       }
     });
   });

@@ -66,6 +66,10 @@
                                 <input class="form-control" name="price" placeholder="Please Enter price"  value = "{{$post->price}}"/>
                             </div>
                             <div class="form-group">
+                                <label>Area</label>
+                                <input class="form-control" name="area" placeholder="Please Enter area"  value = "{{$post->area}}"/>
+                            </div>
+                            <div class="form-group">
                                 <label>Facility</label>
                                 <li><input type = "checkbox" value = 1 name = "wash_machine" @if($post->wash_machine == 1){{"checked"}} @endif  >  Máy giặt</li>
                                 <li><input type = "checkbox" value = 1 name = "wifi" @if($post->wifi == 1){{"checked"}} @endif >  Wifi</li>
@@ -94,7 +98,7 @@
                 <!-- /.row -->
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1 class="page-header">Post
+                        <h1 class="page-header">Comment
                             <small>List</small>
                         </h1>
                     </div>

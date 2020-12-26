@@ -26,7 +26,7 @@
                                 @if(isset($user))
                                 @if($user->favorite->where('post_id', $post->id)->count() > 0)
                                 <span style="color: #0062C4;cursor:pointer"><i class="far fa-bookmark"></i> Đã lưu tin </span>
-                                @else <span style="color: #0062C4;cursor:pointer"><i class="far fa-bookmark" id="favor"></i> Lưu tin </span>
+                                @else <span style="color: #0062C4;cursor:pointer"><i id = "favor"><i class="far fa-bookmark" id="favor"></i>Lưu tin </span></i>
                                 @endif
                                 @endif
                                 <a href="report/{{$post->id}}"><i class="fas fa-flag" style="" >
@@ -120,28 +120,34 @@
                                 <h2>Tiện nghi</h2>
                                 <div class="box-check">
                                     <ul>
-                                        @if($post->value("wash_machine") == 1)
+                                        @if($post->wash_machine == 1)
                                         <li><i class="ico icon"></i><span title="Máy giặt">Máy giặt</span></li>
                                         @endif
-                                        @if($post->value("wifi") == 1)
+
+                                        @if($post->wifi == 1)
                                         <li><i class="ico icon"></i><span title="Wifi">Wifi</span></li>
                                         @endif
-                                        @if($post->value("tv") == 1)
+                                        
+                                        @if($post->tv == 1)
                                         <li><i class="ico icon"></i><span title="Tivi">Tivi</span></li>
                                         @endif
-                                        @if($post->value("air_con") == 1)
+                                        
+                                        @if($post->air_con == 1)
                                         <li><i class="ico icon"></i><span title="Điều hòa">Điều hòa</span></li>
                                         @endif
-                                        @if($post->value("camera") == 1)
+                                        
+                                        @if($post->camera == 1)
                                         <li><i class="ico icon"></i><span title="Camera">Camera</span></li>
                                         @endif
-                                        @if($post->value("garden") == 1)
+                                       
+                                        @if($post->garden == 1)
                                         <li><i class="ico icon"></i><span title="Sân vườn">Sân vườn</span></li>
                                         @endif
-                                        @if($post->value("heater") == 1)
+                                        @if($post->heater == 1)
                                         <li><i class="ico icon"></i><span title="Bình nóng lạnh">Bình nóng lạnh</span></li>
                                         @endif
-                                        @if($post->value("pool") == 1)
+                                        
+                                        @if($post->pool == 1)
                                         <li><i class="ico icon"></i><span title="Bể bơi">Bể bơi</span></li>
                                         @endif
                                         
@@ -151,22 +157,22 @@
                                 <h2>Tiện ích xung quanh</h2>
                                 <div class="box-check">
                                     <ul>
-                                    @if($post->value("market") == 1)
+                                    @if($post->market == 1)
                                         <li><i class="ico icon"></i><span title="Siêu thị">Siêu thị</span></li>
                                         @endif
-                                        @if($post->value("hospital") == 1)
+                                        @if($post->hospital == 1)
                                         <li><i class="ico icon"></i><span title="Bệnh viện">Wifi</span></li>
                                         @endif
-                                        @if($post->value("park") == 1)
+                                        @if($post->park == 1)
                                         <li><i class="ico icon"></i><span title="Công viên">Công viên</span></li>
                                         @endif
-                                        @if($post->value("school") == 1)
+                                        @if($post->school == 1)
                                         <li><i class="ico icon"></i><span title="Trường học">Trường học</span></li>
                                         @endif
-                                        @if($post->value("bus") == 1)
-                                        <li><i class="ico icon"></i><span title="Điểm chờ xe buýt">Camera</span></li>
+                                        @if($post->bus == 1)
+                                        <li><i class="ico icon"></i><span title="Điểm chờ xe buýt">Điểm chờ xe buýt</span></li>
                                         @endif
-                                        @if($post->value("stadium") == 1)
+                                        @if($post->stadium == 1)
                                         <li><i class="ico icon"></i><span title="Sân vân động">Sân vận động</span></li>
                                         @endif
                                     </ul>
