@@ -339,6 +339,11 @@ dl, dd, dt {
     font-weight: normal;
 }
 
+dl dt {
+    min-width: 8px;
+    text-align: left;
+}
+
 .fa {
     display: inline-block;
     font: normal normal normal 14px/1 FontAwesome;
@@ -400,7 +405,9 @@ dl, dd, dt {
         width: 100%;
     }
 }
-
+.info-wrapper {
+    padding-left: 10px;
+}
 dd {
     display: block;
     margin-inline-start: 20px;
@@ -452,10 +459,21 @@ ul, ol {
 .vips {
     display: flex;
     flex-direction: row;
+    padding-left: 10px;
 }
 
 .vips .box-check {
     width: 50%;
+}
+
+.svg-inline--fa{
+   width: 16px;
+   height: 16px;
+   margin-right: 6px;
+   color: #1984f0;
+}
+.svg-inline--fa.fa-w-20, .svg-inline--fa.fa-w-16, .svg-inline--fa.fa-w-18, .svg-inline--fa.fa-w-20, .svg-inline--fa.fa-w-13 {
+    width: 20px;
 }
 
 i.ico.icon {
