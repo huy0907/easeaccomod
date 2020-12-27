@@ -3,7 +3,7 @@
 
 @endsection
 @section('content')
-<script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" data-auto-a11y="true"></script>
+
 <div id="page-wrapper">
     <div>
     <style>
@@ -13,9 +13,6 @@
 
 	}
 
-	.stat i{
-		font-size: 50px;
-	}
 	.stat-items {
 		display: inline-block;
 		margin: 0 80px;
@@ -31,6 +28,10 @@
 		font-weight: bold;
 		letter-spacing: 1px;
 	}
+  i{
+    font-size:50px;
+  }
+  
 </style>
 </head>
 <body>
@@ -40,17 +41,17 @@
 			<div class="container">
 				<div class="row text-center">
 						<div class="stat-items">
-							<i class="fas fa-camera-retro"></i>
+            <i class="fa fa-camera-retro" style="font-size:60px" ></i>
 							<h2><span class="counter text-center">3390</span><span>+</span></h2>
 							<p>Views</p>
 						</div>
 						<div class="stat-items">
-							<i class="fas fa-users"></i>
+            <i class="fa fa-users" aria-hidden="true" style="font-size:60px"  ></i>
 							<h2><span class="counter text-center">3390</span><span>+</span></h2>
 							<p>Users</p>
 						</div>
 							<div class="stat-items">
-							<i class="far fa-clipboard"></i>
+							<i class="fa fa-file-picture-o" style="font-size:60px"></i>
 							<h2><span class="counter text-center">3390</span><span>+</span></h2>
 							<p>Posts</p>
 						</div>
