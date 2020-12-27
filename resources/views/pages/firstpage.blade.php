@@ -51,17 +51,15 @@
             <label class="search_field_item_label">Thêm</label>
             <style> 
                 .multipleSelection { 
-                     width: 145px;  
+                     width: 145px; 
+                
                 } 
   
                 .selectBox { 
                      position: relative; 
                 } 
   
-                .selectBox select { 
-                    width: 100%; 
-                    
-                 } 
+              
   
                  .overSelect { 
                     position: absolute; 
@@ -77,13 +75,16 @@
                     border: 0.5px black solid; 
                 } 
   
-                #checkBoxes label { 
+                #checkBoxes li { 
                     display: block; 
                 } 
   
-                 #checkBoxes label:hover { 
+                 #checkBoxes li:hover { 
                     background-color: #0062C4; 
         } 
+            li{
+                list-style: none;
+            }
     </style> 
                 <form>
                 <div class="multipleSelection">
