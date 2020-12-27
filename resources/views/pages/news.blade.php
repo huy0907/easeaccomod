@@ -44,7 +44,7 @@
                     </div>
                 </div>
             </div>
-            <div class="viewmore"><a href="https://tromoi.com/danh-sach">Xem thêm <i class="fa fa-angle-right"></i></a></div>
+            <div class="viewmore"><a href="#">Xem thêm <i class="fa fa-angle-right"></i></a></div>
             
         </div>
         <div class="line"></div>
@@ -53,39 +53,39 @@
                 <div class="news news-list">
                     <div class="module">
                         <div class="module-header side-line">
-                            <div class="module-title"><a href="https://tromoi.com/blog/review"><span>Review</span></a></div>
+                            <div class="module-title"><a href=""><span>Review</span></a></div>
                         </div>
                         <div class="module-content">
                             <div class="item">
                                 <div class="image">
-                                    <a class="" href="https://tromoi.com/blog/review/cach-trang-tri-phong-tro-nho-hep-dep-lung-linh" style="background-image: url('https://tromoi.com/uploads/static/tin_tuc/02.jpg')" title="Cách trang trí phòng trọ nhỏ hẹp đẹp lung linh"></a>
+                                    <a class="" href="" style="background-image: url('https://tromoi.com/uploads/static/tin_tuc/02.jpg')" title="Cách trang trí phòng trọ nhỏ hẹp đẹp lung linh"></a>
                                 </div>
                                 <div class="content">
-                                    <h4 class="title"><a href="https://tromoi.com/blog/review/cach-trang-tri-phong-tro-nho-hep-dep-lung-linh" title="Cách trang trí phòng trọ nhỏ hẹp đẹp lung linh">Cách trang trí phòng trọ nhỏ hẹp đẹp lung linh</a></h4>
+                                    <h4 class="title"><a href="" title="Cách trang trí phòng trọ nhỏ hẹp đẹp lung linh">Cách trang trí phòng trọ nhỏ hẹp đẹp lung linh</a></h4>
                                     <div class="description">Bạn đang tìm cách trang trí phòng trọ nhỏ hẹp để có thể biến không gian phòng trọ thành nơi tuyệt đẹp vì tuy là phòng trọ nhưng nó chiếm một khoảng thời gian rất lớn của bạn trong ngày. Bên cạnh đó bạn cũng muốn có một không gian tuyệt vời để nghỉ ngơi sau một ngày học tập, làm việc mệt nhoài. Trang trí phòng trọ đẹp cũng giúp cho bạn đón tiếp bạn bè tốt hơn, có thể cho chúng bạn chiêm ngưỡng tài nghệ trang trí nhà cửa của mình tuyệt như thế nào. Vậy còn chần chừ gì nữa, hãy bắt tay vào nghiên cứu và triển khai ngay thôi nào!</div>
                                 </div>
                             </div>
                             <div class="item">
                                 <div class="image">
-                                    <a class="" href="https://tromoi.com/blog/review/cach-trang-tri-phong-tro-nho-hep-dep-lung-linh" style="background-image: url('https://tromoi.com/uploads/static/tin_tuc/02.jpg')" title="Cách trang trí phòng trọ nhỏ hẹp đẹp lung linh"></a>
+                                    <a class="" href="" style="background-image: url('https://tromoi.com/uploads/static/tin_tuc/02.jpg')" title="Cách trang trí phòng trọ nhỏ hẹp đẹp lung linh"></a>
                                 </div>
                                 <div class="content">
-                                    <h4 class="title"><a href="https://tromoi.com/blog/review/cach-trang-tri-phong-tro-nho-hep-dep-lung-linh" title="Cách trang trí phòng trọ nhỏ hẹp đẹp lung linh">Cách trang trí phòng trọ nhỏ hẹp đẹp lung linh</a></h4>
+                                    <h4 class="title"><a href="" title="Cách trang trí phòng trọ nhỏ hẹp đẹp lung linh">Cách trang trí phòng trọ nhỏ hẹp đẹp lung linh</a></h4>
                                     <div class="description">Bạn đang tìm cách trang trí phòng trọ nhỏ hẹp để có thể biến không gian phòng trọ thành nơi tuyệt đẹp vì tuy là phòng trọ nhưng nó chiếm một khoảng thời gian rất lớn của bạn trong ngày. Bên cạnh đó bạn cũng muốn có một không gian tuyệt vời để nghỉ ngơi sau một ngày học tập, làm việc mệt nhoài. Trang trí phòng trọ đẹp cũng giúp cho bạn đón tiếp bạn bè tốt hơn, có thể cho chúng bạn chiêm ngưỡng tài nghệ trang trí nhà cửa của mình tuyệt như thế nào. Vậy còn chần chừ gì nữa, hãy bắt tay vào nghiên cứu và triển khai ngay thôi nào!</div>
                                 </div>
                             </div>
                             <div class="item">
                                 <div class="image">
-                                    <a class="" href="https://tromoi.com/blog/review/cach-trang-tri-phong-tro-nho-hep-dep-lung-linh" style="background-image: url('https://tromoi.com/uploads/static/tin_tuc/02.jpg')" title="Cách trang trí phòng trọ nhỏ hẹp đẹp lung linh"></a>
+                                    <a class="" href="" style="background-image: url('https://tromoi.com/uploads/static/tin_tuc/02.jpg')" title="Cách trang trí phòng trọ nhỏ hẹp đẹp lung linh"></a>
                                 </div>
                                 <div class="content">
-                                    <h4 class="title"><a href="https://tromoi.com/blog/review/cach-trang-tri-phong-tro-nho-hep-dep-lung-linh" title="Cách trang trí phòng trọ nhỏ hẹp đẹp lung linh">Cách trang trí phòng trọ nhỏ hẹp đẹp lung linh</a></h4>
+                                    <h4 class="title"><a href="" title="Cách trang trí phòng trọ nhỏ hẹp đẹp lung linh">Cách trang trí phòng trọ nhỏ hẹp đẹp lung linh</a></h4>
                                     <div class="description">Bạn đang tìm cách trang trí phòng trọ nhỏ hẹp để có thể biến không gian phòng trọ thành nơi tuyệt đẹp vì tuy là phòng trọ nhưng nó chiếm một khoảng thời gian rất lớn của bạn trong ngày. Bên cạnh đó bạn cũng muốn có một không gian tuyệt vời để nghỉ ngơi sau một ngày học tập, làm việc mệt nhoài. Trang trí phòng trọ đẹp cũng giúp cho bạn đón tiếp bạn bè tốt hơn, có thể cho chúng bạn chiêm ngưỡng tài nghệ trang trí nhà cửa của mình tuyệt như thế nào. Vậy còn chần chừ gì nữa, hãy bắt tay vào nghiên cứu và triển khai ngay thôi nào!</div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="viewmore"><a href="https://tromoi.com/blog/review">Xem thêm <i class="fa fa-angle-right"></i></a></div>
+                    <div class="viewmore"><a href="#">Xem thêm <i class="fa fa-angle-right"></i></a></div>
                 </div>
             </div>
         </div>
