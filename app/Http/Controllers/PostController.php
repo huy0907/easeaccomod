@@ -336,10 +336,18 @@ class PostController extends Controller
         $post_count = post::count();
         $user_count = User::count();
         $view_count = post::sum('views');
+        $phong_tro = post::where('category_id', '1')->count();
+        $cat_2 = post::where('category_id', '2')->count();
+        $cat_3 = post::where('category_id', '3')->count();
+        $cat_4 = post::where('category_id', '4')->count();
+        $cat_6 = post::where('category_id', '6')->count();
+        $cat_7 = post::where('category_id', '7')->count();
+        $cat_9 = post::where('category_id', '9')->count();
         $most_view = post::orderBy('views', 'desc')->take(5)->get();
         return view('admin/post/statistic', ["cat" => $cat_info, "prov" => $prov_info,
          "post_count" => $post_count, "view_count" => $view_count, "most_view" => $most_view,
-         "user_count" => $user_count
+         "user_count" => $user_count,
+         "phong_tro" => $phong_tro, "cat_2" => $cat_2, "cat_3" => $cat_3,"cat_4" => $cat_4,"cat_6" => $cat_6,"cat_7" => $cat_7,"cat_9" => $cat_9,
          ]);
     }
 }

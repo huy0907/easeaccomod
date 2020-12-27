@@ -70,7 +70,7 @@
                                                 display: none;
                                                 position: absolute;
                                                 background-color: #f1f1f1;
-                                                min-width: 350px;
+                                                min-width: 200px;
                                                 overflow: auto;
                                                 box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
                                                 z-index: 1;
@@ -94,7 +94,7 @@
                                                 <div id="myDropdown" class="dropdown-content">
                                                     @foreach($user->notify as $row)
                                                     @if($row->state == 1)
-                                                        <a> Tài khoản của bạn đã được phê duyệt. </a>
+                                                        <p>Tài khoản của bạn đã được phê duyệt. </p>
                                                     @endif
                                                     @if($row->state == 2)
                                                     <a href="#"> Bài đăng của bạn của bạn đã được phê duyệt. </a>

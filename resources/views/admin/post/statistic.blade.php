@@ -42,17 +42,17 @@
 				<div class="row text-center">
 						<div class="stat-items">
             <i class="fa fa-camera-retro" style="font-size:60px" ></i>
-							<h2><span class="counter text-center">3390</span><span>+</span></h2>
+							<h2><span class="counter text-center">{{$view_count}}</span><span></span></h2>
 							<p>Views</p>
 						</div>
 						<div class="stat-items">
             <i class="fa fa-users" aria-hidden="true" style="font-size:60px"  ></i>
-							<h2><span class="counter text-center">3390</span><span>+</span></h2>
+							<h2><span class="counter text-center">{{$user_count}}</span><span></span></h2>
 							<p>Users</p>
 						</div>
 							<div class="stat-items">
 							<i class="fa fa-file-picture-o" style="font-size:60px"></i>
-							<h2><span class="counter text-center">3390</span><span>+</span></h2>
+							<h2><span class="counter text-center">{{$post_count}}</span><span></span></h2>
 							<p>Posts</p>
 						</div>
 					
@@ -73,9 +73,21 @@
 
         var data = google.visualization.arrayToDataTable([
           ['Provice', 'count'],
-          ['Hà Nội',     5],
-          ['Hồ Chí Minh',      2],
-          ['Hải Dương',  1]
+          @foreach($prov as $row)
+          [
+          @if($row->province_id == 1)
+              "Hà Nội"
+          @elseif($row->province_id == 2)
+              "Hồ Chí Minh"
+          @elseif($row->province_id == 3)
+              "Hải Dương"
+          @elseif($row->province_id == 4)
+              "Bắc Giang"
+          @elseif($row->province_id == 5)
+              "Hà Tĩnh"
+          @endif 
+            ,  {{$row->total}}],
+          @endforeach
         ]);
         var chart = new google.visualization.PieChart(document.getElementById('piechart'));
         chart.draw(data);
@@ -97,10 +109,10 @@
 
       var data = google.visualization.arrayToDataTable([
         ['loaiphong', 'Số Phòng',{role:'style'}],
-        ['Phòng Trọ', 3,'#b87333'],
-        ['Chung cư mini', 1,'#AEAB8D'],
-        ['Nhà nguyên căn', 1,'gold'],
-        ['Homestay', 2,' #e5e4e2']
+        ['Phòng Trọ', {{$phong_tro}},'#AEAB8D'],
+        ['Chung cư mini', {{$cat_2}},'#b87333'],
+        ['Nhà nguyên căn', {{$cat_3}},'gold'],
+        ['Chung cư nguyên căn', {{$cat_4}},' #e5e4e2']
         
       ]);
       var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
