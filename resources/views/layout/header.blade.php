@@ -15,7 +15,7 @@
                                 <a href = "cat/1"><li class="" id = "1-cat">Phòng trọ</li></a>
                                 <a href = "cat/2"><li class="" id = "2-cat">Chung cư mini</li></a>
                                 <a href = "cat/3"><li class="" id = "3-cat">Nhà nguyên căn</li></a>
-                                <a href = "cat/4"><li class="" id = "4-cat">Chung cư nguyên căn</li></a>
+                                <a href = "cat/4"><li class="" id = "4-cat">Chung cư </li></a>
                                 <li class="li_news"><a href="news">Tin tức</a></li>
                             </ul>
                         </div>
@@ -92,9 +92,14 @@
                                                 <div class="thongbao">
                                                 <button onclick="myFunction()" class="dropbtn"><i class="far fa-bell"></i></button>
                                                 <div id="myDropdown" class="dropdown-content">
-                                                    <a href="">Thằng Huy Con</a>
-                                                    <a href="">Khôi béo</a>
-                                                    <a href="">Anh Hoàng Đẹp trai</a>
+                                                    @foreach($user->notify as $row)
+                                                    @if($row->state == 1)
+                                                        Tài khoản của bạn đã được phê duyệt. <br>
+                                                    @endif
+                                                    @if($row->state == 2)
+                                                        Bài đăng của bạn của bạn đã được phê duyệt.<br>
+                                                    @endif
+                                                    @endforeach
                                                 </div>
                                                 </div>
 
