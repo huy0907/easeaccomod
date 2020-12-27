@@ -446,7 +446,7 @@ b, strong {
     border: 1px solid black;
 }
 .drop_menu_child:hover{
-    background-color: grey;
+    background-color:#ddd;
     display:block;}
 
 
