@@ -23,7 +23,7 @@
                                 <ul class="nav_user">
                                     @if(!isset($user))
                                     <li class="li_add-new"><a class="btn red add-new t frm-login" href="post">Đăng tin</a></li>
-                                    <li class="li_register"><a class="register frm-login" href="register">Đăng ký</a></li>
+                                    <li class="li_register"><a class="register frm-login" href="register"><i class="far fa-bell"></i> Đăng ký</a></li>
                                     <li class="li_login"><a class="login frm-login" href="login">Đăng nhập</a></li>
                                     @else
                                     @if($user->idRole !=2 )
