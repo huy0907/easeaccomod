@@ -97,7 +97,7 @@
                                                         <a> <i class="fas fa-circle"></i> Tài khoản của bạn đã được phê duyệt. </a>
                                                     @endif
                                                     @if($row->state == 2)
-                                                       <a> <i class="fas fa-circle"></i> Bài đăng của bạn của bạn đã được phê duyệt. </a>
+                                                    <a href="#"> <i class="fas fa-circle"></i> Bài đăng của bạn của bạn đã được phê duyệt. </a>
                                                     @endif
                                                     @endforeach
                                                 </div>
