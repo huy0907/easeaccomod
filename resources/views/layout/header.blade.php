@@ -29,7 +29,7 @@
                                     @if($user->idRole !=2 )
                                     <li class="li_add-new"><a class="btn red add-new t frm-login" href="post">Đăng tin</a></li>
                                     @endif
-                                    <li  class="li_admin"><a class="login frm-login" href=""><i class="far fa-bell"></i> {{$user->name}}</a>
+                                    <li  class="li_admin"><a class="login frm-login" href=""> {{$user->name}}</a>
                                         <ul class="drop_menu">
                                         <li class="drop_menu_child"><a href="#" >Tài Khoản:<b>{{$user->name}}</b></a></li>
                                             <li><button><a href="profile/{{$user->id}}">Trang cá nhân</a></button></li>
@@ -44,6 +44,80 @@
                                             <hr>
                                             <li class="drop_menu_child"><a href="#">Hướng dẫn sử dụng</a></li>     
                                         </ul>
+                                    </li>
+                                    <li> 
+                                    <style>
+                                                .dropbtn {
+                                                background-color: #3498DB;
+                                                color: white;
+                                                    padding: 10px;
+                                                    font-size: 10px;
+                                                border: none;
+                                                cursor: pointer;
+                                                border-radius: 10px;
+                                                }
+
+                                                .dropbtn:hover, .dropbtn:focus {
+                                                background-color: #2980B9;
+                                                }
+
+                                                .thongbao {
+                                                position: relative;
+                                                display: inline-block;
+                                                }
+
+                                                .dropdown-content {
+                                                display: none;
+                                                position: absolute;
+                                                background-color: #f1f1f1;
+                                                min-width: 250px;
+                                                overflow: auto;
+                                                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                                                z-index: 1;
+                                                }
+
+                                                .dropdown-content a {
+                                                color: black;
+                                                padding: 12px 10px;
+                                                text-decoration: none;
+                                                display: block;
+                                                }
+
+                                                .thongbao a:hover {background-color: #ddd;}
+
+                                                .show {display: block;}
+                                                </style>
+
+
+                                                <div class="thongbao">
+                                                <button onclick="myFunction()" class="dropbtn"><i class="far fa-bell"></i></button>
+                                                <div id="myDropdown" class="dropdown-content">
+                                                    <a href="">Thằng Huy Con</a>
+                                                    <a href="">Khôi béo</a>
+                                                    <a href="">Anh Hoàng Đẹp trai</a>
+                                                </div>
+                                                </div>
+
+                                                <script>
+
+                                                function myFunction() {
+                                                    document.getElementById("myDropdown").classList.toggle("show");
+                                                    }
+
+
+                                                    window.onclick = function(event) {
+                                                    if (!event.target.matches('.dropbtn')) {
+                                                        var dropdowns = document.getElementsByClassName("dropdown-content");
+                                                        var i;
+                                                        for (i = 0; i < dropdowns.length; i++) {
+                                                        var openDropdown = dropdowns[i];
+                                                        if (openDropdown.classList.contains('show')) {
+                                                            openDropdown.classList.remove('show');
+                                                        }
+                                                        }
+                                                    }
+                                                }
+                                                </script>
                                     </li>
                                     <li class="li_login"><a class="login frm-login" href="logout">Đăng xuất</a></li>
                                     @endif
