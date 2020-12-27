@@ -70,7 +70,7 @@
                                                 display: none;
                                                 position: absolute;
                                                 background-color: #f1f1f1;
-                                                min-width: 250px;
+                                                min-width: 350px;
                                                 overflow: auto;
                                                 box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
                                                 z-index: 1;
@@ -90,7 +90,7 @@
 
 
                                                 <div class="thongbao">
-                                                <button onclick="myFunction()" class="dropbtn"><i class="far fa-bell"></i></button>
+                                                <button onclick="myFunction()" class="dropbtn"><i class="far fa-bell " style="color:white"></i></button>
                                                 <div id="myDropdown" class="dropdown-content">
                                                     @foreach($user->notify as $row)
                                                     @if($row->state == 1)
