@@ -16,7 +16,7 @@
                                 <a href = "cat/2"><li class="" id = "2-cat">Chung cư mini</li></a>
                                 <a href = "cat/3"><li class="" id = "3-cat">Nhà nguyên căn</li></a>
                                 <a href = "cat/4"><li class="" id = "4-cat">Chung cư nguyên căn</li></a>
-                                <li class="li_news"><a href="#">Tin tức</a></li>
+                                <li class="li_news"><a href="news">Tin tức</a></li>
                             </ul>
                         </div>
                         <div class="box-user">
