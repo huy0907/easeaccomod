@@ -3,7 +3,7 @@
 
 @endsection
 @section('content')
-
+<script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" data-auto-a11y="true"></script>
 <div id="page-wrapper">
     <div>
     <style>
