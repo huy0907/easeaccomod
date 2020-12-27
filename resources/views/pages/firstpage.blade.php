@@ -381,7 +381,7 @@ $(document).ready(function(){
         param = param + "&" + $(this).val() + "=1" ;
     });
     console.log(param);
-    $("#main-body").html('<div id="loading" class = "fa fa-circle-o-notch fa-spin fa-3x fa-fw" style="" >Loading</div>');
+    $("#main-body").html('<div id="loading" class = "fas fa-spinner fa-pulse  fa-3x fa-fw" style="" >Loading</div>');
     $.ajax({
       type: 'get',
       dataType: 'html',
