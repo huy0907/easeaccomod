@@ -94,10 +94,10 @@
                                                 <div id="myDropdown" class="dropdown-content">
                                                     @foreach($user->notify as $row)
                                                     @if($row->state == 1)
-                                                        Tài khoản của bạn đã được phê duyệt. <br>
+                                                        <a> Tài khoản của bạn đã được phê duyệt. </a>  <br>
                                                     @endif
                                                     @if($row->state == 2)
-                                                        Bài đăng của bạn của bạn đã được phê duyệt.<br>
+                                                       <a>Bài đăng của bạn của bạn đã được phê duyệt. </a> <br>
                                                     @endif
                                                     @endforeach
                                                 </div>
