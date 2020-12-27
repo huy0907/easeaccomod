@@ -1,6 +1,63 @@
 @extends('admin.layout.index')
 @section('content')
+
 <div id="page-wrapper">
+    <div>
+    <style>
+	.stat{
+		background-image: linear-gradient(to right, purple, pink);
+		color: white;
+
+	}
+
+	.stat i{
+		font-size: 50px;
+	}
+	.stat-items {
+		display: inline-block;
+		margin: 0 80px;
+		text-align: center;
+	}
+	.stat-items h2{
+		font-weight: bold;
+		font-size: 42px;
+		color: yellow;
+
+	}
+	.stat p{
+		font-weight: bold;
+		letter-spacing: 1px;
+	}
+</style>
+</head>
+<body>
+	<section class="stat" id="stat">
+		<div class="content-box">
+			<br><br>
+			<div class="container">
+				<div class="row text-center">
+						<div class="stat-items">
+							<i class="fas fa-camera-retro"></i>
+							<h2><span class="counter text-center">3390</span><span>+</span></h2>
+							<p>Views</p>
+						</div>
+						<div class="stat-items">
+							<i class="fas fa-users"></i>
+							<h2><span class="counter text-center">3390</span><span>+</span></h2>
+							<p>Users</p>
+						</div>
+							<div class="stat-items">
+							<i class="far fa-clipboard"></i>
+							<h2><span class="counter text-center">3390</span><span>+</span></h2>
+							<p>Posts</p>
+						</div>
+					
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+    </div>
     <h2>Province</h2>
     <div>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -15,11 +72,8 @@
           ['Hà Nội',     5],
           ['Hồ Chí Minh',      2],
           ['Hải Dương',  1]
-         
         ]);
-
         var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-
         chart.draw(data);
       }
     </script>
