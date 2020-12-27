@@ -148,6 +148,14 @@ header .container .container-inner .box-user ul.nav_user li a {
     white-space: nowrap;
     line-height: 30px;
 }
+
+header .container .container-inner .box-user ul.nav_user li a.register:hover {
+    color: #9b2e22;
+}
+
+header .container .container-inner .box-user ul.nav_user li a.login:hover {
+    color: #9b2e22;
+}
 header .container .container-inner .menu ul.nav_top li a:hover {
     color: #0062C4;
 }
