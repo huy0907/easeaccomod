@@ -29,7 +29,7 @@
                                     @if($user->idRole !=2 )
                                     <li class="li_add-new"><a class="btn red add-new t frm-login" href="post">Đăng tin</a></li>
                                     @endif
-                                    <li  class="li_admin"><a class="login frm-login" href="">{{$user->name}}</a>
+                                    <li  class="li_admin"><a class="login frm-login" href=""><i class="far fa-bell"></i> {{$user->name}}</a>
                                         <ul class="drop_menu">
                                         <li class="drop_menu_child"><a href="#" >Tài Khoản:<b>{{$user->name}}</b></a></li>
                                             <li><button><a href="profile/{{$user->id}}">Trang cá nhân</a></button></li>
