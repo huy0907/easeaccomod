@@ -48,83 +48,89 @@
                 </select>
             </div>
             <div class="col-xs-6 col-sm-2">
-            <label class="search_field_item_label">Thêm</label>
-            <style> 
-                .multipleSelection { 
-                     width: 145px;  
-                } 
-  
-                .selectBox { 
-                     position: relative; 
-                } 
-  
-                .selectBox select { 
-                    width: 100%; 
-                    
-                 } 
-  
-                 .overSelect { 
-                    position: absolute; 
-                    left: 0; 
-                    right: 0; 
-                    top: 0; 
-                    bottom: 0; 
-                 } 
-  
-                 #checkBoxes { 
-                    background-color:white;
-                    display: none; 
-                    border: 0.5px black solid; 
-                } 
-  
-                #checkBoxes label { 
-                    display: block; 
-                } 
-  
-                 #checkBoxes label:hover { 
-                    background-color: #0062C4; 
-        } 
-    </style> 
+                <label class="search_field_item_label">Thêm</label>
+                <style> 
+                    .multipleSelection { 
+                        width: 145px;  
+                    } 
+    
+                    .selectBox { 
+                        position: relative; 
+                    } 
+    
+                    .selectBox select { 
+                        width: 100%; 
+                        
+                    } 
+    
+                    .overSelect { 
+                        position: absolute; 
+                        left: 0; 
+                        right: 0; 
+                        top: 0; 
+                        bottom: 0; 
+                    } 
+    
+                    #checkBoxes { 
+                        margin-top: 3px;
+                        background-color:white;
+                        display: none; 
+                        box-shadow: 0 0 20px -10px #9c9a9a;
+                        border-radius: 2px;
+                    } 
+
+                    #checkBoxes li {
+                        list-style: none;
+                        padding-left: 15px;
+                    }
+    
+                    #checkBoxes label { 
+                        display: block; 
+                    } 
+    
+                    #checkBoxes label:hover { 
+                        background-color: #0062C4; 
+                        } 
+                </style> 
                 <form>
-                <div class="multipleSelection">
-                <div class="selectBox" 
-                onclick="showCheckboxes()">
-                <select id="more">
-                    <option value="" > Thêm tiêu chí</option>
-                </select>
+                    <div class="multipleSelection">
+                        <div class="selectBox" onclick="showCheckboxes()">
+                            <select id="more">
+                                <option value="" > Thêm tiêu chí</option>
+                            </select>
             
-                <div class="overSelect"></div>
-                </div>
-                <div id="checkBoxes">
-                <label>Tiện nghi</label>
-                <li><input type = "checkbox" value = "wash_machine" class = "facility">  Máy giặt</li>
-                <li><input type = "checkbox" value = "wifi" class = "facility" >  Wifi</li>
-                <li><input type = "checkbox" value = "tv" class = "facility" >  Tivi</li>
-                <li><input type = "checkbox" value = "air_con" class = "facility">  Điều hòa</li>
-                <label>Xung quanh</label>
-                <li><input type = "checkbox" value = "market" class = "facility">  Siêu thị</li>
-                <li><input type = "checkbox" value = "hospital" class = "facility">  Bệnh viện</li>
-                <li><input type = "checkbox" value = "park" class = "facility" >  Công viên</li>
-            </div> 
-                </div>
+                            <div class="overSelect"></div>
+                        </div>
+                        <div id="checkBoxes">
+                            <label>Tiện nghi</label>
+                            <li><input type = "checkbox" value = "wash_machine" class = "facility">  Máy giặt</li>
+                            <li><input type = "checkbox" value = "wifi" class = "facility" >  Wifi</li>
+                            <li><input type = "checkbox" value = "tv" class = "facility" >  Tivi</li>
+                            <li><input type = "checkbox" value = "air_con" class = "facility">  Điều hòa</li>
+                            <label>Xung quanh</label>
+                            <li><input type = "checkbox" value = "market" class = "facility">  Siêu thị</li>
+                            <li><input type = "checkbox" value = "hospital" class = "facility">  Bệnh viện</li>
+                            <li><input type = "checkbox" value = "park" class = "facility" >  Công viên</li>
+                        </div> 
+                    </div>
                 </form>
             </div>
             <script> 
-        var show = true; 
-  
-        function showCheckboxes() { 
-            var checkboxes =  
-                document.getElementById("checkBoxes"); 
-  
-            if (show) { 
-                checkboxes.style.display = "block"; 
-                show = false; 
-            } else { 
-                checkboxes.style.display = "none"; 
-                show = true; 
-            } 
-        } 
-    </script>
+                var show = true; 
+        
+                function showCheckboxes() { 
+                    var checkboxes =  
+                        document.getElementById("checkBoxes"); 
+        
+                    if (show) { 
+                        checkboxes.style.display = "block"; 
+                        show = false; 
+                    } else { 
+                        checkboxes.style.display = "none"; 
+                        show = true; 
+                    } 
+                } 
+            </script>
             <div class="col-sm-6 hidden-xs" style="padding-top:12.5px">
                 <div class="row">
 
