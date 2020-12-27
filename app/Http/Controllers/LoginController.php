@@ -46,7 +46,7 @@ class LoginController extends Controller
         'password.length' => "Password lengt must be at least 6 characters"]);
         if(Auth::attempt(['email' => $req->email, 'password' => $req->password]))
         {
-            if(session('link') == "http://localhost/easeaccomod/public/register")
+            if(session('link') == "http://localhost/easeaccomod/public/register" || session('link') == "http://localhost/easeaccomod/public/login" )
             return redirect('index');
             else return redirect(session('link'));
         }
