@@ -22,6 +22,11 @@
                                         <p class="block_action">
                                             <a href="editpost/{{$row->id}}"><i class="fas fa-edit" aria-hidden="true"></i> Sửa tin</i></a>
                                             <i id = "{{$row->id}}_post_edit"><i class="fas fa-trash-alt" aria-hidden="true"></i> Xoá tin</i>
+                                            @if($row->state == 1)
+                                            <i id = "{{$row->id}}_empty"><i class="fas fa-door-closed" aria-hidden="true"></i> Hết phòng</i>
+                                            @else <i id = "{{$row->id}}_empty"><i class="fas fa-door-open" aria-hidden="true"></i> Còn phòng</i>
+                                            @endif
+
                                         </p>
                                         <p class="detail">Mã tin: <span>{{$row->id}}</span></p>
                                         <p class="detail block_hits">Lượt xem tin: <span>{{$row->views}}</span></p>
@@ -61,6 +66,26 @@ $(document).ready(function(){
       }
     });
     }
+  });
+  @endforeach
+
+  @foreach($user->post as $row)
+  $("#{{$row->id}}_empty").click(function(){
+    var id = {{$row->id}};
+    $.ajax({
+      type: 'get',
+      dataType: 'html',
+      url: '{{url('/empty')}}',
+      data: 'id=' + id,
+      success:function(response){
+        console.log(response);
+        if(response == 0)
+        {
+          $("#{{$row->id}}_empty").html('<i class="fas fa-door-open" aria-hidden="true"></i>Còn phòng');
+        }
+        else $("#{{$row->id}}_empty").html('<i class="fas fa-door-closed" aria-hidden="true"></i>Hết phòng');
+      }
+    });
   });
   @endforeach
 });

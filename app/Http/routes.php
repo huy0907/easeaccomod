@@ -98,3 +98,4 @@ Route::get('postlist', 'PageController@getPostList')->middleware('logincheck');
 
 Route::get('deletepost','PageController@getDeletepost');
 Route::get('news', 'PageController@getNews');
+Route::get('empty', 'PostController@empty');
