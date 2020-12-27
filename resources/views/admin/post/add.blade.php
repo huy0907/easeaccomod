@@ -62,6 +62,10 @@
                                 <input class="form-control" name="price" placeholder="Please Enter price" />
                             </div>
                             <div class="form-group">
+                                <label>Area</label>
+                                <input class="form-control" name="area" placeholder="Please Enter Area" />
+                            </div>
+                            <div class="form-group">
                                 <label>Facility</label>
                                 <li><input type = "checkbox" name = "wash_machine" value = 1 >  Máy giặt</li>
                                 <li><input type = "checkbox" name = "wifi" value = 1 >  Wifi</li>
@@ -80,7 +84,6 @@
                                 <li><input type = "checkbox" name = "stadium"  value = 1>  Sân vận động</li>
                                 <li><input type = "checkbox" name = "school"  value = 1>  Trường học</li>
                                 <li><input type = "checkbox" name = "bus"  value = 1>  Trạm xe bus</li>
-        
                             </div>
                             <button type="submit" class="btn btn-default">Post Add</button>
                             <button type="reset" class="btn btn-default">Reset</button>

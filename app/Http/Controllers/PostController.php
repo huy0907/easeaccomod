@@ -55,9 +55,10 @@ class PostController extends Controller
         $post->idOwner = Auth::user()->id;
         $post->name = $req->name;
         $post->price = $req->price;
+        $post->area = $req->area;
         $post->description = $req->description;
         $post->address = $req->address;
-        $post->isConfirm = 0;
+        $post->isConfirm = 1;
         
         
         if($req->hasFile('image'))
@@ -69,10 +70,6 @@ class PostController extends Controller
                 $file->move("image", $imageName);
                 $imageNameArr[] = $imageName;
             }
-            
-            
-            // $name = str_random(4)."_".$name;
-            // $file->move("image", $name);
             $post->image = implode("?",$imageNameArr);
         }
         else
@@ -203,16 +200,20 @@ class PostController extends Controller
         $post->category_id = $req->category;
         $post->name = $req->name;
         $post->price = $req->price;
+        $post->area = $req->area;
         $post->description = $req->description;
         $post->address = $req->address;
         $post->province_id = $req->province;
         if($req->hasFile('image'))
         {
-            $file = $req->file('image');
-            $name = $file->getClientOriginalName();
-            $name = str_random(4)."_".$name;
-            $file->move("image", $name);
-            $post->image = $name;
+            $imageNameArr = [];
+            foreach ($req->image as $file) {
+                $imageName = $file->getClientOriginalName();
+                $imageName = str_random(4)."_".$imageName;
+                $file->move("image", $imageName);
+                $imageNameArr[] = $imageName;
+            }
+            $post->image = implode("?",$imageNameArr);
         }
         if(isset($req->wash_machine))
         {

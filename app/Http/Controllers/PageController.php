@@ -31,7 +31,7 @@ class PageController extends Controller
     }
     public function index()
     {
-        $post = post::take(8)->get();
+        $post = post::where('isConfirm', '1')->orderBy('id', 'desc')->take(8)->get();
         $cat_list = category::all();
         $prov_list = province::all();
         $cat_info = post::groupBy('category_id')->select('category_id', DB::raw('count(*) as total'))->get();
@@ -49,7 +49,7 @@ class PageController extends Controller
         $cat_list = category::all();
         $prov_list = province::all();
         $cat_info = post::groupBy('category_id')->select('category_id', DB::raw('count(*) as total'))->get();
-        $post_relate = post::where('category_id', '=', $post->category_id)->where('province_id', $post->province_id)->take(4)->get();
+        $post_relate = post::where('category_id', '=', $post->category_id)->where('province_id', $post->province_id)->where('id', '!=', $id)->take(4)->get();
         $count_cmt = comment::where('post_id', '=', $post->id)->count();
         return view('pages.detail', ['post' => $post, 'post_relate' => $post_relate, 'count' => $count_cmt, 'cat' => $cat_info,
         'cat_list' =>  $cat_list, 'prov_list' => $prov_list]);
@@ -90,19 +90,25 @@ class PageController extends Controller
         $post->idOwner = Auth::user()->id;
         $post->name = $req->name;
         $post->price = $req->price;
+        $post->area = $req->area;
         $post->description = $req->description;
         $post->address = $req->address;
         $post->isConfirm = 0;
-        
+        if(Auth::user()->idRole == 3)
+        {
+            $post->isConfirm = 1;
+        }
         
         if($req->hasFile('image'))
         {
-            $file = $req->file('image');
-            $name = $file->getClientOriginalName();
-
-            $name = str_random(4)."_".$name;
-            $file->move("image", $name);
-            $post->image = $name;
+            $imageNameArr = [];
+            foreach ($req->image as $file) {
+                $imageName = $file->getClientOriginalName();
+                $imageName = str_random(4)."_".$imageName;
+                $file->move("image", $imageName);
+                $imageNameArr[] = $imageName;
+            }
+            $post->image = implode("?",$imageNameArr);
         }
         else
         {
@@ -193,11 +199,28 @@ class PageController extends Controller
 
         return view('pages/profile', ['us' => $us]);
     }
-    public function getEdit($id)
+    public function getSavePost()
+    {
+        return view('pages/savepost');
+    }
+    public function getPostList()
+    {
+        return view('pages/postlist');
+    }
+    public function getEdit()
     {
         return view('pages/editprofile');
     }
-    
+    public function postEditUser(Request $req)
+    {
+        $us = Auth::user();
+        $us->name = $req->name;
+        $us->phone = $req->phone;
+        $us->address = $req->address;
+        $us->password =  bcrypt($req->newpassword);
+        $us->save();
+        return redirect('editprofile')->with('notify', 'Chỉnh sửa thông tin người dùng thành công!');
+    }
     
     public function getEditPost($id)
     {
@@ -226,16 +249,20 @@ class PageController extends Controller
         $post->category_id = $req->category;
         $post->name = $req->name;
         $post->price = $req->price;
+        $post->area = $req->area;
         $post->description = $req->description;
         $post->address = $req->address;
         $post->province_id = $req->province;
         if($req->hasFile('image'))
         {
-            $file = $req->file('image');
-            $name = $file->getClientOriginalName();
-            $name = str_random(4)."_".$name;
-            $file->move("image", $name);
-            $post->image = $name;
+            $imageNameArr = [];
+            foreach ($req->image as $file) {
+                $imageName = $file->getClientOriginalName();
+                $imageName = str_random(4)."_".$imageName;
+                $file->move("image", $imageName);
+                $imageNameArr[] = $imageName;
+            }
+            $post->image = implode("?",$imageNameArr);
         }
         if(isset($req->wash_machine))
         {
@@ -353,6 +380,34 @@ class PageController extends Controller
             $data->where('area', '>=', $start * 1000000 );
             $data->where('area', '<=', $end * 1000000 );
         }
+        if($req->has('wash_machine'))
+        {
+            $data->where('wash_machine', 1 );
+        }
+        if($req->has('wifi'))
+        {
+            $data->where('wifi', 1 );
+        }
+        if($req->has('tv'))
+        {
+            $data->where('tv', 1 );
+        }
+        if($req->has('air_con'))
+        {
+            $data->where('air_con', 1 );
+        }
+        if($req->has('market'))
+        {
+            $data->where('market', 1 );
+        }
+        if($req->has('hospital'))
+        {
+            $data->where('hospital', 1 );
+        }
+        if($req->has('park'))
+        {
+            $data->where('park', 1 );
+        }
         if(count($data->get()) == 0)
         {
             echo "<h1 align='center'>Không tìm thấy kết quả</h1>";
@@ -384,5 +439,14 @@ class PageController extends Controller
     public function getNotify()
     {
         return view('pages/notify');
+    }
+    public function getNews()
+    {
+        return view('pages/news');
+    }
+    public function getDeletepost(Request $req)
+    {
+        $post = post::find($req->id);
+        $post->delete();
     }
 }

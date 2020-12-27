@@ -26,7 +26,7 @@
                                 @if(isset($user))
                                 @if($user->favorite->where('post_id', $post->id)->count() > 0)
                                 <span style="color: #0062C4;cursor:pointer"><i class="far fa-bookmark"></i> Đã lưu tin </span>
-                                @else <span style="color: #0062C4;cursor:pointer"><i class="far fa-bookmark" id="favor"></i> Lưu tin </span>
+                                @else <span style="color: #0062C4;cursor:pointer"><i id = "favor"><i class="far fa-bookmark" id="favor"></i>Lưu tin </span></i>
                                 @endif
                                 @endif
                                 <a href="report/{{$post->id}}"><i class="fas fa-flag" style="" >
@@ -117,59 +117,68 @@
                                     </div>
                                 </div>
                                 <div class="line"></div>
-                                <h2>Tiện nghi</h2>
-                                <div class="box-check">
-                                    <ul>
-                                        @if($post->value("wash_machine") == 1)
-                                        <li><i class="ico icon"></i><span title="Máy giặt">Máy giặt</span></li>
-                                        @endif
-                                        @if($post->value("wifi") == 1)
-                                        <li><i class="ico icon"></i><span title="Wifi">Wifi</span></li>
-                                        @endif
-                                        @if($post->value("tv") == 1)
-                                        <li><i class="ico icon"></i><span title="Tivi">Tivi</span></li>
-                                        @endif
-                                        @if($post->value("air_con") == 1)
-                                        <li><i class="ico icon"></i><span title="Điều hòa">Điều hòa</span></li>
-                                        @endif
-                                        @if($post->value("camera") == 1)
-                                        <li><i class="ico icon"></i><span title="Camera">Camera</span></li>
-                                        @endif
-                                        @if($post->value("garden") == 1)
-                                        <li><i class="ico icon"></i><span title="Sân vườn">Sân vườn</span></li>
-                                        @endif
-                                        @if($post->value("heater") == 1)
-                                        <li><i class="ico icon"></i><span title="Bình nóng lạnh">Bình nóng lạnh</span></li>
-                                        @endif
-                                        @if($post->value("pool") == 1)
-                                        <li><i class="ico icon"></i><span title="Bể bơi">Bể bơi</span></li>
-                                        @endif
+                                <div class = "vips">
+                                    
+                                    <div class="box-check">
+                                        <h2>Tiện nghi</h2>
+                                        <ul>
+                                            @if($post->wash_machine == 1)
+                                            <li><i class="fas fa-dumpster-fire"></i><span title="Máy giặt">Máy giặt</span></li>
+                                            @endif
+
+                                            @if($post->wifi == 1)
+                                            <li><i class="fas fa-wifi"></i><span title="Wifi">Wifi</span></li>
+                                            @endif
+                                            
+                                            @if($post->tv == 1)
+                                            <li><i class="fas fa-tv"></i><span title="Tivi">Tivi</span></li>
+                                            @endif
+                                            
+                                            @if($post->air_con == 1)
+                                            <li><i class="fas fa-fan"></i><span title="Điều hòa">Điều hòa</span></li>
+                                            @endif
+                                            
+                                            @if($post->camera == 1)
+                                            <li><i class="fas fa-video"></i><span title="Camera">Camera</span></li>
+                                            @endif
                                         
-                                    </ul>
-                                </div>
-                                <div class="line"></div>
-                                <h2>Tiện ích xung quanh</h2>
-                                <div class="box-check">
-                                    <ul>
-                                    @if($post->value("market") == 1)
-                                        <li><i class="ico icon"></i><span title="Siêu thị">Siêu thị</span></li>
-                                        @endif
-                                        @if($post->value("hospital") == 1)
-                                        <li><i class="ico icon"></i><span title="Bệnh viện">Wifi</span></li>
-                                        @endif
-                                        @if($post->value("park") == 1)
-                                        <li><i class="ico icon"></i><span title="Công viên">Công viên</span></li>
-                                        @endif
-                                        @if($post->value("school") == 1)
-                                        <li><i class="ico icon"></i><span title="Trường học">Trường học</span></li>
-                                        @endif
-                                        @if($post->value("bus") == 1)
-                                        <li><i class="ico icon"></i><span title="Điểm chờ xe buýt">Camera</span></li>
-                                        @endif
-                                        @if($post->value("stadium") == 1)
-                                        <li><i class="ico icon"></i><span title="Sân vân động">Sân vận động</span></li>
-                                        @endif
-                                    </ul>
+                                            @if($post->garden == 1)
+                                            <li><i class="fas fa-mountain"></i><span title="Sân vườn">Sân vườn</span></li>
+                                            @endif
+                                            @if($post->heater == 1)
+                                            <li><i class="fas fa-hot-tub"></i><span title="Bình nóng lạnh">Bình nóng lạnh</span></li>
+                                            @endif
+                                            
+                                            @if($post->pool == 1)
+                                            <li><i class="fas fa-swimmer"></i><span title="Bể bơi">Bể bơi</span></li>
+                                            @endif
+                                            
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="box-check">
+                                        <h2>Tiện ích xung quanh</h2>
+                                        <ul>
+                                        @if($post->market == 1)
+                                            <li><i class="fas fa-hotel"></i><span title="Siêu thị">Siêu thị</span></li>
+                                            @endif
+                                            @if($post->hospital == 1)
+                                            <li><i class="fas fa-hospital"></i><span title="Bệnh viện">Wifi</span></li>
+                                            @endif
+                                            @if($post->park == 1)
+                                            <li><i class="fas fa-tree"></i><span title="Công viên">Công viên</span></li>
+                                            @endif
+                                            @if($post->school == 1)
+                                            <li><i class="fas fa-school"></i><span title="Trường học">Trường học</span></li>
+                                            @endif
+                                            @if($post->bus == 1)
+                                            <li><i class="fas fa-bus-alt"></i><span title="Điểm chờ xe buýt">Điểm chờ xe buýt</span></li>
+                                            @endif
+                                            @if($post->stadium == 1)
+                                            <li><i class="fas fa-running"></i><span title="Sân vân động">Sân vận động</span></li>
+                                            @endif
+                                        </ul>
+                                    </div>
                                 </div>
                                 <div class="line"></div>
                             </div>
@@ -192,7 +201,7 @@
                             </div>
                             <ul id = "comment_list">
                             @foreach($post->comment as $row)
-                            <li>{{$row->user->name}} : {{$row->content}}</li></br>
+                            <li>{{$row->user->name}}({{$row->created_at}}): {{$row->content}}</li></br>
                             @endforeach
                             </ul>
                         </div>
@@ -281,7 +290,7 @@ $(document).ready(function(){
       data: 'post_id=' + {{$post->id}} + "&content=" + comment_content, 
       success:function(response){
         $("#cmt").val("");
-        $("#comment_list").append("<li>{{$user->name}}" + " : " + comment_content+"</li>");
+        $("#comment_list").append("<li>{{$user->name}}(Vừa xong)" + " : " + comment_content+"</li>");
         count_cmt =  count_cmt + 1;
         $("#count_cmt").html("Bình luận (" + count_cmt + ")");
       }

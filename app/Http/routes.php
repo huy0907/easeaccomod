@@ -84,7 +84,8 @@ Route::get('getResult', 'PageController@getResult');
 Route::get('cat/{id}', 'PageController@getHeader');
 //Middeware check for pages must login to access
 Route::get('editpost/{id}', 'PageController@getEditPost')->middleware('logincheck');
-Route::get('editprofile/{id}', 'PageController@getEdit')->middleware('logincheck');
+Route::get('editprofile', 'PageController@getEdit')->middleware('logincheck');
+Route::post('editprofile', 'PageController@postEditUser')->middleware('logincheck');
 Route::post('editpost/{id}', 'PageController@postEditPost')->middleware('logincheck');
 Route::get('post','PageController@getpost')->middleware('logincheck');
 Route::post('post', 'PageController@postPost' )->middleware('logincheck');
@@ -92,3 +93,8 @@ Route::get('report/{id}','PageController@getReport')->middleware('logincheck');
 Route::post('report/{id}', 'ReportController@postReport')->middleware('logincheck');
 Route::get('addFavor','PageController@getAddFavor')->middleware('logincheck');
 Route::get('notify', 'PageController@getNotify')->middleware('logincheck');
+Route::get('savepost', 'PageController@getSavePost')->middleware('logincheck');
+Route::get('postlist', 'PageController@getPostList')->middleware('logincheck');
+
+Route::get('deletepost','PageController@getDeletepost');
+Route::get('news', 'PageController@getNews');

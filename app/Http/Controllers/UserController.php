@@ -82,7 +82,36 @@ class UserController extends Controller
         $role = roles::all();
         return view('admin/user/edit', ['user' => $user, 'role' => $role]);
     }
-
+    public function postEditUser(Request $req, $id)
+    {
+        $user = User::find($id);
+        $this->validate($req,
+        [
+        'name' => 'required|min:3',
+        'password' => 'required|min:6',
+        'email' => 'required',
+        'phone' => 'required',
+        'address' => 'required',
+        ],
+        [
+        'name.required' => "Your name cannot empty",
+        'name.required' => "Your username length must be at least 3 characters",
+        'email.required' => "Your email cannot empty",
+        'phone.required' => "Your description cannot empty",
+        'password.required' => "Your password cannot empty",
+        'address.required' => "Your address cannot empty",
+        'password.min' => "Your password length must be at least 6 characters",
+        
+        ]);
+        if($req->password )
+        $user->name = $req->name;
+        $user->email = $req->email;
+        $user->phone = $req->phone;
+        $user->address = $req->address;
+        $user->password = bcrypt($req->password);
+        $user->save();
+        return redirect('admin/user/edit/'.$id)->with('notify', 'Edit user sucessfully!');
+    }
     public function postEdit(Request $req,$id)
     {
         $user = User::find($id);

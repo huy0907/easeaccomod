@@ -54,7 +54,7 @@
                             </div>
                             <div class="form-group">
                                 <label>Image</label>
-                                <p><img width = "400px" src = "image/{{$post->image}}"></p>
+                                <p><img width = "400px" src = "image/{{explode('?',$post->image)[0]}}"></p>
                                 <input class="form-control" name="image" type = "file" />
                             </div>
                             <div class="form-group">
@@ -64,6 +64,10 @@
                             <div class="form-group">
                                 <label>Price</label>
                                 <input class="form-control" name="price" placeholder="Please Enter price"  value = "{{$post->price}}"/>
+                            </div>
+                            <div class="form-group">
+                                <label>Area</label>
+                                <input class="form-control" name="area" placeholder="Please Enter area"  value = "{{$post->area}}"/>
                             </div>
                             <div class="form-group">
                                 <label>Facility</label>
@@ -94,7 +98,7 @@
                 <!-- /.row -->
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1 class="page-header">Post
+                        <h1 class="page-header">Comment
                             <small>List</small>
                         </h1>
                     </div>
