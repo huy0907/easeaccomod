@@ -97,7 +97,7 @@
                                                         <a> Tài khoản của bạn đã được phê duyệt. </a>
                                                     @endif
                                                     @if($row->state == 2)
-                                                       <a>Bài đăng của bạn của bạn đã được phê duyệt. </a>
+                                                    <a href="#"> Bài đăng của bạn của bạn đã được phê duyệt. </a>
                                                     @endif
                                                     @endforeach
                                                 </div>
