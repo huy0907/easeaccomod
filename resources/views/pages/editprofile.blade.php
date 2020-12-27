@@ -12,13 +12,26 @@
 
                     <div class="content">
                         <h1>Thay đổi cá nhân</h1>
-                        <form action="" onsubmit="return updatePersonal();" method="post">
+                        @if(count($errors) > 0)
+                            <div class = "alert alert-danger">
+                                @foreach($errors->all() as $err)
+                                    {{$err}}<br>
+                                @endforeach
+                            </div>
+                        @endif
+
+                        @if(session('notify'))
+                                <div class = 'alert alert-success'>
+                                    {{session('notify')}}
+                                </div>
+                        @endif
+                        <form action="editprofile" method="post">
                         <input type="hidden" name = "_token" value = "{{csrf_token()}}"/>
                             <div class="frame" id="personal_edit">        
                                 <div class="inforow">
                                     <label>Họ tên:</label>
                                     <div class="infotext">
-                                        <input tabindex="1" type="text" value="{{$user->name}}" name="fullname" maxlength="40" class="subform_input updtinput">
+                                        <input tabindex="1" type="text" value="{{$user->name}}" name="name" maxlength="40" class="subform_input updtinput">
                                     </div>
                                     <div class="clear"></div>
                                 </div>      
@@ -46,13 +59,6 @@
                                 </div>
 
                                 <div class="inforow">
-                                    <label>Mật khẩu cũ:</label>
-                                    <div class="infotext">
-                                        <input tabindex="1" type="password" value="123" name="password" maxlength="40" class="subform_input updtinput">
-                                    </div>
-                                    <div class="clear"></div>
-                                </div>
-                                <div class="inforow">
                                     <label>Mật khẩu mới:</label>
                                     <div class="infotext">
                                         <input tabindex="1" type="password" value="" name="newpassword" maxlength="40" class="subform_input updtinput">
@@ -62,7 +68,7 @@
                                 <div class="inforow">
                                     <label>Nhập lại mật khẩu mới:</label>
                                     <div class="infotext">
-                                        <input tabindex="1" type="password" value="" name="newpassword" maxlength="40" class="subform_input updtinput">
+                                        <input tabindex="1" type="password" value="" name="newpassword1" maxlength="40" class="subform_input updtinput">
                                     </div>
                                     <div class="clear"></div>
                                 </div>

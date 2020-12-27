@@ -49,7 +49,7 @@ class PageController extends Controller
         $cat_list = category::all();
         $prov_list = province::all();
         $cat_info = post::groupBy('category_id')->select('category_id', DB::raw('count(*) as total'))->get();
-        $post_relate = post::where('category_id', '=', $post->category_id)->where('province_id', $post->province_id)->take(4)->get();
+        $post_relate = post::where('category_id', '=', $post->category_id)->where('province_id', $post->province_id)->where('id', '!=', $id)->take(4)->get();
         $count_cmt = comment::where('post_id', '=', $post->id)->count();
         return view('pages.detail', ['post' => $post, 'post_relate' => $post_relate, 'count' => $count_cmt, 'cat' => $cat_info,
         'cat_list' =>  $cat_list, 'prov_list' => $prov_list]);
@@ -94,7 +94,7 @@ class PageController extends Controller
         $post->description = $req->description;
         $post->address = $req->address;
         $post->isConfirm = 0;
-        if(Auth::user()->idRole = 3)
+        if(Auth::user()->idRole == 3)
         {
             $post->isConfirm = 1;
         }
@@ -207,11 +207,20 @@ class PageController extends Controller
     {
         return view('pages/postlist');
     }
-    public function getEdit($id)
+    public function getEdit()
     {
         return view('pages/editprofile');
     }
-    
+    public function postEditUser(Request $req)
+    {
+        $us = Auth::user();
+        $us->name = $req->name;
+        $us->phone = $req->phone;
+        $us->address = $req->address;
+        $us->password =  bcrypt($req->newpassword);
+        $us->save();
+        return redirect('editprofile')->with('notify', 'Chỉnh sửa thông tin người dùng thành công!');
+    }
     
     public function getEditPost($id)
     {

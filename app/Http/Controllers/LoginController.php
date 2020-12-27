@@ -75,6 +75,7 @@ class LoginController extends Controller
         $user->name = $req->name;
         $user->idRole= $req->role;
         $user->email = $req->email;
+        $user->phone = $req->phone;
         $user->password = bcrypt($req->password);
         if($user->idRole == 1)
         {

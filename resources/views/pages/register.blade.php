@@ -24,13 +24,15 @@
             <form action = "register" method = "POST">
             <input type="hidden" name = "_token" value = "{{csrf_token()}}"/>
                 <p>Tên</p>
-                <input type = "name" name="name" placeholder="Nhập tên của bạn">
+                <input type = "name" name="name" placeholder="Nhập tên của bạn" required>
                 <p>Email</p>
-                <input type="email" name="email" placeholder="Nhập email của bạn">
+                <input type="email" name="email" placeholder="Nhập email của bạn" required>
+                <p>Số điện thoại</p>
+                <input type="tel" name="phone" placeholder="Nhập số điện thoại của bạn" required>
                 <p>Mật khẩu</p>
-                <input type="password" name="password" placeholder="Nhập mật khẩu">
+                <input type="password" name="password" placeholder="Nhập mật khẩu" required>
                 <p>Nhập lại mật khẩu</p>
-                <input type="password" name="password_again" placeholder="Nhập lại mật khẩu">
+                <input type="password" name="password_again" placeholder="Nhập lại mật khẩu" required>
                 <label class="">
                     <input name="role" value="2" type="radio">Người tìm nhà
                     <input name="role" value="1" type="radio">Người đăng bài

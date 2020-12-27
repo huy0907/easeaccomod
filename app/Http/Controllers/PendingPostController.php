@@ -34,7 +34,7 @@ class PendingPostController extends Controller
         $post->save();
 
         $not = new notify;
-        $not->user_id = $user->id;
+        $not->user_id = $post->idOwner;
         $not->state = 2;
         $not->save();
         return $this->getList();

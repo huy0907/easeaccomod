@@ -13,6 +13,7 @@
                                 <div class="widget-user-header">
                                     <h3 class="">{{$us->name}}</h3>
                                     <h4 class="widget-user-desc">Email : {{$us->email}}</h4>
+                                    <h4><a href = "editprofile" style="color:black">Sửa</a>
                                 </div>
                                 <div class="widget-user-image" style="background-image:url('https://id.ohi.vn/frontend/images/default-avatar.png');"></div>
                                 <div class="box-footer">

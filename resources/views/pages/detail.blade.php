@@ -201,7 +201,7 @@
                             </div>
                             <ul id = "comment_list">
                             @foreach($post->comment as $row)
-                            <li>{{$row->user->name}} : {{$row->content}}</li></br>
+                            <li>{{$row->user->name}}({{$row->created_at}}): {{$row->content}}</li></br>
                             @endforeach
                             </ul>
                         </div>
@@ -290,7 +290,7 @@ $(document).ready(function(){
       data: 'post_id=' + {{$post->id}} + "&content=" + comment_content, 
       success:function(response){
         $("#cmt").val("");
-        $("#comment_list").append("<li>{{$user->name}}" + " : " + comment_content+"</li>");
+        $("#comment_list").append("<li>{{$user->name}}(Vừa xong)" + " : " + comment_content+"</li>");
         count_cmt =  count_cmt + 1;
         $("#count_cmt").html("Bình luận (" + count_cmt + ")");
       }

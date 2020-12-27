@@ -30,15 +30,15 @@
                         <form action="post" method="POST" enctype = "multipart/form-data">
                         <input type="hidden" name = "_token" value = "{{csrf_token()}}"/>
                             <div class="form-group">
-                                <label>Name</label>
-                                <input class="form-control" name="name" placeholder="Please Enter address" />
+                                <label>Tiêu đề</label>
+                                <input class="form-control" name="name" placeholder="Vui lòng điền tiêu đề" required />
                             </div>
                             <div class="form-group">
-                                <label>Address</label>
-                                <input class="form-control" name="address" placeholder="Please Enter address" />
+                                <label>Địa chỉ</label>
+                                <input class="form-control" name="address" placeholder="Vui lòng nhập địa chỉ" required />
                             </div>
                             <div class="form-group">
-                                <label>Category</label>
+                                <label>Thể loại</label>
                                 <select class="form-control" name = "category">
                                     @foreach($cat as $row)
                                     <option value="{{$row->id}}">{{$row->name}}</option>
@@ -46,7 +46,7 @@
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label>Province</label>
+                                <label>Tỉnh/thành phố</label>
                                 <select class="form-control" name = "province">
                                     @foreach($province as $row)
                                     <option value="{{$row->id}}">{{$row->name}}</option>
@@ -55,23 +55,23 @@
                             </div>
                             
                             <div class="form-group">
-                                <label>Image</label>
+                                <label>Ảnh</label>
                                 <input class="form-control" name="image[]" type = "file" multiple />
                             </div>
                             <div class="form-group">
-                                <label>Description</label>
-                                <textarea id='demo' class="form-control ckeditor" rows="3" name = "description" style="height:220px; width:100%"></textarea>
+                                <label>Mô tả chi tiết</label>
+                                <textarea id='demo' class="form-control ckeditor" rows="3" name = "description" style="height:220px; width:100%" required></textarea>
                             </div>
                             <div class="form-group">
-                                <label>Price</label>
-                                <input class="form-control" name="price" placeholder="Please Enter price" />
+                                <label>Giá(theo tháng)</label>
+                                <input class="form-control" name="price" placeholder="Vui lòng nhập giá" required/>
                             </div>
                             <div class="form-group">
-                                <label>Area</label>
-                                <input class="form-control" name="area" placeholder="Please Enter area" />
+                                <label>Diện tích</label>
+                                <input class="form-control" name="area" placeholder="Vui lòng nhập diện tích" required/>
                             </div>
                             <div class="form-group">
-                                <label>Facility</label>
+                                <label>Tiện nghi</label>
                                 <ul class = "box">
                                     <li><input type = "checkbox" name = "wash_machine" value = 1 >  Máy giặt</li>
                                     <li><input type = "checkbox" name = "wifi" value = 1 >  Wifi</li>
@@ -84,7 +84,7 @@
                                 </ul>
                             </div>
                             <div class="form-group">
-                                <label>Around</label>
+                                <label>Xung quanh</label>
                                 <ul class = "box">
                                     <li><input type = "checkbox" name = "market"  value = 1>  Siêu thị</li>
                                     <li><input type = "checkbox" name = "hospital" value = 1>  Bệnh viện</li>
@@ -95,8 +95,8 @@
                                 </ul>
                             </div>
                             <div class = "submit">
-                                <button type="submit" class="btn btn-default">Post Add</button>
-                                <button type="reset" class="btn btn-default">Reset</button>
+                                <button type="submit" class="btn btn-default">Đăng tin</button>
+                                <button type="reset" class="btn btn-default">Làm mới</button>
                             </div>
                         <form>
                     </div>
