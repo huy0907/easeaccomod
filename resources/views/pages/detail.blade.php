@@ -17,9 +17,9 @@
                         <div class="moduletitle">
                             <div class="blog-title">
                                 <div class="title">
-                                    <span class="type">{{$post->category->name}}</span>
+                                    <span class="type">{{$post->category->name}}/<span class="province">{{$post->province->name}} </span></span>                  
                                     <h3>{{$post->name}}</h3>
-                                    <a href="#" class="province">{{$post->province->name}}</a>
+                                    <h4>@if($post->state == 1){{"Còn phòng"}}@else {{"Hết phòng"}}@endif</h4>
                                 </div>
                             </div>
                             <div class = "social-date" style = "padding-left:10px;">

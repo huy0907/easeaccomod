@@ -296,7 +296,13 @@ class PostController extends Controller
         return redirect('admin/post/edit/'.$id)->with('notify', 'Edit post sucessfully!');
     }
 
-
+    public function empty(Request $req)
+    {
+        $post = post::find($req->id);
+        $post->state = 1 - $post->state;
+        $post->save();
+        return  $post->state;
+    }
 
 
     /**
