@@ -1,10 +1,13 @@
 <!-- HEADER -->
 <header class>
                 <div class="container">
+               
                     <div class="container-inner full">
                         <div class="block-left">
+                        
                             <div class="logo">
                                 <a href="index"><img src="images/logomain.jpg"></a>
+                                
                             </div>
                         </div>
                         <div class="menu">
