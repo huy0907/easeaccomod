@@ -81,6 +81,7 @@
                                                 padding: 12px 10px;
                                                 text-decoration: none;
                                                 display: block;
+                                                text-align: left;
                                                 }
 
                                                 .thongbao a:hover {background-color: #ddd;}
