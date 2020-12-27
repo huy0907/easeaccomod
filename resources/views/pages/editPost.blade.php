@@ -30,7 +30,7 @@
                         <form action="editpost/{{$post->id}}" method="POST" enctype = "multipart/form-data">
                         <input type="hidden" name = "_token" value = "{{csrf_token()}}"/>
                             <div class="form-group">
-                                <label>Category</label>
+                                <label>Thể loại</label>
                                 <select class="form-control" name = "category">
                                     @foreach($cat as $row)
                                     <option value="{{$row->id}}"
@@ -41,7 +41,7 @@
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label>Province</label>
+                                <label>Tỉnh/thành phố</label>
                                 <select class="form-control" name = "province">
                                     @foreach($province as $row)
                                     <option value="{{$row->id}}">{{$row->name}}</option>
@@ -49,28 +49,28 @@
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label>Name</label>
+                                <label>Tiêu đề</label>
                                 <input class="form-control" name="name" value = "{{$post->name}}" />
                             </div>
                             <div class="form-group">
-                                <label>Address</label>
+                                <label>Địa chỉ</label>
                                 <input class="form-control" name="address" value = "{{$post->address}}" placeholder="Please Enter address" />
                             </div>
                             <div class="form-group">
-                                <label>Image</label>
+                                <label>Ảnh</label>
                                 <p><img width = "400px" src = "image/{{explode('?',$post->image)[0]}}"></p>
                                 <input class="form-control" name="image" type = "file" />
                             </div>
                             <div class="form-group">
-                                <label>Description</label>
+                                <label>Mô tả</label>
                                 <textarea id='demo' class="form-control ckeditor" rows="3" name = "description" style="height:220px; width:100%">{{$post->description}}</textarea>
                             </div>
                             <div class="form-group">
-                                <label>Price</label>
+                                <label>Giá</label>
                                 <input class="form-control" name="price" placeholder="Please Enter price"  value = "{{$post->price}}"/>
                             </div>
                             <div class="form-group">
-                                <label>Facility</label>
+                                <label>Tiện nghi</label>
                                 <ul class = "box">
                                     <li><input type = "checkbox" value = 1 name = "wash_machine" @if($post->wash_machine == 1){{"checked"}} @endif  >  Máy giặt</li>
                                     <li><input type = "checkbox" value = 1 name = "wifi" @if($post->wifi == 1){{"checked"}} @endif >  Wifi</li>
@@ -83,7 +83,7 @@
                                 </ul>
                             </div>
                             <div class="form-group">
-                                <label>Around</label>
+                                <label>Xung quanh</label>
                                 <ul class = "box">
                                     <li><input type = "checkbox" name = "market"  value = 1 @if($post->market == 1){{"checked"}} @endif>  Siêu thị</li>
                                     <li><input type = "checkbox" name = "hospital" value = 1 @if($post->hospital == 1){{"checked"}} @endif>  Bệnh viện</li>
@@ -93,8 +93,8 @@
                                     <li><input type = "checkbox" name = "bus"  value = 1 @if($post->bus == 1){{"checked"}} @endif>  Trạm xe bus</li>
                                 </ul>
                             </div>
-                            <button type="submit" class="btn btn-default" >Post Edit</button>
-                            <button type="reset" class="btn btn-default">Reset</button>
+                            <button type="submit" class="btn btn-default" >Chỉnh sửa</button>
+                            <button type="reset" class="btn btn-default">Làm mới</button>
                         <form>
                     </div>
                 </div>

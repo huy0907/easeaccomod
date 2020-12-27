@@ -301,7 +301,7 @@ class PostController extends Controller
         $post = post::find($req->id);
         $post->state = 1 - $post->state;
         $post->save();
-        return  $post->state;
+        return $post->state;
     }
 
 
