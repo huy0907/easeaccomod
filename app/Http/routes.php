@@ -83,10 +83,10 @@ Route::get('filter', 'PageController@getFilter');
 Route::get('getResult', 'PageController@getResult');
 Route::get('cat/{id}', 'PageController@getHeader');
 //Middeware check for pages must login to access
-Route::get('editpost/{id}', 'PageController@getEditPost')->middleware('logincheck');
+Route::get('editpost/{id}', 'PageController@getEditPost')->middleware('usercheck');
 Route::get('editprofile', 'PageController@getEdit')->middleware('logincheck');
 Route::post('editprofile', 'PageController@postEditUser')->middleware('logincheck');
-Route::post('editpost/{id}', 'PageController@postEditPost')->middleware('logincheck');
+Route::post('editpost/{id}', 'PageController@postEditPost')->middleware('usercheck');
 Route::get('post','PageController@getpost')->middleware('logincheck');
 Route::post('post', 'PageController@postPost' )->middleware('logincheck');
 Route::get('report/{id}','PageController@getReport')->middleware('logincheck');

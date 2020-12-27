@@ -184,7 +184,7 @@ class UserController extends Controller
         'password.length' => "Password lengt must be at least 6 characters"]);
         if(Auth::attempt(['email' => $req->email, 'password' => $req->password]))
         {
-            return redirect('admin/category/list');
+            return redirect('admin/statistic');
         }
         else return redirect('admin/login')->with('notify','Wrong email or password. Please try again!  ');
     }

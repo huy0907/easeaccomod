@@ -1,4 +1,7 @@
 @extends('admin.layout.index')
+@section('css')
+
+@endsection
 @section('content')
 <div id="page-wrapper">
     <h2>Province</h2>

@@ -107,6 +107,15 @@
                                                 <dt>Email:</dt>
                                                 <dd>{{$post->user->email}}</dd>
                                             </dl>
+                                            <dl>
+                                                <dt>Trạng thái:</dt>
+                                                <dd>
+                                                @if({{$post->state == 1}})
+                                                {{"Còn phòng"}}
+                                                @else {{"Hết phòng"}}
+                                                @endif
+                                                </dd>
+                                            </dl>
                                         </div>
                                     </div>
                                 </div>
