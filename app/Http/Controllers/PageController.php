@@ -31,12 +31,12 @@ class PageController extends Controller
     }
     public function index()
     {
-        $post = post::where('isConfirm', '1')->orderBy('id', 'desc')->take(8)->get();
+        $post = post::where('isConfirm', '1')->where('state', '1')->orderBy('id', 'desc')->take(8)->get();
         $cat_list = category::all();
         $prov_list = province::all();
         $cat_info = post::groupBy('category_id')->select('category_id', DB::raw('count(*) as total'))->get();
         $prov_info = post::groupBy('province_id')->select('province_id', DB::raw('count(*) as total'))->get();
-        $most_view = post::orderBy('views', 'desc')->take(6)->get();
+        $most_view = post::orderBy('views', 'desc')->where('state', '1')->take(6)->get();
         return view('pages.firstpage', ['cat' => $cat_info, 'top_post' => $post, 'prov' => $prov_info, 'most_view' => $most_view ,
         'cat_list' =>  $cat_list, 'prov_list' => $prov_list]);
     }
@@ -49,7 +49,7 @@ class PageController extends Controller
         $cat_list = category::all();
         $prov_list = province::all();
         $cat_info = post::groupBy('category_id')->select('category_id', DB::raw('count(*) as total'))->get();
-        $post_relate = post::where('category_id', '=', $post->category_id)->where('province_id', $post->province_id)->where('id', '!=', $id)->take(4)->get();
+        $post_relate = post::where('category_id', '=', $post->category_id)->where('province_id', $post->province_id)->where('id', '!=', $id)->where('state', '1')->take(4)->get();
         $count_cmt = comment::where('post_id', '=', $post->id)->count();
         return view('pages.detail', ['post' => $post, 'post_relate' => $post_relate, 'count' => $count_cmt, 'cat' => $cat_info,
         'cat_list' =>  $cat_list, 'prov_list' => $prov_list]);
